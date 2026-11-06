@@ -65,8 +65,8 @@
     letter-spacing: 1px !important;
 }
 
-/* Скрываем поиск на самой странице поиска */
-body:has(#searchInput) #menu {
+/* Скрываем только пункт "Поиск" на странице поиска, оставляя "Указатели" */
+body:has(#searchInput) .header #menu a[href*="/search"] {
     display: none !important;
 }
 
@@ -301,35 +301,24 @@ body #searchInput::placeholder {
     opacity: 1 !important; 
 }
 /* =========================================
-   ВЫСТРАИВАЕМ "УКАЗАТЕЛЬ" ПОД "ПОИСКОМ"
+   ВЫСТРАИВАЕМ "УКАЗАТЕЛИ" ПОД "ПОИСКОМ"
    ========================================= */
 
-/* 1. Контейнер меню (делаем его точкой отсчета) */
+/* 1. Контейнер меню */
 .header #menu {
     position: absolute !important;
     bottom: 0 !important;
     right: 0 !important;
     margin: 0 !important;
-    display: block !important; /* Меняем на block, чтобы позиционировать жестко */
-    height: 100% !important; /* Растягиваем по высоте шапки */
+    display: flex !important;
+    flex-direction: column !important; /* Ставим друг под другом */
+    align-items: flex-end !important; /* Прижимаем к правому краю */
+    gap: 0.2rem !important; /* Отступ между строками */
 }
 
-/* 2. Пункт "ПОИСК" — оставляем наверху справа */
-.header #menu a[href*="/search"] {
-    position: absolute !important;
-    top: 0 !important;
-    right: 0 !important;
+/* 2. Сами ссылки */
+.header #menu a {
+    position: relative !important;
     margin: 0 !important;
     display: block !important;
     line-height: 1.2 !important;
-}
-
-/* 3. Пункт "УКАЗАТЕЛИ" — ставим строго под Поиском */
-.header #menu a[href*="/tags"] {
-    position: absolute !important;
-    top: 1.4rem !important; /* Опускаем вниз. Если текст наезжает, увеличь до 1.5rem или 1.6rem */
-    right: 0 !important;
-    margin: 0 !important;
-    display: block !important;
-    line-height: 1.2 !important;
-}
