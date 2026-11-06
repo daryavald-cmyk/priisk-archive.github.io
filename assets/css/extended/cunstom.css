@@ -1,55 +1,60 @@
 /* =========================================
-   1. ЖЕСТКАЯ ШАПКА (Ядерный вариант)
+   1. ЖЕСТКАЯ ШАПКА (Идеальное распределение)
    ========================================= */
 body .header {
-    display: block !important; /* Отключаем flex, чтобы тема не мешала */
+    display: flex !important;
+    justify-content: space-between !important; /* Логотип влево, меню вправо */
+    align-items: center !important;            /* Идеальная линия */
     max-width: 800px !important;
     margin: 0 auto !important;
     padding: 0 !important;
     position: relative !important;
-    height: 3.5rem !important; /* Высота самой шапки */
+    height: 3.5rem !important;
 }
 
-/* Принудительно ставим логотип слева */
+/* Логотип (Пріискъ + Луна) */
 .header .logo {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
+    position: relative !important; 
     margin: 0 !important;
     padding: 0 !important;
     display: flex !important;
     align-items: center !important;
-    height: 100% !important; /* Логотип на всю высоту шапки */
+    gap: 0.5rem !important;
 }
 
-/* Принудительно ставим меню справа */
-.header #menu {
-    position: absolute !important;
-    top: 0 !important;
-    right: 0 !important;
+.logo a {
+    font-size: 1.1rem !important;
+    font-weight: 400 !important; /* Тонкий шрифт */
+    letter-spacing: 1px !important;
+    text-align: left !important;
+    text-decoration: none !important;
+}
+
+#theme-toggle {
     margin: 0 !important;
     padding: 0 !important;
     display: flex !important;
-    flex-direction: row !important;
     align-items: center !important;
-    height: 100% !important; /* Меню на всю высоту шапки */
-    gap: 1.5rem !important;
+}
+
+/* Скрываем почту, чтобы не мешала кликам */
+.header a[href^="mailto:"] {
+    display: none !important;
 }
 
 /* =========================================
-   2. МЕНЮ (Поиск и Указатели)
+   2. МЕНЮ (Поиск и Указатели справа)
    ========================================= */
 .header #menu {
     position: relative !important; 
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
-    gap: 1.5rem !important;
-    margin: 0 !important; /* Убеждаемся, что тут 0 */
+    gap: 1.5rem !important; /* Отступ между словами */
+    margin: 0 !important;
     padding: 0 !important;
 }
 
-/* Убираем элементы списка и маркеры */
 .header #menu li {
     display: block !important;
     list-style: none !important;
@@ -59,32 +64,31 @@ body .header {
 
 .header #menu a {
     font-size: 1.1rem !important;
-    font-weight: 400 !important;
+    font-weight: 400 !important; /* Тонкий шрифт для меню */
     letter-spacing: 1px !important;
     line-height: 1.2 !important;
     text-decoration: none !important;
     display: inline-block !important; 
-    padding: 10px 0 !important; /* Увеличивает зону клика, чтобы точно попадать курсором */
+    padding: 10px 0 !important; 
 }
 
-/* Рисуем вертикальную черту между словами */
+/* Вертикальная черта между меню */
 .header #menu li:nth-child(2) a::before {
     content: "|" !important;
     display: inline-block !important;
     color: var(--border) !important;
     font-weight: 300 !important;
-    margin-right: 1.5rem !important; 
-    margin-left: -1.5rem !important; 
+    margin-right: 1.5rem !important; /* Отступ от черты до слова */
+    margin-left: -1.5rem !important; /* Отступ от слова до черты */
     vertical-align: middle !important;
 }
 
-/* Скрываем пункт "Поиск" на странице поиска */
 body:has(#searchInput) .header #menu a[href*="/search"] {
     display: none !important;
 }
 
 /* =========================================
-   3. ОПИСАНИЕ (Под словом Прииск)
+   3. ОПИСАНИЕ ПОД ШАПКОЙ
    ========================================= */
 .home-info {
     position: absolute !important;
@@ -96,7 +100,6 @@ body:has(#searchInput) .header #menu a[href*="/search"] {
     margin: 0 !important;
     text-align: left !important;
 }
-
 .home-info p {
     color: var(--primary) !important;
     font-weight: 600 !important;
@@ -106,13 +109,13 @@ body:has(#searchInput) .header #menu a[href*="/search"] {
 }
 
 /* =========================================
-   4. СТИЛИ КАРТОЧЕК И ТЕКСТА
+   4. ЦВЕТА И КАРТОЧКИ
    ========================================= */
 :root {
     --theme: #f0f0f0;
     --entry: #ffffff;
     --border: #e0e0e0;
-    --accent-text: #b06e2c;
+    --accent-text: #b06e2c; /* Наш акцентный оранжевый */
 }
 [data-theme="dark"] {
     --entry: #2a2a2a;
@@ -130,7 +133,7 @@ body .post-entry, body .first-entry {
     margin-bottom: 1rem !important;
     padding: 1.5rem !important;
     padding-top: 3.5rem !important;
-   background: var(--entry) !important;
+    background: var(--entry) !important;
 }
 
 body .post-entry .entry-footer,
@@ -138,7 +141,7 @@ body .first-entry .entry-footer {
     position: absolute !important;
     top: 1.2rem !important;
     left: 1.5rem !important;
-    font-family: var(--font-family) !important;
+   font-family: var(--font-family) !important;
     font-size: 0.85rem !important;
     color: var(--secondary) !important;
 }
@@ -158,26 +161,23 @@ body .first-entry .entry-content {
 }
 
 /* =========================================
-   5. СТРАНИЦА ПУБЛИКАЦИИ (Дата наверх)
+   5. ОТСТУПЫ ДЛЯ СТРАНИЦ (Главная и Публикации)
    ========================================= */
-    /* Отступ для главной страницы, чтобы опустить карточки */
+/* Опускаем карточки на главной */
 body.list .main {
-    padding-top: 6rem !important; /* Увеличиваем это число, если надо опустить ещё ниже */
+    padding-top: 6rem !important; 
 }
 
-/* Отступ для внутренних страниц */
+/* Опускаем текст внутри публикаций */
 body:not(.list) .main {
-    padding-top: 2rem !important; /* Оставляем небольшой отступ для страниц публикаций */
-
+    padding-top: 2rem !important; 
+}
 
 .post-header {
     position: relative !important;
     display: block !important;
-    
-    /* Увеличиваем отступ сверху, чтобы опустить дату и заголовок вниз */
-    padding-top: 3rem !important; 
+    padding-top: 3rem !important; /* Опускаем заголовок и дату в публикации */
     margin-top: 0 !important; 
-    
     border-bottom: 1px solid var(--border) !important;
     padding-bottom: 1.5rem !important;
     margin-bottom: 2rem !important;
@@ -185,7 +185,7 @@ body:not(.list) .main {
 
 .post-header .post-meta {
     position: absolute !important;
-    top: -1.8rem !important; 
+    top: 1rem !important; /* Дата над заголовком */
     left: 0 !important;      
     font-family: var(--font-family) !important;
     font-size: 0.85rem !important;
@@ -208,63 +208,24 @@ body:not(.list) .main {
 }
 
 /* =========================================
-   6. ФИНАЛЬНЫЙ ПОДВАЛ
+   6. ПОДВАЛ
    ========================================= */
-.footer {
-    padding-bottom: 2rem !important;
-}
-
-.footer-inner {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;    
-    gap: 0.5rem;            
-}
-
-.footer-row {
-    display: flex;
-    flex-direction: row;    
-    align-items: center;
-    white-space: nowrap;    
-    font-family: var(--font-family);
-    font-size: 0.95rem;
-}
-
+.footer { padding-bottom: 2rem !important; }
+.footer-inner { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+.footer-row { display: flex; flex-direction: row; align-items: center; white-space: nowrap; font-family: var(--font-family); font-size: 0.95rem; }
 .footer-row:first-child { color: var(--primary); }
-
-.footer-email {
-    color: var(--accent-text) !important;
-    margin-left: 0.3rem;
-    text-decoration: none;
-}
-
+.footer-email { color: var(--accent-text) !important; margin-left: 0.3rem; text-decoration: none; }
 .footer-email:hover { text-decoration: underline; }
-
-.footer-row:last-child {
-    color: var(--primary);
-    font-size: 0.9rem; 
-}
-
+.footer-row:last-child { color: var(--primary); font-size: 0.9rem; }
 .footer > *:not(.footer-inner) { display: none !important; }
 .footer .copyright { display: none !important; }
 .footer::before, .footer::after { content: none !important; display: none !important; }
 
 /* =========================================
-   7. НАСТРОЙКА СТРАНИЦЫ ПОИСКА
+   7. СТРАНИЦА ПОИСКА (ЖЕСТКАЯ ЗАЧИСТКА)
    ========================================= */
-.search-header h1,
-#searchInput ~ h1,
-.main h1 {
-    font-weight: 400 !important;
-    font-size: 1.2rem !important;
-    letter-spacing: 0.5px !important;
-    color: var(--primary) !important;
-    margin-bottom: 0.2rem !important;
-    display: flex !important;
-    align-items: center !important;
-}
-
-h1 svg {
+/* Уничтожаем лупу (SVG) везде, где она может быть */
+svg, .search-header svg, h1 svg, #searchInput ~ svg {
     display: none !important;
     visibility: hidden !important;
     width: 0 !important;
@@ -272,17 +233,38 @@ h1 svg {
     opacity: 0 !important;
 }
 
+/* Делаем заголовок "ПОИСК ПО САЙТУ" маленьким и тонким */
+.search-header h1,
+#searchInput ~ h1,
+.main h1,
+.main h2 {
+    font-weight: 400 !important; /* Тонкий шрифт */
+    font-size: 1.1rem !important; /* Маленький размер */
+    letter-spacing: 0.5px !important;
+    color: var(--primary) !important;
+    margin-bottom: 1rem !important;
+    display: block !important;
+    text-transform: none !important;
+}
+
+/* Настраиваем строку ввода (Рамка + текст) */
 body #searchInput {
-    font-weight: 400 !important;
+    font-weight: 300 !important; /* Очень тонкий шрифт */
     font-family: var(--font-family) !important;
     font-size: 1rem !important;
     color: var(--primary) !important;
-    border: 2px solid var(--accent-text) !important;
+    border: 2px solid var(--accent-text) !important; /* Оранжевая акцентная рамка */
     background-color: var(--entry) !important;
+    padding: 10px 15px !important;
+    border-radius: 6px !important;
+    width: 100% !important;
+    max-width: 800px !important;
+    box-shadow: none !important;
 }
 
+/* Текст-подсказка внутри строки */
 body #searchInput::placeholder {
-    font-weight: 400 !important;
+    font-weight: 300 !important; /* Тонкий шрифт */
     color: var(--secondary) !important;
-    opacity: 1 !important;
+    opacity: 0.8 !important;
 }
