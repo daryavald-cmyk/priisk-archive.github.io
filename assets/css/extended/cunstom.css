@@ -226,3 +226,17 @@ body #searchInput::placeholder {
     margin-left: 0 !important;
     padding-left: 0 !important;
 }
+/* =========================================
+   УБИРАЕМ СЛОВО "ПОИСК" ИЗ ШАПКИ НА СТРАНИЦЕ ПОИСКА
+   ========================================= */
+/* Если в адресе есть /search/, скрываем пункт меню */
+body[data-url*="/search/"] #menu,
+body[data-url*="/search/"] .nav #menu {
+    display: none !important;
+}
+
+/* Дополнительный селектор на случай, если тема использует другой класс для страницы поиска */
+.page-search #menu,
+.search-page #menu {
+    display: none !important;
+}
