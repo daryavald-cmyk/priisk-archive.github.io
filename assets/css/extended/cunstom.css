@@ -185,13 +185,13 @@ body .search-header h1 { font-weight: 400 !important; font-size: 1.1rem !importa
 /* 3. Выводим сам адрес отдельно и красим в оранжевый */
 .footer::after {
     content: "apriisk@yandex.ru" !important;
-    display: block !important;
     order: -1 !important; /* Ставим сразу после слова Email */
     margin-bottom: 1rem !important; /* Отступ до копирайта */
     
     font-family: var(--font-family) !important;
     font-size: 0.95rem !important;
     color: var(--accent-text) !important; /* Оранжевый цвет */
+    margin-top: -1rem !important; /* Прижимаем к слову Email */
 }
 
 /* 4. Стандартный копирайт (© 2026...) */
