@@ -24,3 +24,4 @@ defaultContentLanguage = "ru"
   name = "ПОИСК"
   url = "/search/"
   weight = 9
+  
