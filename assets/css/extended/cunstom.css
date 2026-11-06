@@ -1,15 +1,17 @@
 /* =========================================
-   1. ЖЕСТКАЯ ШАПКА (Идеальное распределение)
+   1. ЖЕСТКАЯ ШАПКА (Растягиваем на весь экран)
    ========================================= */
 body .header {
     display: flex !important;
-    justify-content: space-between !important; /* <--- ЭТО ВЫТАЛКИВАЕТ ЛОГОТИП ВЛЕВО, А МЕНЮ ВПРАВО */
+    justify-content: space-between !important; 
     align-items: center !important;
-    max-width: 800px !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
+    width: 100% !important;         /* Шапка на всю ширину экрана */
+    max-width: 100% !important;     /* Убираем ограничение в 800px */
+    padding: 0 2rem !important;     /* Небольшие отступы от краев монитора */
+    margin: 0 !important;
     position: relative !important;
     height: 3.5rem !important;
+    box-sizing: border-box !important;
 }
 
 /* Логотип (Пріискъ + Луна) */
@@ -22,28 +24,8 @@ body .header {
     gap: 0.5rem !important;
 }
 
-.logo a {
-    font-size: 1.1rem !important;
-    font-weight: 400 !important; /* Тонкий шрифт */
-    letter-spacing: 1px !important;
-    text-align: left !important;
-    text-decoration: none !important;
-}
-
-#theme-toggle {
-    margin: 0 !important;
-    padding: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-}
-
-/* Скрываем почту, чтобы не мешала кликам */
-.header a[href^="mailto:"] {
-    display: none !important;
-}
-
 /* =========================================
-   2. МЕНЮ (Поиск и Указатели справа)
+   2. МЕНЮ (Принудительно вправо)
    ========================================= */
 .header #menu {
     position: relative !important; 
@@ -54,41 +36,8 @@ body .header {
     margin: 0 !important;
     padding: 0 !important;
     
-    /* ДОБАВЬ ЭТИ ДВЕ СТРОКИ, ЧТОБЫ МЕНЮ ПРИЖАЛОСЬ К ПРАВОМУ КРАЮ */
+    /* Жестко прижимаем к правой стороне */
     margin-left: auto !important; 
-    justify-content: flex-end !important;
-}
-
-.header #menu li {
-    display: block !important;
-    list-style: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-.header #menu a {
-    font-size: 1.1rem !important;
-    font-weight: 400 !important; /* Тонкий шрифт для меню */
-    letter-spacing: 1px !important;
-    line-height: 1.2 !important;
-    text-decoration: none !important;
-    display: inline-block !important; 
-    padding: 10px 0 !important; 
-}
-
-/* Вертикальная черта между меню */
-.header #menu li:nth-child(2) a::before {
-    content: "|" !important;
-    display: inline-block !important;
-    color: var(--border) !important;
-    font-weight: 300 !important;
-    margin-right: 1.5rem !important; /* Отступ от черты до слова */
-    margin-left: -1.5rem !important; /* Отступ от слова до черты */
-    vertical-align: middle !important;
-}
-
-body:has(#searchInput) .header #menu a[href*="/search"] {
-    display: none !important;
 }
 
 /* =========================================
