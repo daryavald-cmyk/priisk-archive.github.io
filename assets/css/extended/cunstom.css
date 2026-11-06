@@ -1,134 +1,178 @@
 /* =========================================
-   1. ЦВЕТА И КОНТРАСТ (Заводские, чуть контрастнее)
+   1. ЦВЕТА И КОНТРАСТ
    ========================================= */
 :root {
-    --theme: #f0f0f0; 
-    --entry: #ffffff; 
-    --border: #e0e0e0; 
+    --theme: #f0f0f0;
+    --entry: #ffffff;
+    --border: #e0e0e0;
+    --accent-text: #b06e2c;
 }
 
 [data-theme="dark"] {
-    --entry: #2a2a2a; 
-    --theme: #121212; 
-    --border: #3a3a3a; 
+    --entry: #2a2a2a;
+    --theme: #121212;
+    --border: #3a3a3a;
+    --accent-text: #d8933e;
 }
 
 /* =========================================
-   2. КАРТОЧКИ ПУБЛИКАЦИЙ (рамки, фон, отступы)
+   2. ШАПКА (Прииск слева, Поиск справа)
+   ========================================= */
+.header {
+    display: flex !important;
+    flex-direction: row !important; /* Элементы в одну линию */
+    justify-content: space-between !important; /* Раскидываем по краям */
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 800px !important; /* Ширина как у карточек */
+    margin: 0 auto !important; 
+    padding: 1rem 0 !important;
+}
+
+/* Логотип (Прииск + солнце) */
+.header .logo {
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.2rem !important;
+}
+
+.logo a {
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+}
+
+#theme-toggle {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+/* Меню (Поиск) */
+.header #menu {
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Прячем меню на странице поиска */
+body:has(#searchInput) #menu {
+    display: none !important;
+}
+
+/* =========================================
+   3. ОПИСАНИЕ ПОД ШАПКОЙ
+   ========================================= */
+.home-info {
+    max-width: 800px !important; /* Ширина как у карточек */
+    margin: 0 auto !important; /* Центрируем сам блок */
+    padding: 0 !important;
+    text-align: center !important; /* Текст по центру */
+}
+
+.home-info p {
+    color: var(--primary) !important; 
+    font-weight: 600 !important; /* Жирность как у заголовков */
+    font-size: 1.1rem !important;
+    font-family: var(--font-family) !important;
+    margin-top: 0.5rem !important;
+    margin-bottom: 2rem !important; /* Отступ до первой карточки */
+}
+
+/* =========================================
+   4. КАРТОЧКИ ПУБЛИКАЦИЙ
    ========================================= */
 body .post-entry, body .first-entry {
-    position: relative !important; 
+    position: relative !important;
     display: flex !important;
     flex-direction: column !important;
     border: 1px solid var(--border) !important;
     border-radius: 8px !important;
     margin-bottom: 1rem !important;
     padding: 1.5rem !important;
-    padding-top: 3.5rem !important; 
-    background: var(--entry) !important; 
+    padding-top: 3.5rem !important;
+    background: var(--entry) !important;
 }
 
-/* =========================================
-   3. ДАТА (Системный шрифт, левый верхний угол)
-   ========================================= */
-body .post-entry .entry-footer, 
+/* Дата */
+body .post-entry .entry-footer,
 body .first-entry .entry-footer {
     position: absolute !important;
-    top: 1.2rem !important; 
-    left: 1.5rem !important; 
+    top: 1.2rem !important;
+    left: 1.5rem !important;
     margin: 0 !important;
     padding: 0 !important;
-    
     font-family: var(--font-family) !important;
     font-size: 0.85rem !important;
-    font-weight: 500 !important; 
+    font-weight: 500 !important;
     color: color-mix(in srgb, var(--primary) 60%, var(--secondary)) !important;
     opacity: 1 !important;
 }
 
-/* =========================================
-   4. ЗАГОЛОВКИ И НАЗВАНИЕ САЙТА
-   ========================================= */
-body .post-entry .entry-header, 
+/* Заголовки в карточках */
+body .post-entry .entry-header,
 body .first-entry .entry-header {
-    margin-top: 0 !important; 
+    margin-top: 0 !important;
     margin-bottom: 0.5rem !important;
 }
 
-body .post-entry .entry-header h2, 
+body .post-entry .entry-header h2,
 body .first-entry .entry-header h1 {
-    font-size: 1.3rem !important; 
-    font-weight: 600 !important; 
+    font-size: 1.3rem !important;
+    font-weight: 600 !important;
     margin: 0 !important;
 }
 
-.logo a {
-    font-weight: 600 !important; 
-}
-
-.post-header .post-title {
-    font-weight: 600 !important; 
-}
-
-/* =========================================
-   5. ТЕКСТ ОПИСАНИЯ (Акцентный цвет)
-   ========================================= */
-:root {
-    --accent-text: #b06e2c; 
-}
-[data-theme="dark"] {
-    --accent-text: #d8933e; 
-}
-
-body .post-entry .entry-content, 
+/* Описание в карточках (акцентный цвет) */
+body .post-entry .entry-content,
 body .first-entry .entry-content {
-    font-family: var(--font-family) !important; 
-    font-size: 0.95rem !important; 
-    line-height: 1.6 !important; 
-    margin-top: 0.5rem !important; 
-    color: var(--accent-text) !important; 
-    opacity: 1 !important; 
-    font-weight: 400 !important; 
+    font-family: var(--font-family) !important;
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+    margin-top: 0.5rem !important;
+    color: var(--accent-text) !important;
+    opacity: 1 !important;
+    font-weight: 400 !important;
 }
 
 /* =========================================
-   6. СТРАНИЦА ПУБЛИКАЦИИ (Шапка)
+   5. СТРАНИЦА ПУБЛИКАЦИИ
    ========================================= */
 .post-header {
     position: relative !important;
-    padding-top: 2.5rem !important; 
+    padding-top: 2.5rem !important;
     margin-bottom: 2rem !important;
-    border-bottom: 1px solid var(--border) !important; 
+    border-bottom: 1px solid var(--border) !important;
     padding-bottom: 1.5rem !important;
 }
 
 .post-header .post-meta {
     position: absolute !important;
-    top: 0.5rem !important; 
+    top: 0.5rem !important;
     left: 0 !important;
     margin: 0 !important;
     font-family: var(--font-family) !important;
-    font-size: 1rem !important; 
-    font-weight: 600 !important; 
-    color: color-mix(in srgb, var(--primary) 70%, var(--secondary)) !important; 
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: color-mix(in srgb, var(--primary) 70%, var(--secondary)) !important;
 }
 
 .post-header .post-title {
-    font-weight: 600 !important; 
-    margin-top: 0.8rem !important; 
+    font-weight: 600 !important;
+    margin-top: 0.8rem !important;
     margin-bottom: 1rem !important;
 }
 
 .post-header .post-description {
     font-family: var(--font-family) !important;
-    font-size: 1.05rem !important; 
+    font-size: 1.05rem !important;
     line-height: 1.5 !important;
-    color: var(--accent-text) !important; 
+    color: var(--accent-text) !important;
     margin-top: 0.5rem !important;
 }
 
 /* =========================================
-   7. БЛОКИ ДЛЯ ТЕКСТА ПУБЛИКАЦИИ
+   6. БЛОКИ ДЛЯ ТЕКСТА ПУБЛИКАЦИИ
    ========================================= */
 .doc-meta {
     font-family: "Courier New", Courier, monospace !important;
@@ -140,66 +184,67 @@ body .first-entry .entry-content {
 
 .doc-footnotes {
     font-family: var(--font-family) !important;
-   font-size: 0.85rem !important; 
+    font-size: 0.85rem !important;
     line-height: 1.5 !important;
     margin: 1.5rem 0 !important;
-    padding-left: 1.5rem !important; 
-    text-indent: -1.5rem !important; 
+    padding-left: 1.5rem !important;
+    text-indent: -1.5rem !important;
 }
+
 .doc-footnotes span {
-    font-family: var(--font-family) !important; 
-    font-weight: 600 !important; 
+    font-family: var(--font-family) !important;
+    font-weight: 600 !important;
     margin-right: 0.5rem !important;
 }
 
 .doc-notes {
     font-family: "Courier New", Courier, monospace !important;
-    font-size: 0.8rem !important; 
+    font-size: 0.8rem !important;
     line-height: 1.5 !important;
     color: var(--secondary) !important;
     margin-top: 2rem !important;
     padding-top: 1rem !important;
-    border-top: 1px dashed var(--border) !important; 
+    border-top: 1px dashed var(--border) !important;
 }
 
 .line-solid {
     border: 0 !important;
-    border-top: 1px solid var(--border) !important; 
+    border-top: 1px solid var(--border) !important;
     margin: 1.5rem 0 !important;
 }
 
 .line-dashed {
     border: 0 !important;
-    border-top: 1px solid var(--border) !important; 
+    border-top: 1px solid var(--border) !important;
     margin: 1.5rem 0 !important;
 }
 
 /* =========================================
-   8. СТРАНИЦА ПОИСКА
+   7. СТРАНИЦА ПОИСКА
    ========================================= */
 body .search-header h1,
 body .page-header h1 {
-    font-weight: 400 !important; 
-    font-size: 1.1rem !important; 
+    font-weight: 400 !important;
+    font-size: 1.1rem !important;
     margin-bottom: 2rem !important;
 }
 
 body #searchInput {
-    border: 2px solid var(--accent-text) !important; 
-    background-color: var(--entry) !important; 
-    color: var(--primary) !important; 
-    font-family: var(--font-family) !important; 
+    border: 2px solid var(--accent-text) !important;
+    background-color: var(--entry) !important;
+    color: var(--primary) !important;
+    font-family: var(--font-family) !important;
     font-size: 1rem !important;
     padding: 0.8rem !important;
     border-radius: 8px !important;
-    box-shadow: none !important; 
+    box-shadow: none !important;
     outline: none !important;
 }
 
 body #searchInput::placeholder {
-    color: var(--secondary) !important; 
+    color: var(--secondary) !important;
     opacity: 1 !important;
-    font-weight: 400 !important; 
+    font-weight: 400 !important;
 }
 
 .search-header h1 svg,
@@ -207,79 +252,4 @@ body #searchInput::placeholder {
 .search-header h1 img,
 .page-header h1 svg {
     display: none !important;
-}
-
-/* =========================================
-   НАСТРОЙКА НАЗВАНИЯ САЙТА (Пріискъ)
-   ========================================= */
-.logo a {
-    font-size: 1.1rem !important; 
-    font-weight: 400 !important; 
-    letter-spacing: 1px !important; 
-}
-
-.logo {
-    gap: 0.2rem !important; 
-}
-
-#theme-toggle {
-    margin-left: 0 !important;
-    padding-left: 0 !important;
-}
-
-/* =========================================
-   СКРЫВАЕМ МЕНЮ НА СТРАНИЦЕ ПОИСКА
-   ========================================= */
-/* Этот селектор сработает, если на странице есть строка поиска */
-body:has(#searchInput) #menu {
-    display: none !important;
-}
-/* Стилизуем текст-описание на главной странице */
-.home-info {
-    text-align: center !important; /* Выравниваем по центру */
-    margin-bottom: 2rem !important; /* Отступ до первой карточки */
-}
-
-.home-info p {
-    color: var(--primary) !important; /* Возвращаем белый/черный цвет (как основной текст) */
-    font-family: var(--font-family) !important; 
-    font-size: 1rem !important;
-    opacity: 0.8 !important; /* Легкая прозрачность, чтобы не спорило с названием */
-    margin-top: 0.5rem !important;
-}
-/* =========================================
-   ШАПКА: ПРИИСК СВЕРХУ, ОПИСАНИЕ ПОД НИМ (ПО ЛЕВОМУ КРАЮ)
-   ========================================= */
-
-/* Делаем шапку колонкой */
-.header {
-    display: flex !important;
-    flex-direction: column !important; /* Элементы идут друг под другом */
-    align-items: flex-start !important; /* Жестко прижимаем к ЛЕВОМУ краю */
-    justify-content: flex-start !important;
-    gap: 0.3rem !important; /* Небольшое расстояние между названием и описанием */
-    padding-top: 1rem !important;
-}
-
-/* Настраиваем само название "Пріискъ" */
-.header .logo {
-    margin: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-}
-
-/* Настраиваем текст описания */
-.home-info {
-    margin: 0 !important; 
-    padding: 0 !important;
-    display: block !important;
-}
-
-.home-info p {
-    color: var(--primary) !important; /* Цвет как у основного текста (белый/черный) */
-    font-family: var(--font-family) !important;
-    font-size: 1rem !important; 
-    font-weight: 400 !important; 
-    margin: 0 !important;
-    text-align: left !important; /* Выравниваем текст по левому краю */
 }
