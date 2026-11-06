@@ -15,15 +15,19 @@
     </div>
 </footer>
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    // Ищем кнопку "Наверх" по разным возможным классам и ID
-    const topLink = document.querySelector('#top-link') || 
-                    document.querySelector('.top-link') || 
-                    document.querySelector('a[href="#top"]');
-    
-    // Если нашли — удаляем её из HTML навсегда
-    if (topLink) {
-        topLink.remove();
-    }
+// Ждем полной загрузки, а затем ждем еще чуть-чуть (на случай, если кнопка появляется с задержкой)
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        // Ищем кнопку по всем возможным признакам
+        const killButton = () => {
+            const btns = document.querySelectorAll('a[href="#top"], #top-link, .top-link, [id*="scroll"], [class*="scroll"]');
+            btns.forEach(btn => btn.remove()); // Физически удаляем из DOM
+        };
+        
+        killButton();
+        
+        // На всякий случай запускаем еще раз через секунду (если скрипт темы создаст её заново)
+        setTimeout(killButton, 1000);
+    }, 500); 
 });
 </script>
