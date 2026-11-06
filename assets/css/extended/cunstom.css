@@ -340,24 +340,11 @@ body .first-entry .entry-content {
     font-weight: 600 !important;
 }
 
-/* --- Настройка страницы поиска --- */
-/* Делаем заголовок аккуратным (тонким) */
-.search-header h1 {
-    font-weight: 400 !important; /* Убираем жирность полностью */
-    font-size: 1.4rem !important; /* И делаем его чуть меньше */
-    letter-spacing: 0.5px;
+/* =========================================
+   ФИНАЛЬНАЯ НАСТРОЙКА СТРАНИЦЫ ПОИСКА
+   ========================================= */
+body .search-header h1 {
+    font-weight: 600 !important; /* Как заголовки в карточках */
+    font-size: 1.3rem !important; 
+    margin-bottom: 1.5rem !important;
 }
-
-/* Строка поиска: оставляем красивую яркую рамку */
-#searchInput {
-    border: 2px solid var(--accent-text) !important; /* Сделали рамку чуть толще (2px) */
-    /* ... остальные стили остаются из предыдущего блока */
-}
-
-/* Подсказка "Введите слово...": делаем её приглушенной */
-#searchInput::placeholder {
-    color: var(--secondary) !important; /* Возвращаем стандартный серый цвет */
-    opacity: 1 !important;
-    font-weight: 400 !important; 
-}
-
