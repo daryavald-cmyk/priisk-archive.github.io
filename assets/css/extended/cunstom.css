@@ -224,49 +224,44 @@ body .search-header h1 { font-weight: 400 !important; font-size: 1.1rem !importa
     display: none !important;
 }
 /* =========================================
-   НАСТРОЙКА СТРАНИЦЫ ПОИСКА (ПОЛНЫЙ ФИНАЛ)
+   НАСТРОЙКА СТРАНИЦЫ ПОИСКА (УБИВАЕМ ЛУПУ)
    ========================================= */
 
-/* 1. Заголовок "Поиск по сайту" (цвет как у "Прииск", тоньше и меньше) */
+/* 1. Заголовок "Поиск по сайту" */
 .search-header h1, 
 #searchInput ~ h1, 
 .main h1 {
     font-weight: 400 !important; 
     font-size: 1.5rem !important; 
     letter-spacing: 0.5px !important;
-    color: var(--primary) !important; /* Темный цвет */
+    color: var(--primary) !important; 
     margin-bottom: 1.5rem !important; 
     display: flex !important; 
     align-items: center !important;
 }
 
-/* 2. Прячем иконку лупы внутри заголовка */
-.search-header h1 svg, 
-.search-header h1 i, 
-.search-header h1 img,
-.search-header svg,
-.search-header i,
-.search-header img {
+/* 2. ЖЕСТКО ПРЯЧЕМ ЛУПУ: удаляем все SVG внутри заголовка */
+h1 svg {
     display: none !important; 
+    visibility: hidden !important;
     width: 0 !important;
     height: 0 !important;
     opacity: 0 !important;
-    visibility: hidden !important;
 }
 
-/* 3. Само поле ввода поиска */
+/* 3. Поле ввода поиска */
 body #searchInput {
-    font-weight: 400 !important; /* Убираем жирность у текста внутри */
-    font-family: var(--font-family) !important; /* Стандартный шрифт сайта */
-    font-size: 1rem !important; /* Размер как у обычного текста */
+    font-weight: 400 !important; 
+    font-family: var(--font-family) !important; 
+    font-size: 1rem !important; 
     color: var(--primary) !important;
-    border: 2px solid var(--accent-text) !important; /* Оставляем оранжевую рамку */
+    border: 2px solid var(--accent-text) !important; 
     background-color: var(--entry) !important;
 }
 
-/* 4. Подсказка (плейсхолдер) внутри окна поиска */
+/* 4. Подсказка внутри окна */
 body #searchInput::placeholder {
-    font-weight: 400 !important; /* Убираем жирность у подсказки */
-    color: var(--secondary) !important; /* Серый цвет, чтобы отличать от вводимого текста */
-    opacity: 1 !important; /* Firefox по умолчанию делает их прозрачными */
+    font-weight: 400 !important; 
+    color: var(--secondary) !important; 
+    opacity: 1 !important; 
 }
