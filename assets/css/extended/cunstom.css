@@ -1,52 +1,17 @@
 /* =========================================
-   1. ЖЕСТКАЯ ШАПКА (Всё на одной линии)
+   1. ЖЕСТКАЯ ШАПКА (Исправленная)
    ========================================= */
-.header {
+body .header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
     max-width: 800px !important;
     margin: 0 auto !important;
-    padding: 1.5rem 0 !important; /* Высота шапки */
-    position: relative !important; /* База для абсолютного позиционирования */
-    display: block !important;
-}
-
-/* Прибиваем логотип "Прииск" к ЛЕВОМУ ВЕРХНЕМУ углу */
-.header .logo {
-    position: absolute !important;
-    top: 1.5rem !important;  /* Привязка к верху */
-    left: 0 !important;      /* Привязка к левому краю */
-    margin: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 0.5rem !important;
-}
-
-.logo a {
-    font-size: 1.1rem !important;
-    font-weight: 400 !important;
-    letter-spacing: 1px !important;
-}
-
-/* Значок смены темы (Луна) */
-#theme-toggle {
-    margin: 0 !important;
-    padding: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-}
-
-/* Почта (если она есть, прячем её или оставляем на самом верху) */
-.header a[href^="mailto:"] {
-    position: absolute !important;
+    padding: 0 !important; /* Убираем отступы темы */
+    position: relative !important;
+    height: 3.5rem !important; /* Чуть уменьшили высоту */
     top: 0 !important;
-    left: 0 !important;
-    font-size: 0.8rem !important;
-    color: var(--secondary) !important;
-    font-family: "Courier New", Courier, monospace !important;
-    text-decoration: none !important;
-    padding-bottom: 0.2rem !important;
-    border-bottom: 1px solid var(--border) !important;
 }
-
 /* =========================================
    2. МЕНЮ (Прибиваем к ПРАВОМУ ВЕРХНЕМУ углу)
    ========================================= */
@@ -70,14 +35,14 @@
     padding: 0 !important;
 }
 
-/* Настраиваем отступы для самих слов */
 .header #menu a {
     font-size: 1.1rem !important;
     font-weight: 400 !important;
     letter-spacing: 1px !important;
     line-height: 1.2 !important;
-    padding: 0 15px !important; /* 15px слева и справа от слова */
-    display: inline-block !important;
+    text-decoration: none !important;
+    display: inline-block !important; /* Делает зону клика ровно по тексту */
+    padding: 5px 0 !important;        /* Немного увеличивает зону клика по вертикали */
 }
 
 /* Убираем левый отступ у первого слова */
@@ -123,7 +88,7 @@
 
 /* Добавляем отступ основному контенту, чтобы он не наезжал на описание */
 .main {
-    padding-top: 5rem !important; 
+    padding-top: 1rem !important; 
 }
 
 
