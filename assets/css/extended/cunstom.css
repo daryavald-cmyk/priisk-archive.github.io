@@ -344,3 +344,30 @@ a[href*="#top"] {
     display: none !important;
     visibility: hidden !important;
 }
+/* =========================================
+   УЛЬТИМАТИВНОЕ УНИЧТОЖЕНИЕ КНОПКИ "НАВЕРХ"
+   ========================================= */
+
+/* 1. Прячем всё, что сидит в правом верхнем углу (в шапке), кроме самих ссылок меню */
+.header > * > *:not(.logo):not(#menu):not(a):not(button[type="button"]) {
+    display: none !important;
+}
+
+/* 2. Прячем любые элементы, которые могут быть кнопкой "наверх" */
+a[href="#top"], 
+[id*="top-link"], 
+[class*="top-link"],
+[id*="scroll"],
+[class*="scroll"] {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* 3. Если кнопка "наверх" прилипла к правому краю, прячем вообще всё справа */
+.header .nav > *:last-child:not(a[href*="/search"]):not(a[href*="/tags"]) {
+    display: none !important;
+}
