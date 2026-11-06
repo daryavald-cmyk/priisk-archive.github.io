@@ -1,33 +1,61 @@
 /* =========================================
-   1. ЖЕСТКАЯ ШАПКА (Исправленная)
+   1. ЖЕСТКАЯ ШАПКА (Идеальное выравнивание)
    ========================================= */
 body .header {
     display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
+    justify-content: space-between !important; /* Распихивает логотип влево, меню вправо */
+    align-items: center !important;            /* Идеальная горизонтальная линия */
     max-width: 800px !important;
     margin: 0 auto !important;
-    padding: 0 !important; /* Убираем отступы темы */
+    padding: 0 !important;                     /* Убираем лишнее пространство сверху */
     position: relative !important;
-    height: 3.5rem !important; /* Чуть уменьшили высоту */
-    top: 0 !important;
+    height: 3.5rem !important;                 /* Фиксируем высоту шапки */
 }
-/* =========================================
-   2. МЕНЮ (Прибиваем к ПРАВОМУ ВЕРХНЕМУ углу)
-   ========================================= */
-.header #menu {
-    position: absolute !important;
-    top: 1.5rem !important;  /* Такая же привязка к верху, как у логотипа */
-    right: 0 !important;     /* Привязка к правому краю */
+
+/* Логотип (Пріискъ + Луна) */
+.header .logo {
+    position: relative !important; 
     margin: 0 !important;
     padding: 0 !important;
     display: flex !important;
-    flex-direction: row !important; /* В одну строку */
     align-items: center !important;
-    gap: 0 !important; /* Убираем стандартный отступ */
+    gap: 0.5rem !important;
 }
 
-/* Убираем маркеры списка */
+.logo a {
+    font-size: 1.1rem !important;
+    font-weight: 400 !important; /* Тонкий шрифт, без жирности */
+    letter-spacing: 1px !important;
+    text-align: left !important;
+}
+
+/* Значок смены темы (Луна/Солнце) */
+#theme-toggle {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Скрываем почту, чтобы она не перекрывала клики */
+.header a[href^="mailto:"] {
+    display: none !important;
+}
+
+/* =========================================
+   2. МЕНЮ (Поиск и Указатели)
+   ========================================= */
+.header #menu {
+    position: relative !important; 
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 1.5rem !important; /* Отступ между словами */
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Убираем элементы списка и маркеры */
 .header #menu li {
     display: block !important;
     list-style: none !important;
@@ -41,35 +69,32 @@ body .header {
     letter-spacing: 1px !important;
     line-height: 1.2 !important;
     text-decoration: none !important;
-    display: inline-block !important; /* Делает зону клика ровно по тексту */
-    padding: 5px 0 !important;        /* Немного увеличивает зону клика по вертикали */
+    display: inline-block !important; 
+    padding: 10px 0 !important; /* Увеличивает зону клика, чтобы точно попадать курсором */
 }
 
-/* Убираем левый отступ у первого слова */
-.header #menu li:first-child a {
-    padding-left: 0 !important;
-}
-
-/* =========================================
-   3. ВЕРТИКАЛЬНАЯ ЧЕРТА
-   ========================================= */
+/* Рисуем вертикальную черту между словами */
 .header #menu li:nth-child(2) a::before {
     content: "|" !important;
     display: inline-block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
     color: var(--border) !important;
     font-weight: 300 !important;
-    margin-right: 15px !important; 
-    margin-left: -15px !important; 
+    margin-right: 1.5rem !important; 
+    margin-left: -1.5rem !important; 
+    vertical-align: middle !important;
+}
+
+/* Скрываем пункт "Поиск" на странице поиска */
+body:has(#searchInput) .header #menu a[href*="/search"] {
+    display: none !important;
 }
 
 /* =========================================
-   4. ОПИСАНИЕ (Под словом Прииск)
+   3. ОПИСАНИЕ (Под словом Прииск)
    ========================================= */
 .home-info {
     position: absolute !important;
-    top: 3.5rem !important; /* Опускаем описание под шапку */
+    top: 3.5rem !important; 
     left: 50% !important;
     transform: translateX(-50%) !important;
     width: 800px !important;
@@ -86,20 +111,14 @@ body .header {
     margin: 0 !important;
 }
 
-/* Добавляем отступ основному контенту, чтобы он не наезжал на описание */
-.main {
-    padding-top: 1rem !important; 
-}
-
-
 /* =========================================
-   ОСТАЛЬНОЙ КОД БЕЗ ИЗМЕНЕНИЙ (Карточки, поиск, подвал)
+   4. СТИЛИ КАРТОЧЕК И ТЕКСТА
    ========================================= */
 :root {
     --theme: #f0f0f0;
     --entry: #ffffff;
     --border: #e0e0e0;
-   --accent-text: #b06e2c;
+    --accent-text: #b06e2c;
 }
 [data-theme="dark"] {
     --entry: #2a2a2a;
@@ -117,7 +136,7 @@ body .post-entry, body .first-entry {
     margin-bottom: 1rem !important;
     padding: 1.5rem !important;
     padding-top: 3.5rem !important;
-    background: var(--entry) !important;
+   background: var(--entry) !important;
 }
 
 body .post-entry .entry-footer,
@@ -142,6 +161,13 @@ body .first-entry .entry-content {
     font-size: 0.95rem !important;
     color: var(--accent-text) !important;
     margin-top: 0.5rem !important;
+}
+
+/* =========================================
+   5. СТРАНИЦА ПУБЛИКАЦИИ (Дата наверх)
+   ========================================= */
+.main {
+    padding-top: 1rem !important; 
 }
 
 .post-header {
@@ -177,26 +203,82 @@ body .first-entry .entry-content {
     font-size: 1rem !important;
 }
 
-.footer { padding-bottom: 2rem !important; }
+/* =========================================
+   6. ФИНАЛЬНЫЙ ПОДВАЛ
+   ========================================= */
+.footer {
+    padding-bottom: 2rem !important;
+}
+
 .footer-inner {
-    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    gap: 0.5rem;            
 }
+
 .footer-row {
-    display: flex; flex-direction: row; align-items: center; white-space: nowrap; font-family: var(--font-family); font-size: 0.95rem;
+    display: flex;
+    flex-direction: row;    
+    align-items: center;
+    white-space: nowrap;    
+    font-family: var(--font-family);
+    font-size: 0.95rem;
 }
+
 .footer-row:first-child { color: var(--primary); }
-.footer-email { color: var(--accent-text) !important; margin-left: 0.3rem; text-decoration: none; }
+
+.footer-email {
+    color: var(--accent-text) !important;
+    margin-left: 0.3rem;
+    text-decoration: none;
+}
+
 .footer-email:hover { text-decoration: underline; }
-.footer-row:last-child { color: var(--primary); font-size: 0.9rem; }
+
+.footer-row:last-child {
+    color: var(--primary);
+    font-size: 0.9rem; 
+}
+
 .footer > *:not(.footer-inner) { display: none !important; }
 .footer .copyright { display: none !important; }
 .footer::before, .footer::after { content: none !important; display: none !important; }
 
-.search-header h1, #searchInput ~ h1, .main h1 {
-    font-weight: 400 !important; font-size: 1.2rem !important; letter-spacing: 0.5px !important; color: var(--primary) !important; margin-bottom: 0.2rem !important; display: flex !important; align-items: center !important;
+/* =========================================
+   7. НАСТРОЙКА СТРАНИЦЫ ПОИСКА
+   ========================================= */
+.search-header h1,
+#searchInput ~ h1,
+.main h1 {
+    font-weight: 400 !important;
+    font-size: 1.2rem !important;
+    letter-spacing: 0.5px !important;
+    color: var(--primary) !important;
+    margin-bottom: 0.2rem !important;
+    display: flex !important;
+    align-items: center !important;
 }
-h1 svg { display: none !important; visibility: hidden !important; width: 0 !important; height: 0 !important; opacity: 0 !important; }
+
+h1 svg {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    opacity: 0 !important;
+}
+
 body #searchInput {
-    font-weight: 400 !important; font-family: var(--font-family) !important; font-size: 1rem !important; color: var(--primary) !important; border: 2px solid var(--accent-text) !important; background-color: var(--entry) !important;
+    font-weight: 400 !important;
+    font-family: var(--font-family) !important;
+    font-size: 1rem !important;
+    color: var(--primary) !important;
+    border: 2px solid var(--accent-text) !important;
+    background-color: var(--entry) !important;
 }
-body #searchInput::placeholder { font-weight: 400 !important; color: var(--secondary) !important; opacity: 1 !important; }
+
+body #searchInput::placeholder {
+    font-weight: 400 !important;
+    color: var(--secondary) !important;
+    opacity: 1 !important;
+}
