@@ -314,3 +314,27 @@ body .first-entry .entry-content {
     opacity: 0.8 !important; 
     font-weight: 500 !important;
 }
+/* =========================================
+   10. ПОСЛЕДНИЕ ШТРИХИ (Меню, Поиск, Отступы)
+   ========================================= */
+
+/* 1. Делаем заголовок страницы поиска аккуратным (не жирным) */
+.search-header h1 {
+    font-size: 1.3rem !important; /* Как заголовки в карточках */
+    font-weight: 600 !important; /* Убираем лишнюю жирность */
+    margin-bottom: 2rem !important; 
+}
+
+/* 2. Уменьшаем размер "ПОИСК" в меню, чтобы он не распирал шапку */
+#menu a {
+    font-size: 1rem !important; /* Уменьшили размер */
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    padding-left: 1rem !important; /* Чуть придвинули к центру */
+}
+
+/* 3. Убираем лишний отступ сверху у главной страницы */
+/* Это подтянет первую карточку ближе к меню */
+.main {
+    padding-top: 2rem !important; 
+}
