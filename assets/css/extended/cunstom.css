@@ -371,26 +371,42 @@ body .search-header h1 {
     margin-bottom: 1.5rem !important;
 }
 /* =========================================
-   11. ВЫРАВНИВАНИЕ ШАПКИ ПО КРАЯМ КАРТОЧЕК
+   11. ЖЕСТКАЯ СБОРКА ШАПКИ (Прииск и Поиск рядом)
    ========================================= */
-/* Делаем шапку такой же ширины, как контейнер с контентом */
+/* Скрываем стандартную шапку, чтобы она не мешала */
 .nav {
-    max-width: var(--main-width) !important; /* Берем ширину из настроек темы */
-    margin: 0 auto !important; /* Центрируем саму шапку */
-    padding: 0 var(--gap) !important; /* Добавляем отступы как у карточек */
+    display: none !important;
+}
+
+/* Создаем свою шапку */
+.header {
     display: flex !important;
-    justify-content: space-between !important; /* Раздвигаем по краям */
-    align-items: center !important;
+    justify-content: center !important; /* Ставим всё в центр */
+    align-items: baseline !important; /* Выравниваем по нижнему краю текста */
+    gap: 1.5rem !important; /* Расстояние между словами */
+    padding: 1rem 0 !important;
 }
 
-/* Убираем жесткие отступы, чтобы они не мешали */
-.nav .logo, .nav #menu {
-    margin: 0 !important;
-}
-
-/* Делаем размеры текста одинаковыми */
-.nav .logo a, .nav #menu a {
-    font-size: 1.2rem !important;
+/* Настраиваем шрифт для обоих слов */
+.header .logo a, 
+.header #menu a {
+    font-size: 1.3rem !important;
     font-weight: 600 !important;
     letter-spacing: 1px !important;
+    text-decoration: none !important;
+}
+
+/* Убираем лишние отступы у меню */
+.header #menu {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* =========================================
+   12. УБИРАЕМ ЗНАЧОК ЛУПЫ НА СТРАНИЦЕ ПОИСКА
+   ========================================= */
+.search-header h1 svg,
+.search-header h1 i,
+.search-header h1 img {
+    display: none !important;
 }
