@@ -173,7 +173,7 @@ body .search-header h1 { font-weight: 400 !important; font-size: 1.1rem !importa
 /* 2. Блок с почтой (наверху) */
 .footer::before {
     content: "E-mail: " !important; /* Меняем текст на латиницу */
-    display: block !important;
+    display: inline !important;
     order: -1 !important; /* Ставим на первое место */
     margin-bottom: 1rem !important; 
     
@@ -185,7 +185,7 @@ body .search-header h1 { font-weight: 400 !important; font-size: 1.1rem !importa
 /* 3. Выводим сам адрес отдельно и красим в оранжевый */
 .footer::after {
     content: "apriisk@yandex.ru" !important;
-    display: block !important;
+    display: inline !important;
     order: -1 !important; /* Ставим сразу после слова Email */
     margin-bottom: 1rem !important; /* Отступ до копирайта */
     
