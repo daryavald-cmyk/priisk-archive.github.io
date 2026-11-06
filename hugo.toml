@@ -17,7 +17,7 @@ defaultContentLanguage = "ru"
 
 # Меню с иконкой лупы вместо слова
 [[menu.main]]
-  name = "Поиск"
+  name = "ПОИСК"
   url = "/search/"
   weight = 10
 
