@@ -210,25 +210,25 @@ body #searchInput::placeholder {
 }
 
 /* =========================================
-   9. ИДЕАЛЬНАЯ ШАПКА (Логотип слева, Поиск справа)
+   9. ШАПКА (Прииск слева, ПОИСК справа)
    ========================================= */
 
-/* Отключаем старую шапку */
+/* 1. Скрываем стандартную шапку темы */
 .nav {
     display: none !important;
 }
 
-/* Создаем свою */
+/* 2. Создаем свою шапку */
 .header {
     display: flex !important;
-    justify-content: space-between !important; 
+    justify-content: space-between !important; /* Раздвигаем по краям */
     align-items: center !important;
-    max-width: 800px !important; /* Ширина как у карточек */
+    max-width: 800px !important; /* Ограничиваем ширину (по ширине карточек) */
     margin: 0 auto !important; 
     padding: 1rem 0 !important;
 }
 
-/* ЛЕВАЯ ЧАСТЬ: Пріискъ + Солнце/Луна */
+/* 3. Левая часть (Пріискъ + солнце/луна) */
 .header .logo {
     margin: 0 !important;
     display: flex !important;
@@ -240,10 +240,9 @@ body #searchInput::placeholder {
     font-size: 1.3rem !important;
     font-weight: 600 !important;
     text-decoration: none !important;
-    margin: 0 !important;
 }
 
-/* ПРАВАЯ ЧАСТЬ: Лупа */
+/* 4. Правая часть (Слово ПОИСК) */
 .header #menu {
     margin: 0 !important;
     display: flex !important;
@@ -251,23 +250,15 @@ body #searchInput::placeholder {
 }
 
 .header #menu a {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    font-size: 0 !important; /* Скрываем текст */
-    width: 24px !important;
-    height: 24px !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    font-size: 1.1rem !important; /* Размер слова ПОИСК */
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    color: var(--primary) !important;
+    letter-spacing: 1px !important; /* Немного разряжаем буквы */
 }
 
-/* Рисуем лупу (делаем её серой и аккуратной) */
+/* Убираем нашу старую иконку лупы, если она осталась */
 .header #menu a::before {
-    content: "" !important;
-    display: block !important;
-    width: 20px !important;
-    height: 20px !important;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>') !important;
-    background-repeat: no-repeat !important;
-    background-position: center !important;
+    display: none !important;
+    content: none !important;
 }
