@@ -1,22 +1,35 @@
 /* =========================================
-   1. КАРТОЧКИ ПУБЛИКАЦИЙ (рамки, фон, отступы)
+   1. ЦВЕТА И КОНТРАСТ (Заводские, чуть контрастнее)
+   ========================================= */
+:root {
+    --theme: #f0f0f0; 
+    --entry: #ffffff; 
+    --border: #e0e0e0; 
+}
+
+[data-theme="dark"] {
+    --entry: #2a2a2a; 
+    --theme: #121212; 
+    --border: #3a3a3a; 
+}
+
+/* =========================================
+   2. КАРТОЧКИ ПУБЛИКАЦИЙ (рамки, фон, отступы)
    ========================================= */
 body .post-entry, body .first-entry {
     position: relative !important; 
     display: flex !important;
     flex-direction: column !important;
-    /* Рамка берется из заводских настроек темы */
     border: 1px solid var(--border) !important;
     border-radius: 8px !important;
     margin-bottom: 1rem !important;
     padding: 1.5rem !important;
-    padding-top: 3.5rem !important; /* Место вверху для даты */
-    /* Фон карточки берется из заводских настроек (--entry) */
+    padding-top: 3.5rem !important; 
     background: var(--entry) !important; 
 }
 
 /* =========================================
-   2. ДАТА (Системный шрифт, левый верхний угол)
+   3. ДАТА (Системный шрифт, левый верхний угол)
    ========================================= */
 body .post-entry .entry-footer, 
 body .first-entry .entry-footer {
@@ -28,22 +41,20 @@ body .first-entry .entry-footer {
     
     font-family: var(--font-family) !important;
     font-size: 0.85rem !important;
-    font-weight: 500 !important; /* НОВОЕ: Делаем дату чуть плотнее */
+    font-weight: 500 !important; 
     color: color-mix(in srgb, var(--primary) 60%, var(--secondary)) !important;
     opacity: 1 !important;
 }
 
 /* =========================================
-   3. ЗАГОЛОВКИ (В ленте и на странице публикации)
+   4. ЗАГОЛОВКИ И НАЗВАНИЕ САЙТА
    ========================================= */
-/* Отступы для заголовков в ленте */
 body .post-entry .entry-header, 
 body .first-entry .entry-header {
     margin-top: 0 !important; 
     margin-bottom: 0.5rem !important;
 }
 
-/* Делаем заголовки чуть тоньше (полужирный) в ленте */
 body .post-entry .entry-header h2, 
 body .first-entry .entry-header h1 {
     font-size: 1.3rem !important; 
@@ -51,119 +62,63 @@ body .first-entry .entry-header h1 {
     margin: 0 !important;
 }
 
-/* Название сайта "Пріискъ" тоже делаем чуть тоньше */
 .logo a {
     font-weight: 600 !important; 
 }
 
-/* Заголовок ВНУТРИ самой публикации (когда открываешь пост) */
 .post-header .post-title {
     font-weight: 600 !important; 
 }
 
 /* =========================================
-   4. ТЕКСТ ОПИСАНИЯ (Системный шрифт, чуть ярче)
+   5. ТЕКСТ ОПИСАНИЯ (Акцентный цвет)
    ========================================= */
+:root {
+    --accent-text: #b06e2c; 
+}
+[data-theme="dark"] {
+    --accent-text: #d8933e; 
+}
+
 body .post-entry .entry-content, 
 body .first-entry .entry-content {
     font-family: var(--font-family) !important; 
     font-size: 0.95rem !important; 
     line-height: 1.6 !important; 
     margin-top: 0.5rem !important; 
-    color: var(--primary) !important; /* Яркий цвет */
-    opacity: 0.85 !important; /* Легкая прозрачность для мягкости */
-}
-/* =========================================
-   5. ЦВЕТ ОПИСАНИЯ (Золотисто-оранжевый акцент)
-   ========================================= */
-:root {
-    /* Для светлой темы: глубокий золотисто-коричневый (охра) */
-    --accent-text: #b06e2c; 
-}
-
-[data-theme="dark"] {
-    /* Для темной темы: более светлый и яркий золотисто-оранжевый */
-    --accent-text: #d8933e; 
-}
-
-/* Применяем цвет к описанию */
-body .post-entry .entry-content, 
-body .first-entry .entry-content {
     color: var(--accent-text) !important; 
-    opacity: 1 !important; /* Убираем прозрачность, чтобы цвет был сочным */
-    font-weight: 400 !important; /* Оставляем текст обычной толщины */
+    opacity: 1 !important; 
+    font-weight: 400 !important; 
 }
+
 /* =========================================
-   6. СТРАНИЦА ПУБЛИКАЦИИ (Шапка в стиле карточки)
+   6. СТРАНИЦА ПУБЛИКАЦИИ (Шапка)
    ========================================= */
-/* Делаем контейнер шапки относительным для позиционирования даты */
 .post-header {
     position: relative !important;
-    padding-top: 3rem !important; /* Оставляем место для даты сверху */
-    margin-bottom: 2rem !important;
-    border-bottom: 1px solid var(--border) !important; /* Линия, отделяющая шапку от текста */
-    padding-bottom: 1.5rem !important;
-}
-
-/* Перемещаем дату наверх */
-.post-header .post-meta {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    margin: 0 !important;
-    font-family: var(--font-family) !important;
-    font-size: 0.9rem !important;
-    font-weight: 500 !important; /* Чуть пожирнее */
-    color: color-mix(in srgb, var(--primary) 60%, var(--secondary)) !important;
-}
-
-/* Заголовок внутри публикации (оставляем аккуратным) */
-.post-header .post-title {
-    font-weight: 600 !important; 
-    margin-top: 0.5rem !important; 
-    margin-bottom: 1rem !important;
-}
-
-/* Краткое описание под заголовком в акцентном цвете */
-.post-header .post-description {
-    font-family: var(--font-family) !important;
-    font-size: 1.05rem !important; /* Чуть крупнее для читаемости */
-    line-height: 1.5 !important;
-    color: var(--accent-text) !important; /* Наш золотисто-коричневый цвет */
-    margin-top: 0.5rem !important;
-}
-/* =========================================
-   6. СТРАНИЦА ПУБЛИКАЦИИ (Шапка в стиле карточки)
-   ========================================= */
-/* Делаем контейнер шапки относительным для позиционирования даты */
-.post-header {
-    position: relative !important;
-    padding-top: 2.5rem !important; /* Чуть уменьшили место сверху, чтобы дата не висела в воздухе */
+    padding-top: 2.5rem !important; 
     margin-bottom: 2rem !important;
     border-bottom: 1px solid var(--border) !important; 
     padding-bottom: 1.5rem !important;
 }
 
-/* Перемещаем дату наверх */
 .post-header .post-meta {
     position: absolute !important;
-    top: 0.5rem !important; /* Опустили дату чуть ниже верхнего края */
+    top: 0.5rem !important; 
     left: 0 !important;
     margin: 0 !important;
     font-family: var(--font-family) !important;
-    font-size: 1rem !important; /* Сделали дату КРУПНЕЕ (было 0.9rem) */
-    font-weight: 600 !important; /* Сделали её более плотной, чтобы не терялась */
-    color: color-mix(in srgb, var(--primary) 70%, var(--secondary)) !important; /* Чуть темнее, для лучшей читаемости */
+    font-size: 1rem !important; 
+    font-weight: 600 !important; 
+    color: color-mix(in srgb, var(--primary) 70%, var(--secondary)) !important; 
 }
 
-/* Заголовок внутри публикации */
 .post-header .post-title {
     font-weight: 600 !important; 
-    margin-top: 0.8rem !important; /* Чуть больше отступа от даты до заголовка */
+    margin-top: 0.8rem !important; 
     margin-bottom: 1rem !important;
 }
 
-/* Краткое описание под заголовком в акцентном цвете */
 .post-header .post-description {
     font-family: var(--font-family) !important;
     font-size: 1.05rem !important; 
@@ -171,11 +126,10 @@ body .first-entry .entry-content {
     color: var(--accent-text) !important; 
     margin-top: 0.5rem !important;
 }
+
 /* =========================================
    7. БЛОКИ ДЛЯ ТЕКСТА ПУБЛИКАЦИИ
    ========================================= */
-
-/* 1. Блок для шифра, фонда и выходных данных (Моноширинный) */
 .doc-meta {
     font-family: "Courier New", Courier, monospace !important;
     font-size: 0.85rem !important;
@@ -184,75 +138,23 @@ body .first-entry .entry-content {
     margin: 1.5rem 0 !important;
 }
 
-/* 2. Блок для сносок и "двух столбиков" (номер слева, текст справа) */
 .doc-footnotes {
     font-family: var(--font-family) !important;
-    font-size: 0.9rem !important;
-    line-height: 1.5 !important;
-    margin: 1.5rem 0 !important;
-    padding-left: 2rem !important; /* Отступ для номера */
-    text-indent: -2rem !important; /* Вытаскиваем номер влево */
-}
-.doc-footnotes span {
-    font-family: "Courier New", Courier, monospace !important; /* Номер моноширинный */
-    margin-right: 0.5rem !important;
-}
-
-/* 3. Блок для сведений о публикации (в конце) */
-.doc-notes {
-    font-family: var(--font-family) !important;
-    font-size: 0.9rem !important;
-    color: var(--secondary) !important;
-    margin-top: 2rem !important;
-    padding-top: 1rem !important;
-    border-top: 1px dashed var(--border) !important; /* Пунктирная линия */
-}
-
-/* 4. Просто красивая сплошная линия-разделитель */
-.line-solid {
-    border: 0;
-    border-top: 1px solid var(--border);
-    margin: 2rem 0;
-}
-
-/* 5. Пунктирная линия-разделитель */
-.line-dashed {
-    border: 0;
-    border-top: 1px dashed var(--border);
-    margin: 2rem 0;
-}
-/* =========================================
-   7. БЛОКИ ДЛЯ ТЕКСТА ПУБЛИКАЦИИ
-   ========================================= */
-
-/* 1. Блок для шифра, фонда (Моноширинный) */
-.doc-meta {
-    font-family: "Courier New", Courier, monospace !important;
-    font-size: 0.85rem !important;
-    line-height: 1.6 !important;
-    color: var(--secondary) !important;
-    margin: 1.5rem 0 !important;
-}
-
-/* 2. Блок для сносок (Обычный шрифт, мелкий) */
-.doc-footnotes {
-    font-family: var(--font-family) !important;
-    font-size: 0.85rem !important; /* Сделали чуть меньше */
+   font-size: 0.85rem !important; 
     line-height: 1.5 !important;
     margin: 1.5rem 0 !important;
     padding-left: 1.5rem !important; 
     text-indent: -1.5rem !important; 
 }
 .doc-footnotes span {
-    font-family: var(--font-family) !important; /* Убрали моноширинный, чтобы не путать с шифром */
-    font-weight: 600 !important; /* Цифры сделали чуть жирнее для читаемости */
+    font-family: var(--font-family) !important; 
+    font-weight: 600 !important; 
     margin-right: 0.5rem !important;
 }
 
-/* 3. Блок для завершающих сведений (Моноширинный, как выходные данные) */
 .doc-notes {
     font-family: "Courier New", Courier, monospace !important;
-    font-size: 0.8rem !important; /* Мелкий, как сноска в архиве */
+    font-size: 0.8rem !important; 
     line-height: 1.5 !important;
     color: var(--secondary) !important;
     margin-top: 2rem !important;
@@ -260,51 +162,28 @@ body .first-entry .entry-content {
     border-top: 1px dashed var(--border) !important; 
 }
 
-/* 4. ЕДИНЫЕ ЛИНИИ (Тонкие, одинаковые) */
 .line-solid {
     border: 0 !important;
-    border-top: 1px solid var(--border) !important; /* Тонкая сплошная */
+    border-top: 1px solid var(--border) !important; 
     margin: 1.5rem 0 !important;
 }
 
 .line-dashed {
     border: 0 !important;
-    border-top: 1px solid var(--border) !important; /* Сделали тоже сплошной и тонкой, чтобы не было разнобоя */
+    border-top: 1px solid var(--border) !important; 
     margin: 1.5rem 0 !important;
 }
-/* =========================================
-   8. НАСТРОЙКА МЕНЮ (Размеры и выравнивание)
-   ========================================= */
-/* Делаем название сайта и пункты меню одного размера */
-.logo a {
-    font-size: 1.3rem !important; /* Как заголовки в карточках */
-}
 
-#menu a {
-    font-size: 1.3rem !important; /* Выравниваем размер ПОИСКА */
-    font-weight: 600 !important;
-    letter-spacing: 1px !important; /* Немного разряжаем буквы для стиля */
-}
 /* =========================================
-   9. СВЕРХЖЕСТКАЯ НАСТРОЙКА СТРАНИЦЫ ПОИСКА
+   8. СТРАНИЦА ПОИСКА
    ========================================= */
-
-/* 1. Убиваем жирность заголовка (используем body для усиления) */
 body .search-header h1,
 body .page-header h1 {
-    font-weight: 400 !important; /* 400 — обычный шрифт */
+    font-weight: 400 !important; 
     font-size: 1.3rem !important; 
     margin-bottom: 2rem !important;
 }
 
-/* 2. Возвращаем нормальный цвет подсказке (placeholder) */
-body #searchInput::placeholder {
-    color: var(--secondary) !important; /* Стандартный серый */
-    opacity: 1 !important;
-    font-weight: 400 !important; 
-}
-
-/* 3. Оставляем красивую рамку у строки поиска */
 body #searchInput {
     border: 2px solid var(--accent-text) !important; 
     background-color: var(--entry) !important; 
@@ -317,62 +196,12 @@ body #searchInput {
     outline: none !important;
 }
 
-/* Настраиваем строку ввода поиска */
-#searchInput {
-    border: 1px solid var(--accent-text) !important; /* Делаем рамку нашего коричнево-оранжевого цвета */
-    background-color: var(--entry) !important; /* Фон как у карточек */
-    color: var(--primary) !important; /* Цвет текста, который будет вводить человек */
-    font-family: var(--font-family) !important; 
-    font-size: 1rem !important;
-    padding: 0.8rem !important;
-    border-radius: 8px !important;
-    box-shadow: none !important; /* Убираем стандартную тень */
-    outline: none !important;
+body #searchInput::placeholder {
+    color: var(--secondary) !important; 
+    opacity: 1 !important;
+    font-weight: 400 !important; 
 }
 
-/* Делаем текст-подсказку (placeholder) ярким акцентным цветом */
-#searchInput::placeholder {
-    color: var(--accent-text) !important; 
-    opacity: 0.8 !important; 
-    font-weight: 500 !important;
-}
-/* =========================================
-   10. ФИНАЛЬНАЯ НАСТРОЙКА ШАПКИ И ПОИСКА
-   ========================================= */
-
-/* --- Настройка меню (сближаем Прииск и Поиск) --- */
-.nav {
-    display: flex !important;
-    justify-content: center !important; /* Центрируем всё меню */
-    gap: 2rem !important; /* Расстояние между элементами */
-}
-
-.nav .logo a {
-    font-size: 1.2rem !important; /* Чуть уменьшили название сайта */
-}
-
-#menu {
-    display: flex !important;
-    align-items: center !important;
-    margin-left: 1rem !important; /* Придвигаем ПОИСК к названию */
-}
-
-#menu a {
-    font-size: 1.2rem !important; /* Выравниваем размер со словом Пріискъ */
-    font-weight: 600 !important;
-}
-
-/* =========================================
-   ФИНАЛЬНАЯ НАСТРОЙКА СТРАНИЦЫ ПОИСКА
-   ========================================= */
-body .search-header h1 {
-    font-weight: 600 !important; /* Как заголовки в карточках */
-    font-size: 1.3rem !important; 
-    margin-bottom: 1.5rem !important;
-}
-/* =========================================
-   УБИРАЕМ ЛУПУ НА СТРАНИЦЕ ПОИСКА
-   ========================================= */
 .search-header h1 svg,
 .search-header h1 i,
 .search-header h1 img,
@@ -381,18 +210,17 @@ body .search-header h1 {
 }
 
 /* =========================================
-   11. ИДЕАЛЬНАЯ ШАПКА (Прииск слева, Поиск справа)
+   9. ИДЕАЛЬНАЯ ШАПКА (Прииск слева, Поиск справа)
    ========================================= */
 .header {
-    max-width: 800px !important; /* Ограничиваем ширину, чтобы слова сблизились */
-    margin: 0 auto !important; /* Центрируем саму шапку на экране */
+    max-width: 800px !important; 
+    margin: 0 auto !important; 
     display: flex !important;
-    justify-content: space-between !important; /* Жестко раздвигаем: левый край и правый край */
+    justify-content: space-between !important; 
     align-items: center !important;
     padding: 1rem 0 !important;
 }
 
-/* Убеждаемся, что логотип и меню стоят по краям */
 .header .logo {
     margin: 0 !important;
 }
@@ -407,18 +235,16 @@ body .search-header h1 {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    font-size: 0 !important; /* Скрываем текст, если он есть */
+    font-size: 0 !important; 
     width: 24px !important;
     height: 24px !important;
 }
 
-/* Рисуем лупу через SVG-фон (более надежный способ) */
 #menu a[href="/search/"]::before {
     content: "" !important;
     display: block !important;
     width: 100% !important;
     height: 100% !important;
-    /* Вставляем картинку лупы (feather-icons) */
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>') !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
