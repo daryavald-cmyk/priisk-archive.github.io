@@ -1,45 +1,92 @@
 /* =========================================
-   1. ЖЕСТКАЯ ШАПКА (Растягиваем на весь экран)
+   1. ЖЕСТКАЯ ШАПКА
    ========================================= */
 body .header {
     display: flex !important;
-    justify-content: space-between !important; 
-    align-items: center !important;
-    width: 100% !important;         /* Шапка на всю ширину экрана */
-    max-width: 100% !important;     /* Убираем ограничение в 800px */
-    padding: 0 2rem !important;     /* Небольшие отступы от краев монитора */
-    margin: 0 !important;
+    justify-content: space-between !important; /* Логотип влево, меню вправо */
+    align-items: center !important;            /* Ровная горизонтальная линия */
+    max-width: 800px !important;               /* Ширина как у карточек */
+    margin: 0 auto !important;                 /* Центрируем на экране */
+    padding: 0 !important;
     position: relative !important;
     height: 3.5rem !important;
-    box-sizing: border-box !important;
 }
 
 /* Логотип (Пріискъ + Луна) */
 .header .logo {
-    position: relative !important; 
-    margin: 0 !important;
-    padding: 0 !important;
     display: flex !important;
     align-items: center !important;
-    gap: 0.5rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 8px !important; /* Расстояние между словом и иконкой */
+}
+
+/* Убиваем жирность и ставим правильный шрифт */
+.header .logo a {
+    font-size: 1.1rem !important;
+    font-weight: 400 !important; /* Тонкий шрифт */
+    letter-spacing: 1px !important;
+    text-decoration: none !important;
+    line-height: 1 !important;
+}
+
+/* Возвращаем иконку луны/солнца */
+#theme-toggle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+}
+
+#theme-toggle svg {
+    display: block !important;
+    width: 16px !important;   /* Фиксируем размер иконки */
+    height: 16px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 /* =========================================
-   2. МЕНЮ (Принудительно вправо)
+   2. МЕНЮ (Поиск и Указатели)
    ========================================= */
 .header #menu {
-    position: relative !important; 
     display: flex !important;
     flex-direction: row !important;
-    align-items: center !important;
-    gap: 1.5rem !important; 
+    align-items: center !important; /* Центрируем по вертикали */
     margin: 0 !important;
     padding: 0 !important;
-    
-    /* Жестко прижимаем к правой стороне */
-    margin-left: auto !important; 
+    gap: 0 !important; /* Убираем старый gap, будем использовать margin */
 }
 
+/* Убираем маркеры списка */
+.header #menu li {
+    display: block !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Настраиваем ссылки */
+.header #menu a {
+    font-size: 1.1rem !important;
+    font-weight: 400 !important; /* Тонкий шрифт */
+    letter-spacing: 1px !important;
+    text-decoration: none !important;
+    display: inline-block !important; 
+    padding: 5px 0 !important; /* Зона клика по вертикали */
+    line-height: 1 !important;
+}
+
+/* Рисуем черту через border — это НАДЕЖНЕЕ, чем content: "|" */
+.header #menu li:nth-child(2) a {
+    margin-left: 1.5rem !important; /* Отступ от черты до слова */
+    padding-left: 1.5rem !important; /* Внутренний отступ */
+    border-left: 1px solid var(--border) !important; /* Сама черта */
+}
 /* =========================================
    3. ОПИСАНИЕ ПОД ШАПКОЙ
    ========================================= */
