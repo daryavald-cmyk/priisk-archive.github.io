@@ -31,7 +31,7 @@ defaultContentLanguage = "ru"
   minMatchCharLength = 0
   keys = ["title", "permalink", "summary", "content"]
   
-/* Убираем ссылку "Поиск" из меню только на странице поиска */
-body:has(.search-header) #menu {
-    display: none !important;
-}
+[[menu.main]]
+  name = ""
+  url = "/search/"
+  weight = 10
