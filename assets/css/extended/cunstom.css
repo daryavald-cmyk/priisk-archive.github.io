@@ -224,29 +224,49 @@ body .search-header h1 { font-weight: 400 !important; font-size: 1.1rem !importa
     display: none !important;
 }
 /* =========================================
-   НАСТРОЙКА СТРАНИЦЫ ПОИСКА (ЖЕСТКО)
+   НАСТРОЙКА СТРАНИЦЫ ПОИСКА (ПОЛНЫЙ ФИНАЛ)
    ========================================= */
 
-/* 1. Меняем сам текст заголовка */
+/* 1. Заголовок "Поиск по сайту" (цвет как у "Прииск", тоньше и меньше) */
 .search-header h1, 
 #searchInput ~ h1, 
 .main h1 {
     font-weight: 400 !important; 
     font-size: 1.5rem !important; 
     letter-spacing: 0.5px !important;
-    color: var(--secondary) !important; 
+    color: var(--primary) !important; /* Темный цвет */
     margin-bottom: 1.5rem !important; 
-    
-    /* Делаем блок гибким, чтобы выровнять текст и спрятать иконку */
     display: flex !important; 
     align-items: center !important;
 }
 
-/* 2. Прячем иконку лупы внутри заголовка (справа от текста) */
+/* 2. Прячем иконку лупы внутри заголовка */
 .search-header h1 svg, 
 .search-header h1 i, 
-.search-header h1 img {
+.search-header h1 img,
+.search-header svg,
+.search-header i,
+.search-header img {
     display: none !important; 
     width: 0 !important;
     height: 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+/* 3. Само поле ввода поиска */
+body #searchInput {
+    font-weight: 400 !important; /* Убираем жирность у текста внутри */
+    font-family: var(--font-family) !important; /* Стандартный шрифт сайта */
+    font-size: 1rem !important; /* Размер как у обычного текста */
+    color: var(--primary) !important;
+    border: 2px solid var(--accent-text) !important; /* Оставляем оранжевую рамку */
+    background-color: var(--entry) !important;
+}
+
+/* 4. Подсказка (плейсхолдер) внутри окна поиска */
+body #searchInput::placeholder {
+    font-weight: 400 !important; /* Убираем жирность у подсказки */
+    color: var(--secondary) !important; /* Серый цвет, чтобы отличать от вводимого текста */
+    opacity: 1 !important; /* Firefox по умолчанию делает их прозрачными */
 }
