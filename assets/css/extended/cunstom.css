@@ -2,20 +2,20 @@
    1. ЖЕСТКАЯ ШАПКА
    ========================================= */
 body .header {
-    display: block !important; /* Отключаем flex, чтобы тема не центрировала */
-    max-width: 800px !important; /* Ширина как у карточек */
-    margin: 0 auto !important;   /* Центрируем саму шапку */
+    display: block !important; 
+    max-width: 800px !important; 
+    margin: 0 auto !important;   
     padding: 0 !important;
     position: relative !important;
     height: 3.5rem !important;
 }
 
-/* Логотип (Пріискъ + Луна/Солнце) — жестко влево */
+/* Логотип (Пріискъ + Иконка) — жестко влево */
 .header .logo {
     position: absolute !important;
     left: 0 !important;
     top: 50% !important;
-    transform: translateY(-50%) !important; /* Ровно по центру высоты */
+    transform: translateY(-50%) !important;
     display: flex !important;
     align-items: center !important;
     margin: 0 !important;
@@ -31,22 +31,7 @@ body .header {
     line-height: 1 !important;
 }
 
-/* ИКОНКИ ТЕМЫ: скрываем обе по умолчанию */
-#theme-toggle svg {
-    display: none !important;
-    width: 16px !important;
-    height: 16px !important;
-}
-
-/* В СВЕТЛОЙ ТЕМЕ показываем ЛУНУ */
-html[data-theme="light"] #theme-toggle .moon {
-    display: block !important;
-}
-/* В ТЕМНОЙ ТЕМЕ показываем СОЛНЦЕ */
-html[data-theme="dark"] #theme-toggle .sun {
-    display: block !important;
-}
-
+/* Кнопка темы */
 #theme-toggle {
     display: flex !important;
     align-items: center !important;
@@ -56,6 +41,34 @@ html[data-theme="dark"] #theme-toggle .sun {
     background: none !important;
     border: none !important;
     cursor: pointer !important;
+    width: 20px !important;  /* Фиксируем место под иконку */
+    height: 20px !important;
+    position: relative !important;
+}
+
+/* Показываем ВСЕ иконки (на всякий случай) */
+#theme-toggle svg {
+    display: block !important;
+    width: 16px !important;
+    height: 16px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: absolute !important; /* Накладываем друг на друга */
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+}
+
+/* В СВЕТЛОЙ ТЕМЕ: показываем Луну, скрываем Солнце */
+html[data-theme="light"] #theme-toggle svg[aria-label*="dark"],
+html[data-theme="light"] #theme-toggle svg[aria-label*="светл"] {
+    display: none !important;
+}
+
+/* В ТЕМНОЙ ТЕМЕ: показываем Солнце, скрываем Луну */
+html[data-theme="dark"] #theme-toggle svg[aria-label*="light"],
+html[data-theme="dark"] #theme-toggle svg[aria-label*="темн"] {
+    display: none !important;
 }
 
 /* =========================================
