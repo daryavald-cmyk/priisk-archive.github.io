@@ -325,36 +325,6 @@ body #searchInput::placeholder {
 }
 
 /* =========================================
-   ВАРИАНТ 1: ВЫСТРАИВАЕМ МЕНЮ В ОДНУ ЛИНИЮ
-   ========================================= */
-
-.header #menu {
-    display: flex !important;
-    flex-direction: row !important; /* Ставим в строку, а не в колонку */
-    align-items: center !important; /* Выравниваем по центру */
-    gap: 1.5rem !important; /* Отступ между словами */
-    padding: 0 !important;
-    margin: 0 !important;
-    position: absolute !important;
-    bottom: 0 !important;
-    right: 0 !important;
-}
-
-/* Убираем элементы списка, чтобы они не мешали */
-.header #menu li {
-    display: block !important;
-    list-style: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-.header #menu a {
-    font-size: 1.1rem !important;
-    font-weight: 400 !important;
-    letter-spacing: 1px !important;
-    line-height: 1.2 !important;
-}
-/* =========================================
    ВАРИАНТ 2: ЯДЕРНОЕ УНИЧТОЖЕНИЕ МАРКЕРОВ
    ========================================= */
 
