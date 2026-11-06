@@ -180,7 +180,7 @@ body .first-entry .entry-content {
 body .search-header h1,
 body .page-header h1 {
     font-weight: 400 !important; 
-    font-size: 1.3rem !important; 
+    font-size: 1.1rem !important; 
     margin-bottom: 2rem !important;
 }
 
@@ -246,4 +246,40 @@ body:has(#searchInput) #menu {
     font-size: 1rem !important;
     opacity: 0.8 !important; /* Легкая прозрачность, чтобы не спорило с названием */
     margin-top: 0.5rem !important;
+}
+/* =========================================
+   ШАПКА: ПРИИСК СВЕРХУ, ОПИСАНИЕ ПОД НИМ (ПО ЛЕВОМУ КРАЮ)
+   ========================================= */
+
+/* Делаем шапку колонкой */
+.header {
+    display: flex !important;
+    flex-direction: column !important; /* Элементы идут друг под другом */
+    align-items: flex-start !important; /* Жестко прижимаем к ЛЕВОМУ краю */
+    justify-content: flex-start !important;
+    gap: 0.3rem !important; /* Небольшое расстояние между названием и описанием */
+    padding-top: 1rem !important;
+}
+
+/* Настраиваем само название "Пріискъ" */
+.header .logo {
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Настраиваем текст описания */
+.home-info {
+    margin: 0 !important; 
+    padding: 0 !important;
+    display: block !important;
+}
+
+.home-info p {
+    color: var(--primary) !important; /* Цвет как у основного текста (белый/черный) */
+    font-family: var(--font-family) !important;
+    font-size: 1rem !important; 
+    font-weight: 400 !important; 
+    margin: 0 !important;
+    text-align: left !important; /* Выравниваем текст по левому краю */
 }
