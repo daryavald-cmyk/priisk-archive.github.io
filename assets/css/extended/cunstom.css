@@ -157,3 +157,34 @@ body .first-entry .entry-content {
 
 body #searchInput { border: 2px solid var(--accent-text) !important; background-color: var(--entry) !important; }
 body .search-header h1 { font-weight: 400 !important; font-size: 1.1rem !important; }
+
+/* =========================================
+   КАРДИНАЛЬНАЯ ПЕРЕСТРОЙКА ПОДВАЛА (FOOTER)
+   ========================================= */
+
+/* 1. Делаем подвал колонкой, чтобы элементы шли сверху вниз */
+.footer {
+    display: flex !important;
+    flex-direction: column !important; 
+    align-items: center !important; /* Центрируем всё по горизонтали */
+    padding-bottom: 2rem !important;
+}
+
+/* 2. Создаем блок с почтой и ставим его НА ПЕРВОЕ МЕСТО */
+.footer::before {
+    content: "Адрес электронной почты: apriisk@yandex.ru" !important;
+    display: block !important;
+    order: -1 !important; /* ЖЕСТКО поднимаем наверх */
+    margin-bottom: 1rem !important; /* Отступ от почты до копирайта */
+    
+    /* Стилизуем текст */
+    font-family: var(--font-family) !important;
+    font-size: 0.95rem !important;
+    color: var(--primary) !important;
+}
+
+/* 3. Сдвигаем стандартный копирайт вниз */
+.footer .copyright {
+    order: 1 !important; 
+    margin-top: 0 !important;
+}
