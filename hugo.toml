@@ -9,12 +9,6 @@ defaultContentLanguage = "ru"
   dateFormat = "2 января 2006 г."
   email = "apriisk@yandex.ru"
 
-  [params.homeInfoParams]
-    Title = ""
-    Content = "Вольная коллекция источников по истории Пермской губернии"
-[params.assets]
-  disableFingerprinting = true
-
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
