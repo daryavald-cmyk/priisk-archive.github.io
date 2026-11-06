@@ -322,3 +322,14 @@ body #searchInput::placeholder {
     margin: 0 !important;
     display: block !important;
     line-height: 1.2 !important;
+/* =========================================
+   УБИРАЕМ КНОПКУ "НАВЕРХ" ИЗ ШАПКИ
+   ========================================= */
+
+/* Прячем кнопку "Наверх" (тот самый кружочек со стрелками) */
+#top-link, 
+.top-link {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
