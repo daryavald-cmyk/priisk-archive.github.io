@@ -16,6 +16,6 @@ defaultContentLanguage = "ru"
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 [[menu.main]]
-  name = "Поиск"
+  name = "ПОИСК"
   url = "/search/"
   weight = 10
