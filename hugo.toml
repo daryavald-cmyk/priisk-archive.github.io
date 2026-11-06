@@ -10,6 +10,7 @@ defaultContentLanguage = "ru"
   dateFormat = "2 января 2006 г."
   [markup.goldmark.renderer]
   unsafe = true
+  centerHeader = true
 
 [params.assets]
   disableFingerprinting = true
