@@ -1,13 +1,15 @@
 /* =========================================
-   1. ЖЕСТКАЯ ШАПКА (Прииск слева, Поиск справа)
+   1. ЖЕСТКАЯ ШАПКА (Прииск слева, Меню справа)
    ========================================= */
 .header {
-    display: block !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important; /* Выравнивает по центру по вертикали */
     max-width: 800px !important;
     margin: 0 auto !important;
     padding: 1rem 0 !important;
     position: relative !important;
-    min-height: 3rem !important;
+    height: 4rem !important; /* Фиксируем высоту для ровной линии */
 }
 
 /* Почта (вверху слева) */
@@ -23,18 +25,15 @@
     border-bottom: 1px solid var(--border) !important;
 }
 
-/* Логотип (Пріискъ + Луна) — жестко слева */
+/* Логотип (Пріискъ + Луна) */
 .header .logo {
-    position: absolute !important;
-    bottom: 0 !important;
-    left: 0 !important;
+    position: relative !important; /* Отменяем absolute */
     margin: 0 !important;
     display: flex !important;
     align-items: center !important;
     gap: 0.5rem !important;
 }
 
-/* Сам текст "Прииск" */
 .logo a {
     font-size: 1.1rem !important;
     font-weight: 400 !important;
@@ -49,33 +48,56 @@
     align-items: center !important;
 }
 
-/* ВОЗВРАЩАЕМ "ПОИСК" НАПРАВО */
+/* =========================================
+   2. МЕНЮ (Одна линия, Черта, Без стрелок)
+   ========================================= */
 .header #menu {
-    position: absolute !important;
-    bottom: 0 !important;
-    right: 0 !important;
-    margin: 0 !important;
+    position: relative !important; /* Отменяем absolute */
     display: flex !important;
+    flex-direction: row !important; /* Выстраиваем в строку */
     align-items: center !important;
+    gap: 1.5rem !important; /* Отступ между словами */
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Убираем элементы списка и маркеры (стрелочки) */
+.header #menu li {
+    display: block !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .header #menu a {
     font-size: 1.1rem !important;
     font-weight: 400 !important;
     letter-spacing: 1px !important;
+    line-height: 1.2 !important;
+    text-decoration: none !important;
 }
 
-/* Скрываем только пункт "Поиск" на странице поиска, оставляя "Указатели" */
+/* Рисуем вертикальную черту между словами */
+.header #menu li:nth-child(2) a::before {
+    content: "|" !important;
+    display: inline-block !important;
+    color: var(--border) !important;
+    font-weight: 300 !important;
+    margin-right: 1.5rem !important; /* Расстояние от черты до слова */
+    margin-left: -1.5rem !important; /* Сдвигаем черту для идеальной центровки */
+}
+
+/* Скрываем только пункт "Поиск" на странице поиска */
 body:has(#searchInput) .header #menu a[href*="/search"] {
     display: none !important;
 }
 
 /* =========================================
-   2. ОПИСАНИЕ (Под словом Прииск)
+   3. ОПИСАНИЕ (Под словом Прииск)
    ========================================= */
 .home-info {
     position: absolute !important;
-    top: 3.2rem !important;
+    top: 4rem !important; /* Опускаем чуть ниже шапки */
     left: 50% !important;
     transform: translateX(-50%) !important;
     width: 800px !important;
@@ -92,11 +114,8 @@ body:has(#searchInput) .header #menu a[href*="/search"] {
     margin: 0 !important;
 }
 
-/* Убираем старый конфликтующий .main */
-/* .main { padding-top: 5rem !important; } — ЭТУ СТРОКУ МЫ УДАЛИЛИ, ОНА БУДЕТ НИЖЕ */
-
 /* =========================================
-   3. СТИЛИ КАРТОЧЕК И ТЕКСТА (Оставляем как было)
+   4. СТИЛИ КАРТОЧЕК И ТЕКСТА
    ========================================= */
 :root {
     --theme: #f0f0f0;
@@ -117,7 +136,7 @@ body .post-entry, body .first-entry {
     flex-direction: column !important;
     border: 1px solid var(--border) !important;
     border-radius: 8px !important;
-    margin-bottom: 1rem !important;
+   margin-bottom: 1rem !important;
     padding: 1.5rem !important;
     padding-top: 3.5rem !important;
     background: var(--entry) !important;
@@ -148,15 +167,12 @@ body .first-entry .entry-content {
 }
 
 /* =========================================
-   СТРАНИЦА ПУБЛИКАЦИИ (Дата наверх, отступы)
+   5. СТРАНИЦА ПУБЛИКАЦИИ (Дата наверх)
    ========================================= */
-
-/* 1. Опускаем публикацию чуть ниже (чтобы не прилипала к шапке) */
 .main {
-    padding-top: 3rem !important; /* Увеличили отступ, чтобы опустить текст */
+    padding-top: 3rem !important; 
 }
 
-/* 2. Делаем контейнер шапки относительным (чтобы дата привязалась к нему) */
 .post-header {
     position: relative !important;
     display: block !important;
@@ -166,12 +182,10 @@ body .first-entry .entry-content {
     margin-bottom: 2rem !important;
 }
 
-/* 3. ВЫТАСКИВАЕМ ДАТУ НАВЕРХ (жестко над заголовком) */
 .post-header .post-meta {
     position: absolute !important;
-    top: -1.8rem !important; /* Поднимаем над заголовком */
-    left: 0 !important;      /* Прижимаем к левому краю */
-   
+    top: -1.8rem !important; 
+    left: 0 !important;      
     font-family: var(--font-family) !important;
     font-size: 0.85rem !important;
     color: var(--secondary) !important;
@@ -179,7 +193,6 @@ body .first-entry .entry-content {
     display: block !important;
 }
 
-/* 4. Заголовок публикации */
 .post-header .post-title {
     font-weight: 600 !important;
     font-size: 1.5rem !important;
@@ -187,82 +200,57 @@ body .first-entry .entry-content {
     line-height: 1.3 !important;
 }
 
-/* 5. Подзаголовок (Описание) */
 .post-header .post-description {
     color: var(--accent-text) !important;
     margin-top: 0.5rem !important;
     font-size: 1rem !important;
 }
-/* =========================================
-   ФИНАЛЬНЫЙ ПОДВАЛ (Почта, копирайт, Hugo)
-   ========================================= */
 
-/* 1. Делаем подвал колонкой и центрируем */
+/* =========================================
+   6. ФИНАЛЬНЫЙ ПОДВАЛ
+   ========================================= */
 .footer {
     padding-bottom: 2rem !important;
 }
 
 .footer-inner {
     display: flex;
-    flex-direction: column; /* Строки идут друг под другом */
-    align-items: center;    /* Выравнивание по центру */
-    gap: 0.5rem;            /* Отступ между строками */
+    flex-direction: column; 
+    align-items: center;    
+    gap: 0.5rem;            
 }
 
 .footer-row {
     display: flex;
-    flex-direction: row;    /* Элементы внутри строки — в линию */
+    flex-direction: row;    
     align-items: center;
-    white-space: nowrap;    /* Запрет переноса внутри строки */
+    white-space: nowrap;    
     font-family: var(--font-family);
     font-size: 0.95rem;
 }
 
-/* Стили для почты */
-.footer-row:first-child {
-    color: var(--primary);
-}
+.footer-row:first-child { color: var(--primary); }
 
 .footer-email {
-    color: var(--accent-text) !important; /* Оранжевый цвет */
+    color: var(--accent-text) !important;
     margin-left: 0.3rem;
     text-decoration: none;
 }
 
-.footer-email:hover {
-    text-decoration: underline;
-}
+.footer-email:hover { text-decoration: underline; }
 
-/* Стили для копирайта */
 .footer-row:last-child {
     color: var(--primary);
-    font-size: 0.9rem; /* Чуть меньше, если нужно */
+    font-size: 0.9rem; 
 }
+
+.footer > *:not(.footer-inner) { display: none !important; }
+.footer .copyright { display: none !important; }
+.footer::before, .footer::after { content: none !important; display: none !important; }
+
 /* =========================================
-   УБИРАЕМ ДУБЛИРУЮЩИЙСЯ КОПИРАЙТ СВЕРХУ
+   7. НАСТРОЙКА СТРАНИЦЫ ПОИСКА (УБИВАЕМ ЛУПУ)
    ========================================= */
-
-/* Скрываем всё, что находится в подвале, кроме нашего контейнера */
-.footer > *:not(.footer-inner) {
-    display: none !important;
-}
-
-/* На всякий случай скрываем стандартный класс копирайта темы */
-.footer .copyright {
-    display: none !important;
-}
-
-/* И скрываем псевдоэлементы, если они где-то остались */
-.footer::before,
-.footer::after {
-    content: none !important;
-    display: none !important;
-}
-/* =========================================
-   НАСТРОЙКА СТРАНИЦЫ ПОИСКА (УБИВАЕМ ЛУПУ)
-   ========================================= */
-
-/* 1. Заголовок "Поиск по сайту" */
 .search-header h1,
 #searchInput ~ h1,
 .main h1 {
@@ -275,7 +263,6 @@ body .first-entry .entry-content {
     align-items: center !important;
 }
 
-/* 2. ЖЕСТКО ПРЯЧЕМ ЛУПУ: удаляем все SVG внутри заголовка */
 h1 svg {
     display: none !important;
     visibility: hidden !important;
@@ -284,7 +271,6 @@ h1 svg {
     opacity: 0 !important;
 }
 
-/* 3. Поле ввода поиска */
 body #searchInput {
     font-weight: 400 !important;
     font-family: var(--font-family) !important;
@@ -294,127 +280,8 @@ body #searchInput {
     background-color: var(--entry) !important;
 }
 
-/* 4. Подсказка внутри окна */
 body #searchInput::placeholder {
     font-weight: 400 !important;
     color: var(--secondary) !important;
     opacity: 1 !important;
-}
-/* =========================================
-   ВЫСТРАИВАЕМ "УКАЗАТЕЛИ" ПОД "ПОИСКОМ"
-   ========================================= */
-
-/* 1. Контейнер меню */
-.header #menu {
-    position: absolute !important;
-    bottom: 0 !important;
-    right: 0 !important;
-    margin: 0 !important;
-    display: flex !important;
-    flex-direction: column !important; /* Ставим друг под другом */
-    align-items: flex-end !important; /* Прижимаем к правому краю */
-    gap: 0.2rem !important; /* Отступ между строками */
-}
-
-/* 2. Сами ссылки */
-.header #menu a {
-    position: relative !important;
-    margin: 0 !important;
-    display: block !important;
-    line-height: 1.2 !important;
-}
-
-/* =========================================
-   ВАРИАНТ 2: ЯДЕРНОЕ УНИЧТОЖЕНИЕ МАРКЕРОВ
-   ========================================= */
-
-.header #menu li {
-    display: block !important;
-    list-style: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    position: relative !important;
-}
-
-/* Делаем саму ссылку блочной и убираем любые фоны */
-.header #menu li a {
-    display: block !important;
-    background: none !important;
-    border: none !important;
-    padding: 0.2rem 0 !important;
-    margin: 0 !important;
-}
-
-/* Скрываем ВСЁ, что не является текстом внутри ссылки (иконки, свг, пустые спаны) */
-.header #menu li a *:not(span:not(:empty)) {
-    display: none !important;
-}
-
-/* Убиваем любые псевдоэлементы у li и a */
-.header #menu li::before,
-.header #menu li::after,
-.header #menu li a::before,
-.header #menu li a::after {
-    content: "" !important;
-    display: none !important;
-}
-
-/* Убираем стандартные маркеры */
-ul#menu {
-    list-style-type: none !important;
-    padding-inline-start: 0 !important;
-}
-/* =========================================
-   ВАРИАНТ 1: ВЫСТРАИВАЕМ МЕНЮ В ОДНУ ЛИНИЮ
-   ========================================= */
-
-.header #menu {
-    display: flex !important;
-    flex-direction: row !important; /* Ставим в строку, а не в колонку */
-    align-items: center !important; /* Выравниваем по центру */
-    gap: 1.5rem !important; /* Отступ между словами */
-    padding: 0 !important;
-    margin: 0 !important;
-    position: absolute !important;
-    bottom: 0 !important;
-    right: 0 !important;
-}
-
-/* Убираем элементы списка, чтобы они не мешали */
-.header #menu li {
-    display: block !important;
-    list-style: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-.header #menu a {
-    font-size: 1.1rem !important;
-    font-weight: 400 !important;
-    letter-spacing: 1px !important;
-    line-height: 1.2 !important;
-}
-/* =========================================
-   ФИНАЛЬНАЯ НАСТРОЙКА МЕНЮ (Черта + Подъем вверх)
-   ========================================= */
-
-/* 1. Поднимаем меню на один уровень с логотипом */
-.header #menu {
-    bottom: auto !important; /* Отменяем прижатие к низу */
-    top: 1rem !important;    /* Прижимаем к верху (подберите значение, если нужно) */
-    flex-direction: row !important;
-    gap: 1rem !important;    /* Отступ между элементами */
-}
-
-/* 2. Добавляем вертикальную черту перед словом "УКАЗАТЕЛИ" */
-.header #menu li:nth-child(2) a::before {
-    content: "|" !important;
-    color: var(--border) !important; /* Цвет черты (обычно серый) */
-    margin-right: 1rem !important;   /* Отступ от черты до слова */
-    font-weight: 300 !important;
-}
-
-/* На всякий случай убираем черту, если вдруг у вас всего один пункт меню */
-.header #menu li:only-child a::before {
-    content: none !important;
 }
