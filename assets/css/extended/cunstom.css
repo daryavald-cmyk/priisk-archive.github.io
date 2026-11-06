@@ -246,3 +246,8 @@ body[data-url*="/search/"] .nav #menu {
     display: none !important;
   }
 </style>
+
+<style>
+  /* Прячем пустую ссылку в меню на странице поиска */
+  #menu { display: none !important; }
+</style>
