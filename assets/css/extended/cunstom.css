@@ -71,19 +71,19 @@ body:has(#searchInput) #menu {
    3. ОПИСАНИЕ ПОД ШАПКОЙ
    ========================================= */
 .home-info {
-    max-width: 800px !important; /* Ширина как у карточек */
-    margin: 0 auto !important; /* Центрируем сам блок */
+    max-width: 800px !important; 
+    margin: 0 auto !important; 
     padding: 0 !important;
-    text-align: center !important; /* Текст по центру */
+    text-align: left !important; /* Прижимаем текст к левому краю */
 }
 
 .home-info p {
     color: var(--primary) !important; 
-    font-weight: 600 !important; /* Жирность как у заголовков */
+    font-weight: 600 !important; 
     font-size: 1.1rem !important;
     font-family: var(--font-family) !important;
-    margin-top: 0.5rem !important;
-    margin-bottom: 2rem !important; /* Отступ до первой карточки */
+    margin-top: 0.2rem !important; /* Уменьшили отступ сверху, чтобы поднять повыше */
+    margin-bottom: 1.5rem !important; 
 }
 
 /* =========================================
