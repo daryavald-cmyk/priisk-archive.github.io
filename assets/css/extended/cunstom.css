@@ -106,8 +106,8 @@ html[data-theme="dark"] #theme-toggle svg[aria-label*="темн"] {
 
 /* Черта между словами */
 .header #menu li:nth-child(2) a {
-    margin-left: 1.5rem !important; 
-    padding-left: 1.5rem !important; 
+    margin-left: 0.5rem !important; 
+    padding-left: 0.5rem !important; 
     border-left: 1px solid var(--border) !important; 
 }
 
@@ -194,7 +194,7 @@ body.list .main {
 
 /* Опускаем текст внутри публикаций */
 body:not(.list) .main {
-    padding-top: 2rem !important; 
+    padding-top: 6rem !important; 
 }
 
 .post-header {
@@ -257,18 +257,8 @@ svg, .search-header svg, h1 svg, #searchInput ~ svg {
     opacity: 0 !important;
 }
 
-/* Делаем заголовок "ПОИСК ПО САЙТУ" маленьким и тонким */
-.search-header h1,
-#searchInput ~ h1,
-.main h1,
-.main h2 {
-    font-weight: 400 !important; /* Тонкий шрифт */
-    font-size: 1.1rem !important; /* Маленький размер */
-    letter-spacing: 0.5px !important;
-    color: var(--primary) !important;
-    margin-bottom: 1rem !important;
-    display: block !important;
-    text-transform: none !important;
+.search-header, .main h1, #searchInput ~ h1 {
+    display: none !important;
 }
 
 /* Настраиваем строку ввода (Рамка + текст) */
