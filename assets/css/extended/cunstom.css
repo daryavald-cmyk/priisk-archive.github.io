@@ -192,7 +192,6 @@ body .search-header h1 { font-weight: 400 !important; font-size: 1.1rem !importa
     font-family: var(--font-family) !important;
     font-size: 0.95rem !important;
     color: var(--accent-text) !important; /* Оранжевый цвет */
-    margin-top: -1rem !important; /* Прижимаем к слову Email */
 }
 
 /* 4. Стандартный копирайт (© 2026...) */
