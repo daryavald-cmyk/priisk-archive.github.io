@@ -16,77 +16,59 @@
 }
 
 /* =========================================
-   2. ШАПКА (Прииск слева, Поиск справа)
+   2. ШАПКА И ПОЧТА
    ========================================= */
 .header {
     display: flex !important;
+    justify-content: space-between !important;
     align-items: center !important;
-    justify-content: space-between !important; /* Раздвигаем по краям */
-    width: 100% !important;
-    max-width: 800px !important; 
-    margin: 0 auto !important; 
+    max-width: 800px !important;
+    margin: 0 auto !important;
     padding: 1rem 0 !important;
-    position: relative !important;
 }
 
-/* Логотип (Прииск + солнце) */
+/* Почта (слева, над названием) */
+.header a[href^="mailto:"] {
+    font-size: 0.8rem !important;
+    color: var(--secondary) !important;
+    font-family: "Courier New", Courier, monospace !important;
+    position: absolute !important;
+    top: 0.5rem !important;
+    left: 0 !important;
+}
+
+/* Логотип (Пріискъ) */
 .header .logo {
     margin: 0 !important;
+    margin-top: 1.5rem !important; /* Сдвигаем вниз, чтобы почта встала над ним */
     display: flex !important;
     align-items: center !important;
-    gap: 0.2rem !important;
-    position: static !important; /* Убираем абсолютное позиционирование */
 }
 
-.logo a {
-    font-size: 1.1rem !important;
-    font-weight: 400 !important; 
-    letter-spacing: 1px !important;
-    color: var(--primary) !important;
-}
-
-#theme-toggle {
-    margin-left: 0 !important;
-    padding-left: 0 !important;
-}
-
-/* Меню (Поиск) */
+/* Поиск (справа) */
 .header #menu {
-    margin-left: auto !important; /* Автоматический отступ слева выталкивает его вправо */
-    margin-right: 0 !important;
+    margin: 0 !important;
+    margin-top: 1.5rem !important;
     display: flex !important;
     align-items: center !important;
-    position: static !important; /* Убираем абсолютное позиционирование */
-}
-
-/* Делаем ссылку "ПОИСК" кликабельной на всей площади */
-.header #menu a {
-    display: inline-block !important;
-    padding: 0.5rem 0 !important; /* Добавляем немного места для клика */
-    text-decoration: none !important;
-}
-
-/* Прячем меню на странице поиска */
-body:has(#searchInput) #menu {
-    display: none !important;
 }
 /* =========================================
    3. ОПИСАНИЕ ПОД ШАПКОЙ
    ========================================= */
 .home-info {
-    max-width: 800px !important; 
-    margin: 0 auto !important; 
+    max-width: 800px !important;
+    margin: 0 auto !important;
     padding: 0 !important;
-    text-align: left !important; /* Прижимаем текст к левому краю */
+    text-align: left !important;
 }
 
 .home-info p {
-    color: var(--primary) !important; 
-    font-weight: 600 !important; 
+    color: var(--primary) !important;
+    font-weight: 600 !important;
     font-size: 1.1rem !important;
     font-family: var(--font-family) !important;
-    margin-top: 0.2rem !important; /* Уменьшили отступ сверху, чтобы поднять повыше */
-    margin-bottom: 1.5rem !important; 
+    margin-top: 0.5rem !important;
+    margin-bottom: 1.5rem !important;
 }
 
 /* =========================================
