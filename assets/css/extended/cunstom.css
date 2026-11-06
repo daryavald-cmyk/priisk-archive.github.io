@@ -370,3 +370,27 @@ body .search-header h1 {
     font-size: 1.3rem !important; 
     margin-bottom: 1.5rem !important;
 }
+/* =========================================
+   11. ВЫРАВНИВАНИЕ ШАПКИ ПО КРАЯМ КАРТОЧЕК
+   ========================================= */
+/* Делаем шапку такой же ширины, как контейнер с контентом */
+.nav {
+    max-width: var(--main-width) !important; /* Берем ширину из настроек темы */
+    margin: 0 auto !important; /* Центрируем саму шапку */
+    padding: 0 var(--gap) !important; /* Добавляем отступы как у карточек */
+    display: flex !important;
+    justify-content: space-between !important; /* Раздвигаем по краям */
+    align-items: center !important;
+}
+
+/* Убираем жесткие отступы, чтобы они не мешали */
+.nav .logo, .nav #menu {
+    margin: 0 !important;
+}
+
+/* Делаем размеры текста одинаковыми */
+.nav .logo a, .nav #menu a {
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+}
