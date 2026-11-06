@@ -3,13 +3,17 @@
    ========================================= */
 body .header {
     display: flex !important;
-    justify-content: space-between !important; /* Распихивает логотип влево, меню вправо */
-    align-items: center !important;            /* Идеальная горизонтальная линия */
+    justify-content: space-between !important; /* Это оставляем */
+    align-items: center !important;
     max-width: 800px !important;
     margin: 0 auto !important;
-    padding: 0 !important;                     /* Убираем лишнее пространство сверху */
+    padding: 0 !important;
     position: relative !important;
-    height: 3.5rem !important;                 /* Фиксируем высоту шапки */
+    height: 3.5rem !important;
+    
+    /* ВОТ ЭТИ ДВЕ СТРОКИ ЗАСТАВЯТ ЛОГОТИП ПРИЖАТЬСЯ ВЛЕВО */
+    align-content: flex-start !important; 
+    flex-wrap: nowrap !important;
 }
 
 /* Логотип (Пріискъ + Луна) */
@@ -20,6 +24,10 @@ body .header {
     display: flex !important;
     align-items: center !important;
     gap: 0.5rem !important;
+    
+    /* ПРИЖИМАЕМ ЛОГОТИП ВЛЕВО */
+    margin-right: auto !important; 
+    left: 0 !important;
 }
 
 .logo a {
@@ -50,8 +58,8 @@ body .header {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
-    gap: 1.5rem !important; /* Отступ между словами */
-    margin: 0 !important;
+    gap: 1.5rem !important;
+    margin: 0 !important; /* Убеждаемся, что тут 0 */
     padding: 0 !important;
 }
 
