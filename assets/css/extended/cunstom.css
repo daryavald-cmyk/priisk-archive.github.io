@@ -2,12 +2,12 @@
    1. ЖЕСТКАЯ ШАПКА (Прииск слева, Поиск справа)
    ========================================= */
 .header {
-    display: block !important; /* Отключаем flex, чтобы использовать абсолютное позиционирование */
+    display: block !important; 
     max-width: 800px !important; 
     margin: 0 auto !important; 
     padding: 1rem 0 !important;
     position: relative !important;
-    min-height: 3rem !important; /* Минимальная высота для шапки */
+    min-height: 3rem !important; 
 }
 
 /* Почта (вверху слева) */
@@ -23,7 +23,7 @@
     border-bottom: 1px solid var(--border) !important;
 }
 
-/* Логотип (Пріискъ + Луна) */
+/* Логотип (Пріискъ + Луна) — жестко слева */
 .header .logo {
     position: absolute !important;
     bottom: 0 !important; 
@@ -31,35 +31,24 @@
     margin: 0 !important;
     display: flex !important;
     align-items: center !important;
-    gap: 0.2rem !important; 
+    /* Возвращаем нормальный отступ */
+    gap: 0.5rem !important; 
 }
 
-/* Убираем лишние отступы у кнопки смены темы и придвигаем её влево */
-#theme-toggle {
-    margin: 0 !important;
-    padding: 0 !important;
-    margin-left: -0.3rem !important; /* Придвигаем луну ближе к букве */
-}
-
-/* Поиск — жестко справа */
-.header #menu {
-    position: absolute !important;
-    bottom: 0 !important; /* Прижимаем к низу шапки */
-    right: 0 !important;
-    margin: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-}
-
-.header #menu a {
+/* Сам текст "Прииск" — возвращаем нормальную толщину */
+.logo a {
     font-size: 1.1rem !important;
-    font-weight: 400 !important;
+    font-weight: 400 !important; /* Убираем жирность, возвращаем как было */
     letter-spacing: 1px !important;
 }
 
-/* Скрываем поиск на самой странице поиска */
-body:has(#searchInput) #menu {
-    display: none !important;
+/* Значок смены темы (Луна/Солнце) — возвращаем на место */
+#theme-toggle {
+    margin: 0 !important;
+    padding: 0 !important;
+    /* Убрали отрицательный margin-left, который ломал иконку */
+    display: flex !important;
+    align-items: center !important;
 }
 
 /* =========================================
