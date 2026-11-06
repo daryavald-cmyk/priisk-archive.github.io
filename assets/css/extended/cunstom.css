@@ -354,3 +354,43 @@ body #searchInput::placeholder {
     letter-spacing: 1px !important;
     line-height: 1.2 !important;
 }
+/* =========================================
+   ВАРИАНТ 2: ЯДЕРНОЕ УНИЧТОЖЕНИЕ МАРКЕРОВ
+   ========================================= */
+
+.header #menu li {
+    display: block !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+}
+
+/* Делаем саму ссылку блочной и убираем любые фоны */
+.header #menu li a {
+    display: block !important;
+    background: none !important;
+    border: none !important;
+    padding: 0.2rem 0 !important;
+    margin: 0 !important;
+}
+
+/* Скрываем ВСЁ, что не является текстом внутри ссылки (иконки, свг, пустые спаны) */
+.header #menu li a *:not(span:not(:empty)) {
+    display: none !important;
+}
+
+/* Убиваем любые псевдоэлементы у li и a */
+.header #menu li::before,
+.header #menu li::after,
+.header #menu li a::before,
+.header #menu li a::after {
+    content: "" !important;
+    display: none !important;
+}
+
+/* Убираем стандартные маркеры */
+ul#menu {
+    list-style-type: none !important;
+    padding-inline-start: 0 !important;
+}
