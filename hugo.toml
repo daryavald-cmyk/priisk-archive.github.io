@@ -23,5 +23,10 @@ defaultContentLanguage = "ru"
 [[menu.main]]
   name = "ПОИСК"
   url = "/search/"
-  weight = 9
+  weight = 10
   
+[[menu.main]]
+  identifier = "tags"
+  name = "УКАЗАТЕЛИ"
+  url = "/tags/"
+  weight = 20
