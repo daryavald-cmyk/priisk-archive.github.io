@@ -15,12 +15,6 @@ defaultContentLanguage = "ru"
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
-# Меню с иконкой лупы вместо слова
-[[menu.main]]
-  name = "ПОИСК"
-  url = "/search/"
-  weight = 10
-
 # Разрешаем HTML-код в статьях (для наших блоков)
 [markup]
   [markup.goldmark]
