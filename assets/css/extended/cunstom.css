@@ -395,44 +395,26 @@ ul#menu {
     line-height: 1.2 !important;
 }
 /* =========================================
-   ФИНАЛЬНЫЙ ФИКС: ПОДНИМАЕМ МЕНЮ И РИСУЕМ ЧЕРТУ
+   ФИНАЛЬНАЯ НАСТРОЙКА МЕНЮ (Черта + Подъем вверх)
    ========================================= */
 
-/* 1. Поднимаем меню на уровень логотипа */
+/* 1. Поднимаем меню на один уровень с логотипом */
 .header #menu {
-    top: 1rem !important;        /* Прижимаем к верху (на уровень "Прииск") */
-    bottom: auto !important;     /* ОТМЕНЯЕМ прижатие к низу, которое было раньше */
-    right: 0 !important;
-    position: absolute !important;
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 0 !important;           /* Убираем стандартный отступ, будем делать свои */
-    padding: 0 !important;
-    margin: 0 !important;
+    bottom: auto !important; /* Отменяем прижатие к низу */
+    top: 1rem !important;    /* Прижимаем к верху (подберите значение, если нужно) */
+    flex-direction: row !important; 
+    gap: 1rem !important;    /* Отступ между элементами */
 }
 
-/* 2. Настраиваем отступы для слов */
-.header #menu a {
-    padding: 0 15px !important;  /* 15px по бокам от каждого слова */
-    font-size: 1.1rem !important;
-    font-weight: 400 !important;
-    letter-spacing: 1px !important;
-    display: inline-block !important;
-}
-
-/* Убираем левый отступ у первого слова, чтобы оно ровно встало по краю */
-.header #menu li:first-child a {
-    padding-left: 0 !important;
-}
-
-/* 3. Рисуем черту (ставим её перед словом "УКАЗАТЕЛИ") */
+/* 2. Добавляем вертикальную черту перед словом "УКАЗАТЕЛИ" */
 .header #menu li:nth-child(2) a::before {
     content: "|" !important;
-    display: inline-block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    color: var(--border) !important;
+    color: var(--border) !important; /* Цвет черты (обычно серый) */
+    margin-right: 1rem !important;   /* Отступ от черты до слова */
     font-weight: 300 !important;
-    margin-right: 15px !important; /* Отступ от черты до слова */
-    margin-left: -15px !important; /* Сдвигаем черту влево для идеальной центровки */
+}
+
+/* На всякий случай убираем черту, если вдруг у вас всего один пункт меню */
+.header #menu li:only-child a::before {
+    content: none !important;
 }
