@@ -1,17 +1,16 @@
 /* =========================================
-   1. ШАПКА (Прииск и Поиск по краям, почта наверху)
+   1. ЖЕСТКАЯ ШАПКА (Прииск слева, Поиск справа)
    ========================================= */
 .header {
-    display: flex !important;
-    justify-content: space-between !important; 
-    align-items: flex-end !important; /* Прижимаем к низу, чтобы почта встала над ними */
+    display: block !important; /* Отключаем flex, чтобы использовать абсолютное позиционирование */
     max-width: 800px !important; 
     margin: 0 auto !important; 
     padding: 1rem 0 !important;
     position: relative !important;
+    min-height: 3rem !important; /* Минимальная высота для шапки */
 }
 
-/* Почта в левом верхнем углу */
+/* Почта (вверху слева) */
 .header a[href^="mailto:"] {
     position: absolute !important;
     top: 0 !important;
@@ -20,12 +19,15 @@
     color: var(--secondary) !important;
     font-family: "Courier New", Courier, monospace !important;
     text-decoration: none !important;
-    padding-bottom: 0.3rem !important;
-    border-bottom: 1px solid var(--border) !important; /* Тонкая черта под почтой */
+    padding-bottom: 0.2rem !important;
+    border-bottom: 1px solid var(--border) !important;
 }
 
-/* Логотип (Пріискъ) */
+/* Логотип (Пріискъ + Луна) — жестко слева */
 .header .logo {
+    position: absolute !important;
+    bottom: 0 !important; /* Прижимаем к низу шапки */
+    left: 0 !important;
     margin: 0 !important;
     display: flex !important;
     align-items: center !important;
@@ -36,11 +38,17 @@
     font-size: 1.1rem !important;
     font-weight: 400 !important; 
     letter-spacing: 1px !important;
-    color: var(--primary) !important;
 }
 
-/* Поиск */
+#theme-toggle {
+    margin-left: 0 !important;
+}
+
+/* Поиск — жестко справа */
 .header #menu {
+    position: absolute !important;
+    bottom: 0 !important; /* Прижимаем к низу шапки */
+    right: 0 !important;
     margin: 0 !important;
     display: flex !important;
     align-items: center !important;
@@ -50,20 +58,19 @@
     font-size: 1.1rem !important;
     font-weight: 400 !important;
     letter-spacing: 1px !important;
-    color: var(--primary) !important;
 }
 
-/* Убираем поиск на самой странице поиска */
+/* Скрываем поиск на самой странице поиска */
 body:has(#searchInput) #menu {
     display: none !important;
 }
 
 /* =========================================
-   2. ОПИСАНИЕ ПОД ПРИИСКОМ
+   2. ОПИСАНИЕ (Под словом Прииск)
    ========================================= */
 .home-info {
     position: absolute !important; 
-    top: 3.5rem !important; /* Опускаем ровно под слово Прииск */
+    top: 3.2rem !important; /* Опускаем ровно под Прииск */
     left: 50% !important; 
     transform: translateX(-50%) !important; 
     width: 800px !important; 
@@ -80,9 +87,9 @@ body:has(#searchInput) #menu {
     margin: 0 !important;
 }
 
-/* Отступаем карточки вниз, чтобы описание не наезжало на них */
+/* Отступаем контент вниз, чтобы описание не наезжало на карточки */
 .main {
-    padding-top: 6rem !important; 
+    padding-top: 5rem !important; 
 }
 
 /* =========================================
