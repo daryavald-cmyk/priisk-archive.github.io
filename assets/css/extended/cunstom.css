@@ -208,3 +208,11 @@ body #searchInput::placeholder {
 .page-header h1 svg {
     display: none !important;
 }
+/* =========================================
+   НАСТРОЙКА НАЗВАНИЯ САЙТА (Пріискъ)
+   ========================================= */
+.logo a {
+    font-size: 1.1rem !important; /* Уменьшаем размер (было 1.3rem) */
+    font-weight: 400 !important; /* Делаем тоньше (400 — обычный, не жирный) */
+    letter-spacing: 1px !important; /* Немного разряжаем буквы для стиля */
+}
