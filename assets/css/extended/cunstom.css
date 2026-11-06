@@ -210,56 +210,60 @@ body #searchInput::placeholder {
 }
 
 /* =========================================
-   9. СВОЯ ШАПКА (Отключаем старую, строим новую)
+   9. ЖЕСТКАЯ ШАПКА (Логотип слева, Лупа справа)
    ========================================= */
 
-/* 1. Скрываем стандартную шапку темы */
+/* 1. Отключаем стандартную шапку, чтобы она не мешала */
 .nav {
     display: none !important;
 }
 
-/* 2. Создаем свою шапку на всю ширину */
+/* 2. Создаем свою шапку */
 .header {
     display: flex !important;
-    justify-content: space-between !important; /* Логотип слева, поиск справа */
+    justify-content: space-between !important; /* Прижимаем к краям */
     align-items: center !important;
-    max-width: var(--main-width) !important; /* Ширина как у карточек */
+    max-width: 800px !important; /* Ширина, чтобы слова сблизились */
     margin: 0 auto !important; 
-    padding: 1rem var(--gap) !important; /* Отступы как у карточек */
+    padding: 1rem 0 !important;
 }
 
-/* 3. Настраиваем размер текста для Пріискъ */
+/* 3. Жестко прижимаем логотип (Пріискъ + луна) влево */
+.header .logo {
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
 .header .logo a {
     font-size: 1.3rem !important;
     font-weight: 600 !important;
     text-decoration: none !important;
 }
 
-/* 4. Настраиваем иконку поиска */
+/* 4. Жестко прижимаем меню (Поиск) вправо */
 .header #menu {
+    margin: 0 !important;
     display: flex !important;
     align-items: center !important;
-    margin: 0 !important;
 }
 
 .header #menu a {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    font-size: 1.3rem !important; /* Размер как у текста */
-    text-decoration: none !important;
-    color: var(--primary) !important;
+    font-size: 0 !important; /* Скрываем текст "Поиск" */
+    width: 24px !important;
+    height: 24px !important;
 }
 
-/* Убираем стандартную лупу темы, если она есть */
-.header #menu a svg {
-    display: none !important;
-}
-
-/* Вставляем свой значок лупы через псевдоэлемент */
+/* 5. Рисуем лупу через SVG */
 .header #menu a::before {
-    content: "🔍"; /* Пока используем эмодзи, но стилизуем его */
-    font-size: 1.1rem !important;
-    opacity: 0.6; /* Делаем его немного приглушенным, чтобы не бросался в глаза */
-    filter: grayscale(100%); /* Убираем цвет, чтобы был серым */
+    content: "" !important;
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>') !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
 }
