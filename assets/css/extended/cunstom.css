@@ -392,3 +392,27 @@ a[href="#top"],
 .header .nav > *:last-child:not(a[href*="/search"]):not(a[href*="/tags"]) {
     display: none !important;
 }
+/* =========================================
+   УБИРАЕМ СТРЕЛОЧКИ (МАРКЕРЫ СПИСКА) ИЗ МЕНЮ
+   ========================================= */
+
+/* 1. Убираем маркеры у самого списка меню */
+.header #menu,
+.header #menu ul,
+.header #menu li {
+    list-style: none !important;
+    list-style-type: none !important;
+}
+
+/* 2. Обнуляем лишние отступы у контейнера меню, чтобы он не съезжал */
+.header #menu {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* 3. На всякий случай убираем псевдоэлементы у ссылок */
+.header #menu a::before,
+.header #menu a::after {
+    content: none !important;
+    display: none !important;
+}
