@@ -9,25 +9,17 @@ defaultContentLanguage = "ru"
   dateFormat = "2 января 2006 г."
   email = "apriisk@yandex.ru"
 
+[params.assets]
+  disableFingerprinting = true
+
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
-# Разрешаем HTML-код в статьях (для наших блоков)
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
 
-# Настройки поиска
-[params.fuseOpts]
-  isCaseSensitive = false
-  shouldSort = true
-  location = 0
-  distance = 1000
-  threshold = 0.4
-  minMatchCharLength = 0
-  keys = ["title", "permalink", "summary", "content"]
-  
 [[menu.main]]
   name = "ПОИСК"
   url = "/search/"
