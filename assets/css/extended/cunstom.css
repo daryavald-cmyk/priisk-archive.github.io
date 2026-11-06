@@ -173,7 +173,6 @@ body .search-header h1 { font-weight: 400 !important; font-size: 1.1rem !importa
 /* 2. Блок с почтой (наверху) */
 .footer::before {
     content: "Email: " !important; /* Меняем текст на латиницу */
-    display: block !important;
     order: -1 !important; /* Ставим на первое место */
     margin-bottom: 1rem !important; 
     
