@@ -232,10 +232,10 @@ body .search-header h1 { font-weight: 400 !important; font-size: 1.1rem !importa
 #searchInput ~ h1, 
 .main h1 {
     font-weight: 400 !important; 
-    font-size: 1.5rem !important; 
+    font-size: 1.2rem !important; 
     letter-spacing: 0.5px !important;
     color: var(--primary) !important; 
-    margin-bottom: 1.5rem !important; 
+    margin-bottom: 0.5rem !important; 
     display: flex !important; 
     align-items: center !important;
 }
