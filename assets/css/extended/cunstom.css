@@ -234,3 +234,16 @@ body #searchInput::placeholder {
 body:has(#searchInput) #menu {
     display: none !important;
 }
+/* Стилизуем текст-описание на главной странице */
+.home-info {
+    text-align: center !important; /* Выравниваем по центру */
+    margin-bottom: 2rem !important; /* Отступ до первой карточки */
+}
+
+.home-info p {
+    color: var(--primary) !important; /* Возвращаем белый/черный цвет (как основной текст) */
+    font-family: var(--font-family) !important; 
+    font-size: 1rem !important;
+    opacity: 0.8 !important; /* Легкая прозрачность, чтобы не спорило с названием */
+    margin-top: 0.5rem !important;
+}
