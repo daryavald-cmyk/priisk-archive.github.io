@@ -310,26 +310,26 @@ body #searchInput::placeholder {
     bottom: 0 !important;
     right: 0 !important;
     margin: 0 !important;
-    display: flex !important;
-    flex-direction: row !important; /* Пока оставляем в линию, чтобы не сломать */
-    align-items: flex-start !important;
-    gap: 1rem !important; /* Расстояние между ними по горизонтали, если вдруг */
+    display: block !important; /* Меняем на block, чтобы позиционировать жестко */
+    height: 100% !important; /* Растягиваем по высоте шапки */
 }
 
-/* 2. Пункт "Поиск" — оставляем наверху справа */
-.header #menu a[href="/search/"] {
+/* 2. Пункт "ПОИСК" — оставляем наверху справа */
+.header #menu a[href*="/search"] {
     position: absolute !important;
     top: 0 !important;
     right: 0 !important;
     margin: 0 !important;
     display: block !important;
+    line-height: 1.2 !important;
 }
 
-/* 3. Пункт "Указатель" — ставим под Поиском */
-.header #menu a[href="/tags/"] {
+/* 3. Пункт "УКАЗАТЕЛИ" — ставим строго под Поиском */
+.header #menu a[href*="/tags"] {
     position: absolute !important;
-    top: 1.5rem !important; /* Опускаем вниз (подгоняй цифру, если нужно) */
+    top: 1.4rem !important; /* Опускаем вниз. Если текст наезжает, увеличь до 1.5rem или 1.6rem */
     right: 0 !important;
     margin: 0 !important;
     display: block !important;
+    line-height: 1.2 !important;
 }
