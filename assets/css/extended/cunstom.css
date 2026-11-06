@@ -18,55 +18,58 @@
 /* =========================================
    2. ШАПКА (Прииск слева, Поиск справа)
    ========================================= */
-/* Делаем контейнер шапки относительным */
 .header {
-    position: relative !important;
-    max-width: 800px !important; /* Ширина как у карточек */
-    margin: 0 auto !important; 
-    padding: 1rem 0 !important;
     display: flex !important;
     align-items: center !important;
-    justify-content: space-between !important; /* Пытаемся раздвинуть */
+    justify-content: space-between !important; /* Раздвигаем по краям */
+    width: 100% !important;
+    max-width: 800px !important; 
+    margin: 0 auto !important; 
+    padding: 1rem 0 !important;
+    position: relative !important;
 }
 
-/* Жестко прижимаем логотип к левому краю */
+/* Логотип (Прииск + солнце) */
 .header .logo {
-    position: absolute !important;
-    left: 0 !important; /* Прибиваем к левому краю */
     margin: 0 !important;
     display: flex !important;
     align-items: center !important;
     gap: 0.2rem !important;
+    position: static !important; /* Убираем абсолютное позиционирование */
 }
 
-/* Возвращаем Пріискъ нормальный, не жирный шрифт */
 .logo a {
     font-size: 1.1rem !important;
-    font-weight: 400 !important; /* Убираем жирность (было 600) */
+    font-weight: 400 !important; 
     letter-spacing: 1px !important;
-    color: var(--primary) !important; /* Возвращаем нормальный цвет */
+    color: var(--primary) !important;
 }
 
-/* Убираем лишние отступы у иконки темы */
 #theme-toggle {
     margin-left: 0 !important;
     padding-left: 0 !important;
 }
 
-/* Жестко прижимаем меню к правому краю */
+/* Меню (Поиск) */
 .header #menu {
-    position: absolute !important;
-    right: 0 !important; /* Прибиваем к правому краю */
-    margin: 0 !important;
+    margin-left: auto !important; /* Автоматический отступ слева выталкивает его вправо */
+    margin-right: 0 !important;
     display: flex !important;
     align-items: center !important;
+    position: static !important; /* Убираем абсолютное позиционирование */
+}
+
+/* Делаем ссылку "ПОИСК" кликабельной на всей площади */
+.header #menu a {
+    display: inline-block !important;
+    padding: 0.5rem 0 !important; /* Добавляем немного места для клика */
+    text-decoration: none !important;
 }
 
 /* Прячем меню на странице поиска */
 body:has(#searchInput) #menu {
     display: none !important;
 }
-
 /* =========================================
    3. ОПИСАНИЕ ПОД ШАПКОЙ
    ========================================= */
