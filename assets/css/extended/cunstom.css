@@ -263,3 +263,40 @@ body #searchInput::placeholder {
 .page-header h1 svg {
     display: none !important;
 }
+/* =========================================
+   ОПИСАНИЕ ПОД СЛОВОМ ПРИИСК
+   ========================================= */
+
+/* Убираем стандартную карточку, оставляем только текст */
+.home-info {
+    position: absolute !important; /* Вырываем из потока */
+    top: 3.5rem !important; /* Опускаем ровно под слово Пріискъ */
+    left: 50% !important; /* Ставим по центру экрана */
+    transform: translateX(-50%) !important; /* Центрируем */
+    width: 800px !important; /* Ширина как у карточек */
+    text-align: left !important; /* Текст прижимаем к левому краю */
+    background: transparent !important; /* Убираем фон */
+    border: none !important; /* Убираем рамку */
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Настраиваем сам текст */
+.home-info p {
+    color: var(--primary) !important; 
+    font-weight: 600 !important; 
+    font-size: 1.1rem !important;
+    font-family: var(--font-family) !important;
+    margin: 0 !important;
+    padding-left: 0 !important; /* Убираем отступ слева */
+}
+
+/* Убираем заголовок внутри блока, если он появится */
+.home-info h1 {
+    display: none !important;
+}
+
+/* Даем отступ первой карточке, чтобы описание не наезжало на нее */
+.main {
+    padding-top: 5rem !important; 
+}
