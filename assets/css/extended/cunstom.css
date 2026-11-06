@@ -315,27 +315,49 @@ body .first-entry .entry-content {
     font-weight: 500 !important;
 }
 /* =========================================
-   10. ПОСЛЕДНИЕ ШТРИХИ (Меню, Поиск, Отступы)
+   10. ФИНАЛЬНАЯ НАСТРОЙКА ШАПКИ И ПОИСКА
    ========================================= */
 
-/* 1. Делаем заголовок страницы поиска аккуратным (не жирным) */
-.search-header h1 {
-    font-size: 1.3rem !important; /* Как заголовки в карточках */
-    font-weight: 600 !important; /* Убираем лишнюю жирность */
-    margin-bottom: 2rem !important; 
+/* --- Настройка меню (сближаем Прииск и Поиск) --- */
+.nav {
+    display: flex !important;
+    justify-content: center !important; /* Центрируем всё меню */
+    gap: 2rem !important; /* Расстояние между элементами */
 }
 
-/* 2. Уменьшаем размер "ПОИСК" в меню, чтобы он не распирал шапку */
+.nav .logo a {
+    font-size: 1.2rem !important; /* Чуть уменьшили название сайта */
+}
+
+#menu {
+    display: flex !important;
+    align-items: center !important;
+    margin-left: 1rem !important; /* Придвигаем ПОИСК к названию */
+}
+
 #menu a {
-    font-size: 1rem !important; /* Уменьшили размер */
+    font-size: 1.2rem !important; /* Выравниваем размер со словом Пріискъ */
     font-weight: 600 !important;
-    letter-spacing: 0.5px !important;
-    padding-left: 1rem !important; /* Чуть придвинули к центру */
 }
 
-/* 3. Убираем лишний отступ сверху у главной страницы */
-/* Это подтянет первую карточку ближе к меню */
-.main {
-    padding-top: 2rem !important; 
+/* --- Настройка страницы поиска --- */
+/* Делаем заголовок аккуратным (тонким) */
+.search-header h1 {
+    font-weight: 400 !important; /* Убираем жирность полностью */
+    font-size: 1.4rem !important; /* И делаем его чуть меньше */
+    letter-spacing: 0.5px;
+}
+
+/* Строка поиска: оставляем красивую яркую рамку */
+#searchInput {
+    border: 2px solid var(--accent-text) !important; /* Сделали рамку чуть толще (2px) */
+    /* ... остальные стили остаются из предыдущего блока */
+}
+
+/* Подсказка "Введите слово...": делаем её приглушенной */
+#searchInput::placeholder {
+    color: var(--secondary) !important; /* Возвращаем стандартный серый цвет */
+    opacity: 1 !important;
+    font-weight: 400 !important; 
 }
 
