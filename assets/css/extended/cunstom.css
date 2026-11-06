@@ -388,3 +388,8 @@ body .search-header h1 {
 .search-header h1 img {
     display: none !important;
 }
+/* Скрываем иконку лупы на странице поиска */
+.search-header h1 svg,
+.page-header h1 svg {
+    display: none !important;
+}
