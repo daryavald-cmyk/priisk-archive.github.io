@@ -14,3 +14,16 @@
 
     </div>
 </footer>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Ищем кнопку "Наверх" по разным возможным классам и ID
+    const topLink = document.querySelector('#top-link') || 
+                    document.querySelector('.top-link') || 
+                    document.querySelector('a[href="#top"]');
+    
+    // Если нашли — удаляем её из HTML навсегда
+    if (topLink) {
+        topLink.remove();
+    }
+});
+</script>
