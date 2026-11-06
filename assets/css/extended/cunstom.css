@@ -393,3 +393,7 @@ body .search-header h1 {
 .page-header h1 svg {
     display: none !important;
 }
+/* Убираем ссылку "Поиск" из меню только на странице поиска */
+body:has(.search-header) #menu {
+    display: none !important;
+}
