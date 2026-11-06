@@ -15,61 +15,6 @@
 }
 
 /* =========================================
-   2. ЖЕСТКАЯ ШАПКА (Прииск слева, Поиск справа)
-   ========================================= */
-/* Отключаем стандартную шапку темы */
-.nav { display: none !important; }
-
-/* Создаем свою шапку */
-.header {
-    display: flex !important;
-    justify-content: space-between !important; /* Раскидываем по краям */
-    align-items: center !important;
-    max-width: 800px !important; /* Ширина как у карточек */
-    margin: 0 auto !important; 
-    padding: 1rem 0 !important;
-    position: relative !important;
-}
-
-/* Левый блок (Прииск + Луна) */
-.header .logo {
-    margin: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 0.2rem !important; /* Луна придвинута к слову */
-}
-
-.logo a {
-    font-size: 1.1rem !important;
-    font-weight: 400 !important; /* Спокойный шрифт, не жирный */
-    letter-spacing: 1px !important;
-    color: var(--primary) !important;
-}
-
-#theme-toggle {
-    margin-left: 0 !important;
-}
-
-/* Правый блок (Поиск) */
-.header #menu {
-    margin: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    position: static !important;
-}
-
-.header #menu a {
-    font-size: 1.1rem !important;
-    font-weight: 400 !important; /* Такой же шрифт, как у Прииска */
-    letter-spacing: 1px !important;
-    color: var(--primary) !important;
-}
-
-body:has(#searchInput) #menu {
-    display: none !important;
-}
-
-/* =========================================
    3. ОПИСАНИЕ (Строго под словом Прииск)
    ========================================= */
 /* Вытаскиваем блок описания из стандартной сетки */
