@@ -34,4 +34,4 @@ defaultContentLanguage = "ru"
 [[menu.main]]
   name = "ПОИСК"
   url = "/search/"
-  weight = 10
+  weight = 9
