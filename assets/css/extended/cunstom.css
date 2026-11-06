@@ -286,26 +286,26 @@ body .first-entry .entry-content {
     letter-spacing: 1px !important; /* Немного разряжаем буквы для стиля */
 }
 /* =========================================
-   9. ЖЕСТКАЯ НАСТРОЙКА СТРАНИЦЫ ПОИСКА
+   9. СВЕРХЖЕСТКАЯ НАСТРОЙКА СТРАНИЦЫ ПОИСКА
    ========================================= */
 
-/* 1. Убиваем жирность заголовка "Поиск по сайту" */
-body .search-header h1 {
-    font-weight: 400 !important; /* 400 — это обычный, нежирный шрифт */
+/* 1. Убиваем жирность заголовка (используем body для усиления) */
+body .search-header h1,
+body .page-header h1 {
+    font-weight: 400 !important; /* 400 — обычный шрифт */
     font-size: 1.3rem !important; 
     margin-bottom: 2rem !important;
-    letter-spacing: 0.5px !important;
 }
 
-/* 2. Возвращаем нормальный цвет подсказке "Введите слово..." */
-#searchInput::placeholder {
-    color: var(--secondary) !important; /* Стандартный серый цвет темы */
+/* 2. Возвращаем нормальный цвет подсказке (placeholder) */
+body #searchInput::placeholder {
+    color: var(--secondary) !important; /* Стандартный серый */
     opacity: 1 !important;
     font-weight: 400 !important; 
 }
 
 /* 3. Оставляем красивую рамку у строки поиска */
-#searchInput {
+body #searchInput {
     border: 2px solid var(--accent-text) !important; 
     background-color: var(--entry) !important; 
     color: var(--primary) !important; 
