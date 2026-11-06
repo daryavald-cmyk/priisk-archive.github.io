@@ -160,7 +160,7 @@ body .first-entry .entry-content {
 .post-header {
     position: relative !important;
     display: block !important;
-    padding-top: 0 !important; 
+    padding-top: 0 !important;
     border-bottom: 1px solid var(--border) !important;
     padding-bottom: 1.5rem !important;
     margin-bottom: 2rem !important;
@@ -168,21 +168,21 @@ body .first-entry .entry-content {
 
 /* 3. ВЫТАСКИВАЕМ ДАТУ НАВЕРХ (жестко над заголовком) */
 .post-header .post-meta {
-    position: absolute !important; 
+    position: absolute !important;
     top: -1.8rem !important; /* Поднимаем над заголовком */
     left: 0 !important;      /* Прижимаем к левому краю */
-    
+   
     font-family: var(--font-family) !important;
-    font-size: 0.85rem !important; 
-    color: var(--secondary) !important; 
-    margin: 0 !important; 
+    font-size: 0.85rem !important;
+    color: var(--secondary) !important;
+    margin: 0 !important;
     display: block !important;
 }
 
 /* 4. Заголовок публикации */
 .post-header .post-title {
     font-weight: 600 !important;
-    font-size: 1.5rem !important; 
+    font-size: 1.5rem !important;
     margin: 0 !important;
     line-height: 1.3 !important;
 }
@@ -263,21 +263,21 @@ body .first-entry .entry-content {
    ========================================= */
 
 /* 1. Заголовок "Поиск по сайту" */
-.search-header h1, 
-#searchInput ~ h1, 
+.search-header h1,
+#searchInput ~ h1,
 .main h1 {
-    font-weight: 400 !important; 
-    font-size: 1.2rem !important; 
+    font-weight: 400 !important;
+    font-size: 1.2rem !important;
     letter-spacing: 0.5px !important;
-    color: var(--primary) !important; 
-    margin-bottom: 0.2rem !important; 
-    display: flex !important; 
+    color: var(--primary) !important;
+    margin-bottom: 0.2rem !important;
+    display: flex !important;
     align-items: center !important;
 }
 
 /* 2. ЖЕСТКО ПРЯЧЕМ ЛУПУ: удаляем все SVG внутри заголовка */
 h1 svg {
-    display: none !important; 
+    display: none !important;
     visibility: hidden !important;
     width: 0 !important;
     height: 0 !important;
@@ -286,19 +286,19 @@ h1 svg {
 
 /* 3. Поле ввода поиска */
 body #searchInput {
-    font-weight: 400 !important; 
-    font-family: var(--font-family) !important; 
-    font-size: 1rem !important; 
+    font-weight: 400 !important;
+    font-family: var(--font-family) !important;
+    font-size: 1rem !important;
     color: var(--primary) !important;
-    border: 2px solid var(--accent-text) !important; 
+    border: 2px solid var(--accent-text) !important;
     background-color: var(--entry) !important;
 }
 
 /* 4. Подсказка внутри окна */
 body #searchInput::placeholder {
-    font-weight: 400 !important; 
-    color: var(--secondary) !important; 
-    opacity: 1 !important; 
+    font-weight: 400 !important;
+    color: var(--secondary) !important;
+    opacity: 1 !important;
 }
 /* =========================================
    ВЫСТРАИВАЕМ "УКАЗАТЕЛИ" ПОД "ПОИСКОМ"
@@ -402,7 +402,7 @@ ul#menu {
 .header #menu {
     bottom: auto !important; /* Отменяем прижатие к низу */
     top: 1rem !important;    /* Прижимаем к верху (подберите значение, если нужно) */
-    flex-direction: row !important; 
+    flex-direction: row !important;
     gap: 1rem !important;    /* Отступ между элементами */
 }
 
