@@ -198,5 +198,4 @@ body .search-header h1 { font-weight: 400 !important; font-size: 1.1rem !importa
 /* 4. Стандартный копирайт (© 2026...) */
 .footer .copyright {
     order: 1 !important;
-    margin-bottom: 0.3rem !important; /* Убираем большой пробел */
 }
