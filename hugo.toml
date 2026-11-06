@@ -32,6 +32,7 @@ defaultContentLanguage = "ru"
   keys = ["title", "permalink", "summary", "content"]
   
 [[menu.main]]
-  name = ""
+  name = " "
   url = "/search/"
   weight = 10
+  
