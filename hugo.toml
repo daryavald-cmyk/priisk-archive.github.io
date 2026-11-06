@@ -8,7 +8,6 @@ defaultContentLanguage = "ru"
   disableSpecial1stPost = true
   dateFormat = "2 января 2006 г."
   [params.footer]
-  text = "Почта редакции: apriisk@yandex.ru"
 
 [params.assets]
   disableFingerprinting = true
