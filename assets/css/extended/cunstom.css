@@ -170,3 +170,9 @@ body #searchInput::placeholder {
 .search-header h1 svg, .page-header h1 svg {
     display: none !important;
 }
+/* Выравниваем текст описания по левому краю */
+.home-info {
+    text-align: left !important;
+    max-width: 800px !important;
+    margin: 0 auto !important;
+}
