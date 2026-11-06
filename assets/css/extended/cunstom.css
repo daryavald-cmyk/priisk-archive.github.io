@@ -371,35 +371,13 @@ body .search-header h1 {
     margin-bottom: 1.5rem !important;
 }
 /* =========================================
-   11. ЖЕСТКАЯ СБОРКА ШАПКИ (Прииск и Поиск рядом)
+   УБИРАЕМ ЛУПУ НА СТРАНИЦЕ ПОИСКА
    ========================================= */
-/* Скрываем стандартную шапку, чтобы она не мешала */
-.nav {
+.search-header h1 svg,
+.search-header h1 i,
+.search-header h1 img,
+.page-header h1 svg {
     display: none !important;
-}
-
-/* Создаем свою шапку */
-.header {
-    display: flex !important;
-    justify-content: center !important; /* Ставим всё в центр */
-    align-items: baseline !important; /* Выравниваем по нижнему краю текста */
-    gap: 1.5rem !important; /* Расстояние между словами */
-    padding: 1rem 0 !important;
-}
-
-/* Настраиваем шрифт для обоих слов */
-.header .logo a, 
-.header #menu a {
-    font-size: 1.3rem !important;
-    font-weight: 600 !important;
-    letter-spacing: 1px !important;
-    text-decoration: none !important;
-}
-
-/* Убираем лишние отступы у меню */
-.header #menu {
-    margin: 0 !important;
-    padding: 0 !important;
 }
 
 /* =========================================
