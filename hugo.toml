@@ -4,7 +4,9 @@ theme = "PaperMod"
 defaultContentLanguage = "ru"
 
 [params]
-  homeInfoParams = false
+  [params.homeInfoParams]
+  Title = "Пріискъ"
+  Content = "Вольная коллекция источников по истории Пермской губернии"
   mainSections = ["posts"]
   disableSpecial1stPost = true
   dateFormat = "2 января 2006 г."
