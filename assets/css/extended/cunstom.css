@@ -272,3 +272,45 @@ body .first-entry .entry-content {
     border-top: 1px solid var(--border) !important; /* Сделали тоже сплошной и тонкой, чтобы не было разнобоя */
     margin: 1.5rem 0 !important;
 }
+/* =========================================
+   8. НАСТРОЙКА МЕНЮ (Размеры и выравнивание)
+   ========================================= */
+/* Делаем название сайта и пункты меню одного размера */
+.logo a {
+    font-size: 1.3rem !important; /* Как заголовки в карточках */
+}
+
+#menu a {
+    font-size: 1.3rem !important; /* Выравниваем размер ПОИСКА */
+    font-weight: 600 !important;
+    letter-spacing: 1px !important; /* Немного разряжаем буквы для стиля */
+}
+/* =========================================
+   9. КРАСИВАЯ СТРАНИЦА ПОИСКА
+   ========================================= */
+
+/* Делаем заголовок "Поиск по сайту" таким же, как заголовки публикаций */
+.search-header h1 {
+    font-weight: 600 !important; /* Убираем излишнюю жирность */
+    font-size: 1.5rem !important; /* Делаем аккуратным */
+}
+
+/* Настраиваем строку ввода поиска */
+#searchInput {
+    border: 1px solid var(--accent-text) !important; /* Делаем рамку нашего коричнево-оранжевого цвета */
+    background-color: var(--entry) !important; /* Фон как у карточек */
+    color: var(--primary) !important; /* Цвет текста, который будет вводить человек */
+    font-family: var(--font-family) !important; 
+    font-size: 1rem !important;
+    padding: 0.8rem !important;
+    border-radius: 8px !important;
+    box-shadow: none !important; /* Убираем стандартную тень */
+    outline: none !important;
+}
+
+/* Делаем текст-подсказку (placeholder) ярким акцентным цветом */
+#searchInput::placeholder {
+    color: var(--accent-text) !important; 
+    opacity: 0.8 !important; 
+    font-weight: 500 !important;
+}
