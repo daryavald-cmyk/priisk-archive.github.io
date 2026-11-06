@@ -210,48 +210,56 @@ body #searchInput::placeholder {
 }
 
 /* =========================================
-   9. ИДЕАЛЬНАЯ ШАПКА (Прииск слева, Поиск справа)
+   9. СВОЯ ШАПКА (Отключаем старую, строим новую)
    ========================================= */
+
+/* 1. Скрываем стандартную шапку темы */
+.nav {
+    display: none !important;
+}
+
+/* 2. Создаем свою шапку на всю ширину */
 .header {
-    max-width: 1000px !important; /* Сделали чуть шире, чтобы не было слишком тесно */
+    display: flex !important;
+    justify-content: space-between !important; /* Логотип слева, поиск справа */
+    align-items: center !important;
+    max-width: var(--main-width) !important; /* Ширина как у карточек */
     margin: 0 auto !important; 
-    display: flex !important;
-    justify-content: space-between !important; /* Раздвигаем по краям */
-    align-items: center !important;
-    padding: 1rem 0 !important;
+    padding: 1rem var(--gap) !important; /* Отступы как у карточек */
 }
 
-/* ЖЕСТКО ПРИЖИМАЕМ ЛОГОТИП (Прииск + солнце) ВЛЕВО */
-.header .logo {
-    margin-right: auto !important; /* Автоматический отступ справа выталкивает его влево */
-    margin-left: 0 !important;
+/* 3. Настраиваем размер текста для Пріискъ */
+.header .logo a {
+    font-size: 1.3rem !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
 }
 
-/* ЖЕСТКО ПРИЖИМАЕМ МЕНЮ (Поиск) ВПРАВО */
+/* 4. Настраиваем иконку поиска */
 .header #menu {
-    margin-left: auto !important; /* Автоматический отступ слева выталкивает его вправо */
-    margin-right: 0 !important;
     display: flex !important;
     align-items: center !important;
+    margin: 0 !important;
 }
 
-/* Настраиваем иконку поиска */
-#menu a[href="/search/"] {
+.header #menu a {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    font-size: 0 !important; /* Скрываем текст "Поиск", если он есть */
-    width: 24px !important;
-    height: 24px !important;
+    font-size: 1.3rem !important; /* Размер как у текста */
+    text-decoration: none !important;
+    color: var(--primary) !important;
 }
 
-/* Рисуем лупу */
-#menu a[href="/search/"]::before {
-    content: "" !important;
-    display: block !important;
-    width: 100% !important;
-    height: 100% !important;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>') !important;
-    background-repeat: no-repeat !important;
-    background-position: center !important;
+/* Убираем стандартную лупу темы, если она есть */
+.header #menu a svg {
+    display: none !important;
+}
+
+/* Вставляем свой значок лупы через псевдоэлемент */
+.header #menu a::before {
+    content: "🔍"; /* Пока используем эмодзи, но стилизуем его */
+    font-size: 1.1rem !important;
+    opacity: 0.6; /* Делаем его немного приглушенным, чтобы не бросался в глаза */
+    filter: grayscale(100%); /* Убираем цвет, чтобы был серым */
 }
