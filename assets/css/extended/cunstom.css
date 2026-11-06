@@ -2,12 +2,12 @@
    1. ЖЕСТКАЯ ШАПКА (Прииск слева, Поиск справа)
    ========================================= */
 .header {
-    display: block !important; 
-    max-width: 800px !important; 
-    margin: 0 auto !important; 
+    display: block !important;
+    max-width: 800px !important;
+    margin: 0 auto !important;
     padding: 1rem 0 !important;
     position: relative !important;
-    min-height: 3rem !important; 
+    min-height: 3rem !important;
 }
 
 /* Почта (вверху слева) */
@@ -26,57 +26,74 @@
 /* Логотип (Пріискъ + Луна) — жестко слева */
 .header .logo {
     position: absolute !important;
-    bottom: 0 !important; 
+    bottom: 0 !important;
     left: 0 !important;
     margin: 0 !important;
     display: flex !important;
     align-items: center !important;
-    /* Возвращаем нормальный отступ */
-    gap: 0.5rem !important; 
+    gap: 0.5rem !important;
 }
 
-/* Сам текст "Прииск" — возвращаем нормальную толщину */
+/* Сам текст "Прииск" */
 .logo a {
     font-size: 1.1rem !important;
-    font-weight: 400 !important; /* Убираем жирность, возвращаем как было */
+    font-weight: 400 !important;
     letter-spacing: 1px !important;
 }
 
-/* Значок смены темы (Луна/Солнце) — возвращаем на место */
+/* Значок смены темы (Луна/Солнце) */
 #theme-toggle {
     margin: 0 !important;
     padding: 0 !important;
-    /* Убрали отрицательный margin-left, который ломал иконку */
     display: flex !important;
     align-items: center !important;
+}
+
+/* ВОЗВРАЩАЕМ "ПОИСК" НАПРАВО */
+.header #menu {
+    position: absolute !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.header #menu a {
+    font-size: 1.1rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 1px !important;
+}
+
+/* Скрываем поиск на самой странице поиска */
+body:has(#searchInput) #menu {
+    display: none !important;
 }
 
 /* =========================================
    2. ОПИСАНИЕ (Под словом Прииск)
    ========================================= */
 .home-info {
-    position: absolute !important; 
-    top: 3.2rem !important; /* Опускаем ровно под Прииск */
-    left: 50% !important; 
-    transform: translateX(-50%) !important; 
-    width: 800px !important; 
+    position: absolute !important;
+    top: 3.2rem !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 800px !important;
     padding: 0 !important;
     margin: 0 !important;
-    text-align: left !important; 
+    text-align: left !important;
 }
 
 .home-info p {
-    color: var(--primary) !important; 
-    font-weight: 600 !important; 
+    color: var(--primary) !important;
+    font-weight: 600 !important;
     font-size: 1rem !important;
     font-family: var(--font-family) !important;
     margin: 0 !important;
 }
 
-/* Отступаем контент вниз, чтобы описание не наезжало на карточки */
-.main {
-    padding-top: 5rem !important; 
-}
+/* Убираем старый конфликтующий .main */
+/* .main { padding-top: 5rem !important; } — ЭТУ СТРОКУ МЫ УДАЛИЛИ, ОНА БУДЕТ НИЖЕ */
 
 /* =========================================
    3. СТИЛИ КАРТОЧЕК И ТЕКСТА (Оставляем как было)
