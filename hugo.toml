@@ -8,9 +8,10 @@ defaultContentLanguage = "ru"
   disableSpecial1stPost = true
   dateFormat = "2 января 2006 г."
   email = "apriisk@yandex.ru"
-    Title = ""
-  Content = "Вольная коллекция источников по истории Пермской губернии"
 
+  [params.homeInfoParams]
+    Title = ""
+    Content = "Вольная коллекция источников по истории Пермской губернии"
 [params.assets]
   disableFingerprinting = true
 
