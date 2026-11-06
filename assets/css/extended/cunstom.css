@@ -203,3 +203,23 @@ body .search-header h1 { font-weight: 400 !important; font-size: 1.1rem !importa
     color: var(--primary);
     font-size: 0.9rem; /* Чуть меньше, если нужно */
 }
+/* =========================================
+   УБИРАЕМ ДУБЛИРУЮЩИЙСЯ КОПИРАЙТ СВЕРХУ
+   ========================================= */
+
+/* Скрываем всё, что находится в подвале, кроме нашего контейнера */
+.footer > *:not(.footer-inner) {
+    display: none !important;
+}
+
+/* На всякий случай скрываем стандартный класс копирайта темы */
+.footer .copyright {
+    display: none !important;
+}
+
+/* И скрываем псевдоэлементы, если они где-то остались */
+.footer::before,
+.footer::after {
+    content: none !important;
+    display: none !important;
+}
