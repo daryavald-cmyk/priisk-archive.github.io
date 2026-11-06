@@ -1,53 +1,39 @@
 /* =========================================
-   1. ЖЕСТКАЯ ШАПКА (Идеальное выравнивание)
+   1. ЖЕСТКАЯ ШАПКА (Ядерный вариант)
    ========================================= */
 body .header {
-    display: flex !important;
-    justify-content: space-between !important; /* Это оставляем */
-    align-items: center !important;
+    display: block !important; /* Отключаем flex, чтобы тема не мешала */
     max-width: 800px !important;
     margin: 0 auto !important;
     padding: 0 !important;
     position: relative !important;
-    height: 3.5rem !important;
-    
-    /* ВОТ ЭТИ ДВЕ СТРОКИ ЗАСТАВЯТ ЛОГОТИП ПРИЖАТЬСЯ ВЛЕВО */
-    align-content: flex-start !important; 
-    flex-wrap: nowrap !important;
+    height: 3.5rem !important; /* Высота самой шапки */
 }
 
-/* Логотип (Пріискъ + Луна) */
+/* Принудительно ставим логотип слева */
 .header .logo {
-    position: relative !important; 
-    margin: 0 !important;
-    padding: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 0.5rem !important;
-    
-    /* ПРИЖИМАЕМ ЛОГОТИП ВЛЕВО */
-    margin-right: auto !important; 
+    position: absolute !important;
+    top: 0 !important;
     left: 0 !important;
-}
-
-.logo a {
-    font-size: 1.1rem !important;
-    font-weight: 400 !important; /* Тонкий шрифт, без жирности */
-    letter-spacing: 1px !important;
-    text-align: left !important;
-}
-
-/* Значок смены темы (Луна/Солнце) */
-#theme-toggle {
     margin: 0 !important;
     padding: 0 !important;
     display: flex !important;
     align-items: center !important;
+    height: 100% !important; /* Логотип на всю высоту шапки */
 }
 
-/* Скрываем почту, чтобы она не перекрывала клики */
-.header a[href^="mailto:"] {
-    display: none !important;
+/* Принудительно ставим меню справа */
+.header #menu {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    height: 100% !important; /* Меню на всю высоту шапки */
+    gap: 1.5rem !important;
 }
 
 /* =========================================
@@ -174,14 +160,24 @@ body .first-entry .entry-content {
 /* =========================================
    5. СТРАНИЦА ПУБЛИКАЦИИ (Дата наверх)
    ========================================= */
-.main {
-    padding-top: 1rem !important; 
+    /* Отступ для главной страницы, чтобы опустить карточки */
+body.list .main {
+    padding-top: 6rem !important; /* Увеличиваем это число, если надо опустить ещё ниже */
 }
+
+/* Отступ для внутренних страниц */
+body:not(.list) .main {
+    padding-top: 2rem !important; /* Оставляем небольшой отступ для страниц публикаций */
+
 
 .post-header {
     position: relative !important;
     display: block !important;
-    padding-top: 0 !important;
+    
+    /* Увеличиваем отступ сверху, чтобы опустить дату и заголовок вниз */
+    padding-top: 3rem !important; 
+    margin-top: 0 !important; 
+    
     border-bottom: 1px solid var(--border) !important;
     padding-bottom: 1.5rem !important;
     margin-bottom: 2rem !important;
