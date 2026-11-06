@@ -223,3 +223,36 @@ body .search-header h1 { font-weight: 400 !important; font-size: 1.1rem !importa
     content: none !important;
     display: none !important;
 }
+/* =========================================
+   НАСТРОЙКА СТРАНИЦЫ ПОИСКА
+   ========================================= */
+
+/* 1. Меняем внешний вид заголовка "Поиск по сайту" */
+body .search-header h1 {
+    font-weight: 400 !important;      /* Убираем жирность (делаем обычным) */
+    font-size: 1.5rem !important;     /* Уменьшаем размер (было крупнее) */
+    letter-spacing: 0.5px !important; /* Немного разряжаем буквы */
+    color: var(--secondary) !important; /* Делаем цвет более приглушенным (серым) */
+    margin-bottom: 1.5rem !important; /* Добавляем отступ до поля ввода */
+    
+    /* Убираем иконку лупы внутри заголовка */
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* 2. Прячем SVG-иконку (лупу), которая вставлена в заголовок */
+body .search-header h1 svg {
+    display: none !important; 
+}
+
+/* На всякий случай прячем иконку, если она вставлена как тег <i> или <img> */
+body .search-header h1 i,
+body .search-header h1 img {
+    display: none !important;
+}
+
+/* 3. Центрируем заголовок и поле поиска для красоты (опционально) */
+body .search-header {
+    text-align: left !important; /* Или center, если хочешь по центру */
+    margin-bottom: 2rem !important;
+}
