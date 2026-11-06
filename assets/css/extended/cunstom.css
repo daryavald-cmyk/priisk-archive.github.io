@@ -323,13 +323,24 @@ body #searchInput::placeholder {
     display: block !important;
     line-height: 1.2 !important;
 /* =========================================
-   УБИРАЕМ КНОПКУ "НАВЕРХ" ИЗ ШАПКИ
+   ЖЕСТКОЕ СКРЫТИЕ КНОПКИ "НАВЕРХ"
    ========================================= */
 
-/* Прячем кнопку "Наверх" (тот самый кружочек со стрелками) */
-#top-link, 
-.top-link {
+/* 1. Прячем по ID (если он есть) */
+#top-link {
+    display: none !important;
+}
+
+/* 2. Прячем по классу */
+.top-link, 
+.scroll-to-top, 
+#scroll-to-top {
+    display: none !important;
+}
+
+/* 3. Прячем всё, что находится в правом нижнем углу с абсолютным позиционированием */
+a[href="#top"], 
+a[href*="#top"] {
     display: none !important;
     visibility: hidden !important;
-    opacity: 0 !important;
 }
