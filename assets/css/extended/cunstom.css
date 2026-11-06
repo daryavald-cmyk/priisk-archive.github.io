@@ -216,3 +216,13 @@ body #searchInput::placeholder {
     font-weight: 400 !important; /* Делаем тоньше (400 — обычный, не жирный) */
     letter-spacing: 1px !important; /* Немного разряжаем буквы для стиля */
 }
+/* Придвигаем иконку темы ближе к слову Пріискъ */
+.logo {
+    gap: 0.2rem !important; /* Уменьшаем расстояние между элементами внутри логотипа */
+}
+
+/* На всякий случай убираем лишние отступы у самой иконки */
+#theme-toggle {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
