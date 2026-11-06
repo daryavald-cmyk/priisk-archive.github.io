@@ -7,7 +7,7 @@ defaultContentLanguage = "ru"
   mainSections = ["posts"]
   disableSpecial1stPost = true
   dateFormat = "2 января 2006 г."
-footerText = "E-mail: apriisk@yandex.ru"
+  footerText = "Почта редакции: apriisk@yandex.ru"
 
 [params.assets]
   disableFingerprinting = true
