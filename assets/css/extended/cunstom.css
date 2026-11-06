@@ -213,19 +213,24 @@ body #searchInput::placeholder {
    9. ИДЕАЛЬНАЯ ШАПКА (Прииск слева, Поиск справа)
    ========================================= */
 .header {
-    max-width: 800px !important; 
+    max-width: 1000px !important; /* Сделали чуть шире, чтобы не было слишком тесно */
     margin: 0 auto !important; 
     display: flex !important;
-    justify-content: space-between !important; 
+    justify-content: space-between !important; /* Раздвигаем по краям */
     align-items: center !important;
     padding: 1rem 0 !important;
 }
 
+/* ЖЕСТКО ПРИЖИМАЕМ ЛОГОТИП (Прииск + солнце) ВЛЕВО */
 .header .logo {
-    margin: 0 !important;
+    margin-right: auto !important; /* Автоматический отступ справа выталкивает его влево */
+    margin-left: 0 !important;
 }
+
+/* ЖЕСТКО ПРИЖИМАЕМ МЕНЮ (Поиск) ВПРАВО */
 .header #menu {
-    margin: 0 !important;
+    margin-left: auto !important; /* Автоматический отступ слева выталкивает его вправо */
+    margin-right: 0 !important;
     display: flex !important;
     align-items: center !important;
 }
@@ -235,11 +240,12 @@ body #searchInput::placeholder {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    font-size: 0 !important; 
+    font-size: 0 !important; /* Скрываем текст "Поиск", если он есть */
     width: 24px !important;
     height: 24px !important;
 }
 
+/* Рисуем лупу */
 #menu a[href="/search/"]::before {
     content: "" !important;
     display: block !important;
