@@ -416,3 +416,33 @@ a[href="#top"],
     content: none !important;
     display: none !important;
 }
+/* =========================================
+   УЛЬТИМАТИВНОЕ УНИЧТОЖЕНИЕ СТРЕЛОЧЕК (МАРКЕРОВ)
+   ========================================= */
+
+/* 1. Заставляем элементы списка быть блоками, а не маркерами */
+.header #menu li,
+.header #menu > li {
+    display: block !important;
+    list-style: none !important;
+    list-style-type: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* 2. Убираем любые псевдоэлементы (если стрелки нарисованы через CSS) */
+.header #menu li::before,
+.header #menu li::after,
+.header #menu a::before,
+.header #menu a::after {
+    content: none !important;
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* 3. Проверяем саму ссылку внутри li, чтобы убрать возможные фоновые картинки */
+.header #menu li a {
+    display: inline-block !important;
+    background-image: none !important;
+    padding-right: 0 !important;
+}
