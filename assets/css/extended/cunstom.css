@@ -164,36 +164,42 @@ body .search-header h1 { font-weight: 400 !important; font-size: 1.1rem !importa
 
 /* 1. Делаем подвал колонкой и центрируем */
 .footer {
-    display: flex !important;
-    flex-direction: column !important; 
-    align-items: center !important; 
     padding-bottom: 2rem !important;
 }
 
-/* 2. Блок с почтой (наверху) */
-.footer::before {
-    content: "Email: " !important; /* Меняем текст на латиницу */
-    order: -1 !important; /* Ставим на первое место */
-    margin-bottom: 1rem !important; 
-    
-    font-family: var(--font-family) !important;
-    font-size: 0.95rem !important;
-    color: var(--primary) !important;
+.footer-inner {
+    display: flex;
+    flex-direction: column; /* Строки идут друг под другом */
+    align-items: center;    /* Выравнивание по центру */
+    gap: 0.5rem;            /* Отступ между строками */
 }
 
-/* 3. Выводим сам адрес отдельно и красим в оранжевый */
-.footer::after {
-    content: "apriisk@yandex.ru" !important;
-    order: -1 !important; /* Ставим сразу после слова Email */
-    margin-bottom: 1rem !important; /* Отступ до копирайта */
-    
-    font-family: var(--font-family) !important;
-    font-size: 0.95rem !important;
+.footer-row {
+    display: flex;
+    flex-direction: row;    /* Элементы внутри строки — в линию */
+    align-items: center;
+    white-space: nowrap;    /* Запрет переноса внутри строки */
+    font-family: var(--font-family);
+    font-size: 0.95rem;
+}
+
+/* Стили для почты */
+.footer-row:first-child {
+    color: var(--primary);
+}
+
+.footer-email {
     color: var(--accent-text) !important; /* Оранжевый цвет */
-    margin-top: -1rem !important; /* Прижимаем к слову Email */
+    margin-left: 0.3rem;
+    text-decoration: none;
 }
 
-/* 4. Стандартный копирайт (© 2026...) */
-.footer .copyright {
-    order: 1 !important;
+.footer-email:hover {
+    text-decoration: underline;
+}
+
+/* Стили для копирайта */
+.footer-row:last-child {
+    color: var(--primary);
+    font-size: 0.9rem; /* Чуть меньше, если нужно */
 }
