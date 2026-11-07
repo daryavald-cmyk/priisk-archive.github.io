@@ -320,3 +320,19 @@ span.bronze {
 .post-content li {
     font-size: 0,9rem !important; /* ЗДЕСЬ МЕНЯЕТСЯ РАЗМЕР */
 }
+/* По умолчанию (для телефонов) — по левому краю */
+.post-content, 
+.post-content p, 
+.post-content li {
+    text-align: left !important;
+}
+
+/* Для экранов пошире (планшеты и компьютеры) — по ширине */
+@media (min-width: 768px) {
+    .post-content, 
+    .post-content p, 
+    .post-content li {
+        text-align: justify !important;
+        text-justify: inter-word !important;
+    }
+}
