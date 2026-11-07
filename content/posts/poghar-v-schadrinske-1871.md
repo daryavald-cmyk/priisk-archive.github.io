@@ -20,7 +20,7 @@ draft: false
     /* ДЕЛАЕМ ШРИФТ МЕНЬШЕ: */
     /* 0.9em означает 90% от обычного размера текста на странице. 
        Если нужно еще меньше, поставьте 0.85em или 0.8em */
-    font-size: 0.85em !important; 
+    font-size: 0.9em !important; 
     
     line-height: 1.5;
     margin: 0 !important;
