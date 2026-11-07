@@ -298,3 +298,19 @@ span.bronze {
     padding: 2px 4px !important;
     border-radius: 3px !important;
 }
+/* Убираем стандартные кружочки и ставим тире */
+.post-content ul {
+    list-style-type: none !important; /* Убираем кружочки */
+    padding-left: 1.5rem !important;  /* Отступ слева для всего списка */
+}
+
+.post-content ul li {
+    position: relative !important;
+}
+
+.post-content ul li::before {
+    content: "—" !important;          /* Ставим тире */
+    position: absolute !important;
+    left: -1.5rem !important;         /* Сдвигаем тире левее текста */
+    color: inherit !important;        /* Цвет тире как у текста */
+}
