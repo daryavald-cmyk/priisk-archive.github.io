@@ -32,7 +32,7 @@ body .header {
 }
 
 /* =========================================
-   КНОПКА ТЕМЫ (Идеальный векторный кружок)
+   КНОПКА ТЕМЫ (Солнце и Луна через SVG)
    ========================================= */
 #theme-toggle {
     display: flex !important;
@@ -48,8 +48,10 @@ body .header {
     position: relative !important;
 }
 
-/* БЕЗЖАЛОСТНО прячем любые картинки, которые пытается вставить тема */
-#theme-toggle svg {
+/* БЕЗЖАЛОСТНО прячем любые картинки темы, включая ту "кляксу" */
+#theme-toggle svg, 
+#theme-toggle img,
+#theme-toggle i {
     display: none !important; 
     visibility: hidden !important;
     opacity: 0 !important;
@@ -57,57 +59,29 @@ body .header {
     height: 0 !important;
 }
 
-/* Рисуем свой идеальный кружок */
+/* А теперь рисуем свою иконку через маску (это гарантирует, что она не сломается) */
 #theme-toggle::before {
     content: "" !important;
     display: block !important;
-    width: 14px !important;  /* Размер кружка */
-    height: 14px !important;
-    border-radius: 50% !important; /* Делает форму круга */
-    box-sizing: border-box !important;
+    width: 18px !important;
+    height: 18px !important;
+    background-color: var(--primary) !important; /* Цвет иконки берется из темы */
     
-    /* В светлой теме: темный контур и закрашенная левая половина */
-    border: 1.5px solid var(--primary) !important;
-    background: linear-gradient(90deg, var(--primary) 50%, transparent 50%) !important;
+    /* Маска для ЛУНЫ (в светлой теме) */
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'/%3E%3C/svg%3E") !important;
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'/%3E%3C/svg%3E") !important;
+    -webkit-mask-size: contain !important;
+    mask-size: contain !important;
+    -webkit-mask-repeat: no-repeat !important;
+    mask-repeat: no-repeat !important;
     
-    /* Плавный переход */
     transition: all 0.3s ease !important;
 }
 
-/* В темной теме: светлый контур и закрашенная правая половина */
+/* Маска для СОЛНЦА (в темной теме) */
 html[data-theme="dark"] #theme-toggle::before {
-    border: 1.5px solid var(--primary) !important;
-    background: linear-gradient(90deg, transparent 50%, var(--primary) 50%) !important;
-}
-
-/* Меняем цвета местами, если тема темная */
-html[data-theme="dark"] #theme-toggle::after {
-    background: linear-gradient(90deg, transparent 50%, var(--primary) 50%) !important;
-}
-
-/* Показываем ВСЕ иконки (на всякий случай) */
-#theme-toggle svg {
-    display: block !important;
-    width: 16px !important;
-    height: 16px !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    position: absolute !important; /* Накладываем друг на друга */
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-}
-
-/* В СВЕТЛОЙ ТЕМЕ: показываем Луну, скрываем Солнце */
-html[data-theme="light"] #theme-toggle svg[aria-label*="dark"],
-html[data-theme="light"] #theme-toggle svg[aria-label*="светл"] {
-    display: none !important;
-}
-
-/* В ТЕМНОЙ ТЕМЕ: показываем Солнце, скрываем Луну */
-html[data-theme="dark"] #theme-toggle svg[aria-label*="light"],
-html[data-theme="dark"] #theme-toggle svg[aria-label*="темн"] {
-    display: none !important;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='5'/%3E%3Cline x1='12' y1='1' x2='12' y2='3'/%3E%3Cline x1='12' y1='21' x2='12' y2='23'/%3E%3Cline x1='4.22' y1='4.22' x2='5.64' y2='5.64'/%3E%3Cline x1='18.36' y1='18.36' x2='19.78' y2='19.78'/%3E%3Cline x1='1' y1='12' x2='3' y2='12'/%3E%3Cline x1='21' y1='12' x2='23' y2='12'/%3E%3Cline x1='4.22' y1='19.78' x2='5.64' y2='18.36'/%3E%3Cline x1='18.36' y1='5.64' x2='19.78' y2='4.22'/%3E%3C/svg%3E") !important;
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='5'/%3E%3Cline x1='12' y1='1' x2='12' y2='3'/%3E%3Cline x1='12' y1='21' x2='12' y2='23'/%3E%3Cline x1='4.22' y1='4.22' x2='5.64' y2='5.64'/%3E%3Cline x1='18.36' y1='18.36' x2='19.78' y2='19.78'/%3E%3Cline x1='1' y1='12' x2='3' y2='12'/%3E%3Cline x1='21' y1='12' x2='23' y2='12'/%3E%3Cline x1='4.22' y1='19.78' x2='5.64' y2='18.36'/%3E%3Cline x1='18.36' y1='5.64' x2='19.78' y2='4.22'/%3E%3C/svg%3E") !important;
 }
 
 /* =========================================
