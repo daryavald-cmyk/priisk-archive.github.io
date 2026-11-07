@@ -11,11 +11,11 @@ draft: false
 
 <style>
   .my-mono-font, .my-mono-font * {
-    font-family: monospace !important;
+    font-family: Consolas, "SF Mono", "Roboto Mono", "DejaVu Sans Mono", monospace !important;
     font-weight: normal !important; 
-    line-height: 1.5; /* Межстрочный интервал для удобства чтения */
-    margin: 0 !important; /* Убираем все внешние отступы */
-    padding: 0 !important; /* Убираем все внутренние отступы */
+    line-height: 1.5;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 </style>
 
@@ -23,7 +23,7 @@ draft: false
   <div>Шифр: ГАСО. Ф. 24. Оп. 1. Д. 356. Л. 12–15.</div>
   <div>Фонд: Сысертский горный округ.</div>
   <div>Датировка: 1858 г.</div>
-</div>
+</div
 
 <hr class="line-solid">
 
