@@ -298,3 +298,27 @@ body #searchInput::placeholder {
     color: var(--secondary) !important;
     opacity: 0.8 !important;
 }
+/* =========================================
+   ЦВЕТОВЫЕ МАРКЕРЫ ДЛЯ ТЕКСТА
+   ========================================= */
+span.gold {
+    background-color: rgba(176, 110, 44, 0.15) !important; /* Приглушенное золото */
+    color: inherit !important;
+    padding: 2px 4px !important;
+    border-radius: 3px !important;
+    font-weight: 500 !important; /* Чуть плотнее, чтобы выделялось */
+}
+
+span.silver {
+    background-color: rgba(160, 160, 160, 0.15) !important; /* Приглушенное серебро */
+    color: inherit !important;
+    padding: 2px 4px !important;
+    border-radius: 3px !important;
+}
+
+span.bronze {
+    background-color: rgba(140, 90, 60, 0.15) !important; /* Приглушенная бронза */
+    color: inherit !important;
+    padding: 2px 4px !important;
+    border-radius: 3px !important;
+}
