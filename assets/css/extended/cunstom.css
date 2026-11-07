@@ -166,8 +166,8 @@ body .first-entry .entry-footer {
     top: 1.2rem !important;
     left: 1.5rem !important;
    font-family: var(--font-family) !important;
-    font-size: 0.85rem !important;
-    color: var(--secondary) !important;
+    font-size: 0.95rem !important;
+    color: var(--primary) !important;
 }
 
 body .post-entry .entry-header h2,
@@ -212,8 +212,8 @@ body:not(.list) .main {
     top: 1rem !important; /* Дата над заголовком */
     left: 0 !important;      
     font-family: var(--font-family) !important;
-    font-size: 0.85rem !important;
-    color: var(--secondary) !important;
+    font-size: 0.95rem !important;
+    color: var(--primary) !important;
     margin: 0 !important;
     display: block !important;
 }
