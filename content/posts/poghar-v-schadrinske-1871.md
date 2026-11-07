@@ -13,15 +13,16 @@ draft: false
   .my-mono-font, .my-mono-font * {
     font-family: "Courier New", Courier, "Lucida Sans Typewriter", monospace !important;
     font-weight: normal !important; 
+    line-height: 1.5; /* Межстрочный интервал для удобства чтения */
+    margin: 0 !important; /* Убираем все внешние отступы */
+    padding: 0 !important; /* Убираем все внутренние отступы */
   }
 </style>
 
 <div class="my-mono-font">
-  <p>Шифр: ГАСО. Ф. 24. Оп. 1. Д. 356. Л. 12–15.</p>
-  <p>Фонд: Сысертский горный округ.</p>
-  <p>Датировка: 1858 г.</p>
-</div>
-
+  <div>Шифр: ГАСО. Ф. 24. Оп. 1. Д. 356. Л. 12–15.</div>
+  <div>Фонд: Сысертский горный округ.</div>
+  <div>Датировка: 1858 г.</div>
 </div>
 
 <hr class="line-solid">
