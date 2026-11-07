@@ -11,7 +11,7 @@ draft: false
 
 <style>
   .my-mono-font, .my-mono-font * {
-    font-family: "Courier New", Courier, "Lucida Sans Typewriter", monospace !important;
+    font-family: monospace !important;
     font-weight: normal !important; 
     line-height: 1.5; /* Межстрочный интервал для удобства чтения */
     margin: 0 !important; /* Убираем все внешние отступы */
