@@ -309,7 +309,7 @@ span.bronze {
 }
 
 .post-content ul li::before {
-    content: "—" !important;          /* Ставим тире */
+    content: "-" !important;          /* Ставим тире */
     position: absolute !important;
     left: -1.5rem !important;         /* Сдвигаем тире левее текста */
     color: inherit !important;        /* Цвет тире как у текста */
