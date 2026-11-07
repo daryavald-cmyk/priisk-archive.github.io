@@ -6,7 +6,7 @@ defaultContentLanguage = "ru"
 [params]
   mainSections = ["posts"]
   disableSpecial1stPost = true
-  dateFormat = "2 января 2006 г."
+  dateFormat = "02.01.2006"
   disableScrollToTop = true
 
 [params.assets]
