@@ -129,19 +129,23 @@ html[data-theme="dark"] #theme-toggle::before {
    ========================================= */
 .home-info {
     position: absolute !important;
-    /* Привязываем к левому краю шапки (как и слово Пріискъ) */
     left: 0 !important; 
-    /* Опускаем ровно на одну строку ниже слова Пріискъ (высота шапки 3.5rem) */
     top: 3.5rem !important; 
-    
-    /* Ширину делаем не на весь экран, чтобы текст переносился красиво */
     max-width: 400px !important; 
     padding: 0 !important;
     margin: 0 !important;
     text-align: left !important;
-    
-    /* Ставим поверх остального контента, чтобы карточки его не перекрывали */
     z-index: 10 !important; 
+}
+
+/* Поймали заголовок из homeInfoParams */
+.home-info .entry-title { 
+    color: var(--primary) !important; 
+    font-family: var(--font-family) !important; 
+    font-size: 1rem !important; 
+    font-weight: 400 !important; 
+    line-height: 1.4 !important;
+    margin: 0 !important;
 }
 
 .home-info p {
