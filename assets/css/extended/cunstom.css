@@ -234,7 +234,6 @@ body:not(.list) .main {
 .footer-row { display: flex; flex-direction: row; align-items: center; white-space: nowrap; font-family: var(--font-family); font-size: 0.95rem; }
 .footer-row:first-child { color: var(--primary); }
 .footer-email { color: var(--accent-text) !important; margin-left: 0.3rem; text-decoration: none; }
-.footer-email:hover { text-decoration: underline; }
 .footer-row:last-child { color: var(--primary); font-size: 0.9rem; }
 .footer > *:not(.footer-inner) { display: none !important; }
 .footer .copyright { display: none !important; }
