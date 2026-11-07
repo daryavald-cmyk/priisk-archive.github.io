@@ -10,11 +10,11 @@ draft: false
 <div class="doc-meta">
 
 <pre style="font-family: monospace; background: transparent; color: inherit; border: none; padding: 0; font-size: 1em;">
+  ```text
 Шифр: ГАСО. Ф. 24. Оп. 1. Д. 356. Л. 12–15.
-
 Фонд: Сысертский горный округ.
-
 Датировка: 1858 г.
+  ```
 </pre>
 
 </div>
