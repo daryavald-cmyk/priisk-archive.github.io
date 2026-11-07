@@ -32,7 +32,7 @@ body .header {
 }
 
 /* =========================================
-   КНОПКА ТЕМЫ (Вместо старой иконки рисуем кружок)
+   КНОПКА ТЕМЫ (Идеальный векторный кружок)
    ========================================= */
 #theme-toggle {
     display: flex !important;
@@ -43,30 +43,41 @@ body .header {
     background: none !important;
     border: none !important;
     cursor: pointer !important;
-    width: 20px !important;  /* Фиксируем размер кнопки */
+    width: 20px !important;  
     height: 20px !important;
     position: relative !important;
 }
 
-/* Прячем любые старые иконки SVG, которые вставила тема */
+/* БЕЗЖАЛОСТНО прячем любые картинки, которые пытается вставить тема */
 #theme-toggle svg {
     display: none !important; 
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
 }
 
-/* А теперь рисуем наш новый кружок */
-#theme-toggle::after {
+/* Рисуем свой идеальный кружок */
+#theme-toggle::before {
     content: "" !important;
     display: block !important;
-    width: 16px !important;
-    height: 16px !important;
+    width: 14px !important;  /* Размер кружка */
+    height: 14px !important;
     border-radius: 50% !important; /* Делает форму круга */
-    border: 1px solid var(--primary) !important; /* Обводка */
+    box-sizing: border-box !important;
     
-    /* Делаем левую половину темной, правую — светлой */
+    /* В светлой теме: темный контур и закрашенная левая половина */
+    border: 1.5px solid var(--primary) !important;
     background: linear-gradient(90deg, var(--primary) 50%, transparent 50%) !important;
     
-    /* Плавный переход при клике */
+    /* Плавный переход */
     transition: all 0.3s ease !important;
+}
+
+/* В темной теме: светлый контур и закрашенная правая половина */
+html[data-theme="dark"] #theme-toggle::before {
+    border: 1.5px solid var(--primary) !important;
+    background: linear-gradient(90deg, transparent 50%, var(--primary) 50%) !important;
 }
 
 /* Меняем цвета местами, если тема темная */
