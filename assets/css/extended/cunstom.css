@@ -321,3 +321,9 @@ span.bronze {
     text-align: justify !important;       /* Выравнивание по обоим краям */
     text-justify: inter-word !important;  /* Раздвигаем именно пробелы между словами */
 }
+/* Размер основного текста в публикациях */
+.post-content, 
+.post-content p, 
+.post-content li {
+    font-size: 0,95rem !important; /* ЗДЕСЬ МЕНЯЕТСЯ РАЗМЕР */
+}
