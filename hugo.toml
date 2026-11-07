@@ -31,3 +31,10 @@ defaultContentLanguage = "ru"
   url = "/tags/"
   weight = 20
   
+[taxonomies]
+  tag = 'tags'
+  category = 'categories'
+  place = 'places'        # Места
+  surname = 'surnames'    # Фамилии
+  theme = 'themes'        # Темы
+  source = 'sources'      # Типы источников
