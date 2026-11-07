@@ -125,26 +125,36 @@ html[data-theme="dark"] #theme-toggle::before {
 }
 
 /* =========================================
-   3. ОПИСАНИЕ ПОД ШАПКОЙ
+   3. ОПИСАНИЕ ПОД ШАПКОЙ (Вольная коллекция...)
    ========================================= */
 .home-info {
     position: absolute !important;
+    /* Привязываем к левому краю шапки (как и слово Пріискъ) */
+    left: 0 !important; 
+    /* Опускаем ровно на одну строку ниже слова Пріискъ (высота шапки 3.5rem) */
     top: 3.5rem !important; 
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    width: 800px !important;
+    
+    /* Ширину делаем не на весь экран, чтобы текст переносился красиво */
+    max-width: 400px !important; 
     padding: 0 !important;
     margin: 0 !important;
     text-align: left !important;
-}
-.home-info p {
-    color: var(--primary) !important;
-    font-weight: 600 !important;
-    font-size: 1rem !important;
-    font-family: var(--font-family) !important;
-    margin: 0 !important;
+    
+    /* Ставим поверх остального контента, чтобы карточки его не перекрывали */
+    z-index: 10 !important; 
 }
 
+.home-info p {
+    /* Более яркий цвет (основной цвет текста), нежели серый */
+    color: var(--primary) !important; 
+    /* Другой шрифт (в теме PaperMod это обычно шрифт заголовков, если хочешь строгий — используй var(--font-family)) */
+    font-family: var(--font-family) !important; 
+    /* Размер оставляем как у Пріискъ (1.1rem) или чуть меньше (1rem) */
+    font-size: 1rem !important; 
+    font-weight: 400 !important; /* Тонкий шрифт */
+    line-height: 1.4 !important;
+    margin: 0 !important;
+}
 /* =========================================
    4. ЦВЕТА И КАРТОЧКИ
    ========================================= */
