@@ -239,7 +239,10 @@ body:not(.list) .main {
 .footer > *:not(.footer-inner) { display: none !important; }
 .footer .copyright { display: none !important; }
 .footer::before, .footer::after { content: none !important; display: none !important; }
-
+.footer .footer-content, 
+.footer .powered-by { 
+    display: none !important; 
+   
 /* =========================================
    7. СТРАНИЦА ПОИСКА (ЖЕСТКАЯ ЗАЧИСТКА)
    ========================================= */
