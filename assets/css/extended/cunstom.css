@@ -314,3 +314,13 @@ span.bronze {
     left: -1.5rem !important;         /* Сдвигаем тире левее текста */
     color: inherit !important;        /* Цвет тире как у текста */
 }
+/* Выравнивание текста по ширине во всех публикациях */
+.post-content, 
+.post-content p, 
+.post-content li {
+    text-align: justify !important;       /* Выравнивание по обоим краям */
+    text-justify: inter-word !important;  /* Раздвигаем именно пробелы между словами */
+    hyphens: auto !important;             /* Включаем переносы слов (чтобы не было огромных дыр) */
+    -webkit-hyphens: auto !important;
+    -ms-hyphens: auto !important;
+}
