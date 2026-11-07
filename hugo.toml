@@ -8,6 +8,7 @@ defaultContentLanguage = "ru"
   disableSpecial1stPost = true
   dateFormat = "2 января 2006 г."
   disableScrollToTop = true
+    homeInfoParams = true
 
 [params.assets]
   disableFingerprinting = true
