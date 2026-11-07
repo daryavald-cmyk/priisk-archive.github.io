@@ -38,7 +38,3 @@ defaultContentLanguage = "ru"
   surname = 'surnames'    # Фамилии
   theme = 'themes'        # Темы
   source = 'sources'      # Типы источников
-  
-[params.homeInfoParams]
-  Title = "Вольная коллекция источников по истории Пермской губернии"
-  Content = ""
