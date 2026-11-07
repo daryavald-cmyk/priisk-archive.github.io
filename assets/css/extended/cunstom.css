@@ -194,7 +194,6 @@ body:not(.list) .main {
     display: block !important;
     padding-top: 3rem !important; /* Опускаем заголовок и дату в публикации */
     margin-top: 0 !important; 
-    border-bottom: 1px solid var(--border) !important;
     padding-bottom: 1.5rem !important;
     margin-bottom: 2rem !important;
 }
