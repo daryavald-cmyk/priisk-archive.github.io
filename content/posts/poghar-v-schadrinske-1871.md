@@ -12,7 +12,7 @@ draft: false
 <style>
   .my-mono-font, .my-mono-font * {
     /* Оставляем ваши системные шрифты */
-    font-family: "Cascadia Mono", "Cascadia Code", Consolas, "SF Mono", "Roboto Mono", "Ubuntu Mono", monospace !important;
+    font-family: "Courier New", Courier, "Nimbus Mono PS", "Liberation Mono", monospace !important;
     
     /* ДЕЛАЕМ ШРИФТ ТОНЬШЕ: */
     font-weight: 300 !important; 
