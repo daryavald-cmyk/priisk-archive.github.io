@@ -34,16 +34,17 @@
   {{- partial "toc.html" . }}
   {{- end }}
 
-  {{- if .Content }}
+{{- if .Content }}
   <div class="post-content md-content">
     {{- if not (.Param "disableAnchoredHeadings") }}
-    {{- partial "anchored_headings.html" .Content -}}
-    {{- else }}{{ .Content }}{{ end }}
+    {{- partial "anchored_headings.html" .ContentWithoutSummary -}}
+    {{- else }}{{ .ContentWithoutSummary }}{{ end }}
   </div>
   {{- end }}
 
   {{- partial "extend_post_content.html" . }}
 
+  
   <footer class="post-footer">
     {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
     <ul class="post-tags">
