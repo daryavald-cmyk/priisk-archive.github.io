@@ -54,7 +54,7 @@ draft: false
 **Ссылки на связанные источники и публикации**
 
 [«Методические рекомендации по публикации архивных документов в печатном виде» (Росархив, ВНИИДАД. - М., 2022) на сайте Федерального архивного агентства.](https:////archives.gov.ru/documents/methodics/2022-recommendations-publikation.shtml)
-
+<div style="margin-top: 2rem;"></div>
 
 <hr class="line-solid">
 
