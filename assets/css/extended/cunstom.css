@@ -31,7 +31,9 @@ body .header {
     line-height: 1 !important;
 }
 
-/* Кнопка темы */
+/* =========================================
+   КНОПКА ТЕМЫ (Вместо старой иконки рисуем кружок)
+   ========================================= */
 #theme-toggle {
     display: flex !important;
     align-items: center !important;
@@ -41,9 +43,35 @@ body .header {
     background: none !important;
     border: none !important;
     cursor: pointer !important;
-    width: 20px !important;  /* Фиксируем место под иконку */
+    width: 20px !important;  /* Фиксируем размер кнопки */
     height: 20px !important;
     position: relative !important;
+}
+
+/* Прячем любые старые иконки SVG, которые вставила тема */
+#theme-toggle svg {
+    display: none !important; 
+}
+
+/* А теперь рисуем наш новый кружок */
+#theme-toggle::after {
+    content: "" !important;
+    display: block !important;
+    width: 16px !important;
+    height: 16px !important;
+    border-radius: 50% !important; /* Делает форму круга */
+    border: 1px solid var(--primary) !important; /* Обводка */
+    
+    /* Делаем левую половину темной, правую — светлой */
+    background: linear-gradient(90deg, var(--primary) 50%, transparent 50%) !important;
+    
+    /* Плавный переход при клике */
+    transition: all 0.3s ease !important;
+}
+
+/* Меняем цвета местами, если тема темная */
+html[data-theme="dark"] #theme-toggle::after {
+    background: linear-gradient(90deg, transparent 50%, var(--primary) 50%) !important;
 }
 
 /* Показываем ВСЕ иконки (на всякий случай) */
