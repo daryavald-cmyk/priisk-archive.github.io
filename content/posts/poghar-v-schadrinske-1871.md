@@ -11,7 +11,8 @@ draft: false
 
 <style>
   .my-mono-font, .my-mono-font * {
-    font-family: Consolas, "SF Mono", "Roboto Mono", "DejaVu Sans Mono", monospace !important;
+    /* Перечисляем красивые системные шрифты без засечек */
+    font-family: "Cascadia Mono", "Cascadia Code", Consolas, "SF Mono", "Roboto Mono", "Ubuntu Mono", monospace !important;
     font-weight: normal !important; 
     line-height: 1.5;
     margin: 0 !important;
@@ -23,8 +24,7 @@ draft: false
   <div>Шифр: ГАСО. Ф. 24. Оп. 1. Д. 356. Л. 12–15.</div>
   <div>Фонд: Сысертский горный округ.</div>
   <div>Датировка: 1858 г.</div>
-  
-</div
+</div>
 
 <hr class="line-solid">
   
