@@ -9,13 +9,18 @@ draft: false
 
 <div class="doc-meta">
 
-<pre style="font-family: Consolas, 'Courier New', monospace !important; background: transparent; color: inherit; border: none; padding: 0; font-size: 1em;">
-Шифр: ГАСО. Ф. 24. Оп. 1. Д. 356. Л. 12–15.
+<style>
+  .my-mono-font, .my-mono-font * {
+    font-family: "Courier New", Courier, "Lucida Sans Typewriter", monospace !important;
+    font-weight: normal !important; 
+  }
+</style>
 
-Фонд: Сысертский горный округ.
-
-Датировка: 1858 г.
-</pre>
+<div class="my-mono-font">
+  <p>Шифр: ГАСО. Ф. 24. Оп. 1. Д. 356. Л. 12–15.</p>
+  <p>Фонд: Сысертский горный округ.</p>
+  <p>Датировка: 1858 г.</p>
+</div>
 
 </div>
 
