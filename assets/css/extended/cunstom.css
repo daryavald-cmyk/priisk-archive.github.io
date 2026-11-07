@@ -125,39 +125,49 @@ html[data-theme="dark"] #theme-toggle::before {
 }
 
 /* =========================================
-   3. ОПИСАНИЕ ПОД ШАПКОЙ (Вольная коллекция...)
+   3. ОПИСАНИЕ ПОД ШАПКОЙ (Уничтожаем квадрат)
    ========================================= */
 .home-info {
-    position: absolute !important;
-    left: 0 !important; 
-    top: 3.5rem !important; 
-    max-width: 400px !important; 
+    /* Уничтожаем сам квадрат */
+    background: transparent !important; 
+    border: none !important;
+    box-shadow: none !important;
     padding: 0 !important;
     margin: 0 !important;
+    
+    /* Вырываем его из потока, чтобы он не толкал карточки */
+    position: absolute !important;
+    top: 3.5rem !important; /* Привязка под шапку */
+    left: 0 !important;     /* Привязка к левому краю (под Пріискъ) */
+    width: 100% !important;
+    max-width: 800px !important;
+    z-index: 10 !important;
     text-align: left !important;
-    z-index: 10 !important; 
 }
 
-/* Поймали заголовок из homeInfoParams */
-.home-info .entry-title { 
+/* Форматируем текст внутри */
+.home-info .entry-content,
+.home-info .entry-title,
+.home-info p {
+    background: transparent !important;
     color: var(--primary) !important; 
     font-family: var(--font-family) !important; 
     font-size: 1rem !important; 
     font-weight: 400 !important; 
     line-height: 1.4 !important;
     margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
 }
 
-.home-info p {
-    /* Более яркий цвет (основной цвет текста), нежели серый */
-    color: var(--primary) !important; 
-    /* Другой шрифт (в теме PaperMod это обычно шрифт заголовков, если хочешь строгий — используй var(--font-family)) */
-    font-family: var(--font-family) !important; 
-    /* Размер оставляем как у Пріискъ (1.1rem) или чуть меньше (1rem) */
-    font-size: 1rem !important; 
-    font-weight: 400 !important; /* Тонкий шрифт */
-    line-height: 1.4 !important;
-    margin: 0 !important;
+/* Убираем возможные заголовки, если тема их добавляет */
+.home-info h1, .home-info h2, .home-info h3 {
+    display: none !important;
+}
+
+/* Возвращаем карточки на место (убираем лишний отступ, который мы ставили ранее) */
+body.list .main {
+    padding-top: 6rem !important; 
 }
 /* =========================================
    4. ЦВЕТА И КАРТОЧКИ
