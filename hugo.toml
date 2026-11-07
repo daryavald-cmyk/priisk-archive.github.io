@@ -8,7 +8,6 @@ defaultContentLanguage = "ru"
   disableSpecial1stPost = true
   dateFormat = "2 января 2006 г."
   disableScrollToTop = true
-  homeInfoParams = true
 
 [params.assets]
   disableFingerprinting = true
@@ -39,3 +38,7 @@ defaultContentLanguage = "ru"
   surname = 'surnames'    # Фамилии
   theme = 'themes'        # Темы
   source = 'sources'      # Типы источников
+  
+[params.homeInfoParams]
+  Title = "Вольная коллекция источников по истории Пермской губернии"
+  Content = ""
