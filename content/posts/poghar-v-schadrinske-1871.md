@@ -5,10 +5,15 @@ description: "В этом пожаре сгорела половина горо�
 draft: false
 ---
 
-<div class="doc-meta">
+</div>
+
+<hr class="line-solid">
+
+```text
 Шифр: ГАСО. Ф. 24. Оп. 1. Д. 356. Л. 12–15.<br>
 Фонд: Сысертский горный округ.<br>
 Датировка: 1858 г.
+```text
 </div>
 
 <hr class="line-solid">
