@@ -27,6 +27,8 @@ draft: false
 
 <hr class="line-solid">
 
+<div class="doc-meta">
+
 А здесь начинается сам текст документа. Он пишется обычным шрифтом, который удобно читать.
 
 <hr class="line-dashed">
