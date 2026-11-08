@@ -669,3 +669,30 @@ body .first-entry:hover {
     color: var(--accent-text) !important;
     font-weight: 400 !important;
 }
+/* =========================================
+   ЯДЕРНОЕ ПРАВИЛО ДЛЯ АКТИВНОГО ПУНКТА МЕНЮ
+   ========================================= */
+
+/* Перебираем все возможные варианты: ссылка с классом, li с классом, атрибут aria-current */
+.header #menu a.active,
+.header #menu a.current,
+.header #menu a[aria-current="page"],
+.header #menu a[aria-current="true"],
+.header #menu li.active > a,
+.header #menu li.current > a,
+.header #menu .menu-item.active > a {
+    color: var(--accent-text) !important; /* Твой оранжевый цвет */
+    text-decoration: none !important;     /* Убираем подчеркивание */
+    border-bottom: none !important;       /* Убираем нижнюю линию */
+    font-weight: 400 !important;          /* Убираем жирность, возвращаем нормальную толщину */
+}
+
+/* На всякий случай дублируем для состояния наведения на активный пункт */
+.header #menu a.active:hover,
+.header #menu a.current:hover,
+.header #menu a[aria-current="page"]:hover,
+.header #menu li.active > a:hover {
+    color: var(--accent-text) !important;
+    text-decoration: none !important;
+    font-weight: 400 !important;
+}
