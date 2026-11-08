@@ -15,47 +15,47 @@
 {{ if or .Params.places .Params.surnames .Params.themes .Params.occupations .Params.sources .Params.archive_codes }}{{ $hasTags = true }}{{ end }}
 
 {{ if $hasTags }}
-<div class="post-tags" style="margin-top: 2rem; padding-top: 1rem; line-height: 1.8;">
+<div class="post-tags" style="margin-top: 2rem; padding-top: 1rem; display: flex; flex-direction: column; gap: 0.8rem;">
     
     {{ with .Params.places }}
-    <div style="margin-bottom: 0.5rem;">
-        <strong>Места:</strong> 
-        {{ range (sort .) }}<a href="{{ "/places/" | relURL }}{{ . | urlize }}/" style="text-decoration: none; color: inherit; margin-right: 0.5rem;">{{ . }}</a>{{ end }}
+    <div class="tag-group" style="display: flex; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
+        <strong style="white-space: nowrap; margin-right: 0.5rem; line-height: 1.5;">Места:</strong>
+        {{ range (sort .) }}<a href="{{ "/places/" | relURL }}{{ . | urlize }}/" class="tag-pill">{{ . }}</a>{{ end }}
     </div>
     {{ end }}
 
     {{ with .Params.surnames }}
-    <div style="margin-bottom: 0.5rem;">
-        <strong>Люди:</strong> 
-        {{ range (sort .) }}<a href="{{ "/surnames/" | relURL }}{{ . | urlize }}/" style="text-decoration: none; color: inherit; margin-right: 0.5rem;">{{ . }}</a>{{ end }}
+    <div class="tag-group" style="display: flex; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
+        <strong style="white-space: nowrap; margin-right: 0.5rem; line-height: 1.5;">Люди:</strong>
+        {{ range (sort .) }}<a href="{{ "/surnames/" | relURL }}{{ . | urlize }}/" class="tag-pill">{{ . }}</a>{{ end }}
     </div>
     {{ end }}
 
     {{ with .Params.themes }}
-    <div style="margin-bottom: 0.5rem;">
-        <strong>Темы:</strong> 
-        {{ range (sort .) }}<a href="{{ "/themes/" | relURL }}{{ . | urlize }}/" style="text-decoration: none; color: inherit; margin-right: 0.5rem;">{{ . }}</a>{{ end }}
+    <div class="tag-group" style="display: flex; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
+        <strong style="white-space: nowrap; margin-right: 0.5rem; line-height: 1.5;">Темы:</strong>
+        {{ range (sort .) }}<a href="{{ "/themes/" | relURL }}{{ . | urlize }}/" class="tag-pill">{{ . }}</a>{{ end }}
     </div>
     {{ end }}
 
     {{ with .Params.occupations }}
-    <div style="margin-bottom: 0.5rem;">
-        <strong>Профессии и занятия:</strong> 
-        {{ range (sort .) }}<a href="{{ "/occupations/" | relURL }}{{ . | urlize }}/" style="text-decoration: none; color: inherit; margin-right: 0.5rem;">{{ . }}</a>{{ end }}
+    <div class="tag-group" style="display: flex; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
+        <strong style="white-space: nowrap; margin-right: 0.5rem; line-height: 1.5;">Профессии и занятия:</strong>
+        {{ range (sort .) }}<a href="{{ "/occupations/" | relURL }}{{ . | urlize }}/" class="tag-pill">{{ . }}</a>{{ end }}
     </div>
     {{ end }}
 
     {{ with .Params.sources }}
-    <div style="margin-bottom: 0.5rem;">
-        <strong>Типы источников:</strong> 
-        {{ range (sort .) }}<a href="{{ "/sources/" | relURL }}{{ . | urlize }}/" style="text-decoration: none; color: inherit; margin-right: 0.5rem;">{{ . }}</a>{{ end }}
+    <div class="tag-group" style="display: flex; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
+        <strong style="white-space: nowrap; margin-right: 0.5rem; line-height: 1.5;">Типы источников:</strong>
+        {{ range (sort .) }}<a href="{{ "/sources/" | relURL }}{{ . | urlize }}/" class="tag-pill">{{ . }}</a>{{ end }}
     </div>
     {{ end }}
 
     {{ with .Params.archive_codes }}
-    <div style="margin-bottom: 0.5rem;">
-        <strong>Шифры дел:</strong> 
-        {{ range (sort .) }}<a href="{{ "/archive-codes/" | relURL }}{{ . | urlize }}/" style="text-decoration: none; color: inherit; margin-right: 0.5rem;">{{ . }}</a>{{ end }}
+    <div class="tag-group" style="display: flex; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
+        <strong style="white-space: nowrap; margin-right: 0.5rem; line-height: 1.5;">Шифры дел:</strong>
+        {{ range (sort .) }}<a href="{{ "/archive-codes/" | relURL }}{{ . | urlize }}/" class="tag-pill">{{ . }}</a>{{ end }}
     </div>
     {{ end }}
 
