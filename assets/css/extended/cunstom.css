@@ -457,3 +457,40 @@ span.bronze {
     color: var(--accent-text) !important; /* Становится акцентно-оранжевым */
     text-decoration-color: var(--accent-text) !important; /* И подчеркивание тоже оранжевое */
 }
+/* =========================================
+   КНОПКА "НАВЕРХ" (В правом нижнем углу)
+   ========================================= */
+#scroll-top {
+    position: fixed !important;
+    bottom: 2rem !important;
+    right: 2rem !important;
+    background: var(--entry) !important; /* Фон как у карточек */
+    border: 1px solid var(--border) !important; /* Рамка */
+    border-radius: 50% !important; /* Круглая форма */
+    width: 3rem !important;
+    height: 3rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    font-size: 1.5rem !important;
+    color: var(--primary) !important;
+    opacity: 0 !important; /* Изначально невидима */
+    visibility: hidden !important;
+    transition: all 0.3s ease !important;
+    z-index: 1000 !important; /* Поверх всего */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important; /* Тень */
+}
+
+/* Когда кнопка получает класс .show (при скролле), она появляется */
+#scroll-top.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Эффект при наведении */
+#scroll-top:hover {
+    border-color: var(--accent-text) !important; /* Оранжевая рамка */
+    color: var(--accent-text) !important; /* Оранжевая стрелка */
+    transform: translateY(-3px) !important; /* Чуть подпрыгивает */
+}
