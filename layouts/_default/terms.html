@@ -8,7 +8,7 @@
         <!-- Выводим список всех терминов (тегов) этой таксономии -->
         <div class="taxonomy-list">
             {{ range .Data.Terms.Alphabetical }}
-                <a href="{{ .Page.Permalink }}" class="tag-pill">{{ .Page.Title }}</a>
+                <a href="{{ .Page.Permalink }}" class="tag-pill">{{ .Page.Data.Term }}</a>
             {{ end }}
         </div>
     </div>
