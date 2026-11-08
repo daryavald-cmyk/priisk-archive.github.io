@@ -200,7 +200,7 @@ body:not(.list) .main {
 
 .post-header .post-meta {
     position: absolute !important;
-    top: 0.5rem !important; /* Дата над заголовком */
+    top: 1.5rem !important; /* Дата над заголовком */
     left: 0 !important;      
     font-family: var(--font-family) !important;
     font-size: 1.0rem !important;
