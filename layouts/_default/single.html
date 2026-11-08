@@ -1,0 +1,35 @@
+{{ define "main" }}
+<article class="post-single">
+    <header class="post-header">
+        {{ partial "post_meta.html" . }}
+        <h1 class="post-title">{{ .Title }}</h1>
+        {{ with .Description }}<div class="post-description">{{ . }}</div>{{ end }}
+    </header>
+    
+    <div class="post-content">
+        {{ .Content }}
+    </div>
+
+    <!-- НАЧАЛО БЛОКА С ТЕГАМИ -->
+    {{ $taxonomies := slice "places" "surnames" "themes" "occupations" "sources" "archive_codes" }}
+    {{ $hasTags := false }}
+    {{ range $taxonomies }}{{ if index $.Params . }}{{ $hasTags = true }}{{ end }}{{ end }}
+    
+    {{ if $hasTags }}
+    <div class="post-tags" style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border);">
+        <strong>Указатели:</strong>
+        {{ range $taxonomy := $taxonomies }}
+            {{ with index $.Params $taxonomy }}
+                {{ $taxonomyName := $taxonomy }}
+                {{ range . }}
+                    <a href="{{ printf "/%s/%s/" ($taxonomyName | urlize) (. | urlize) | relURL }}" style="display: inline-block; margin: 0.2rem; padding: 0.2rem 0.5rem; background: var(--entry); border: 1px solid var(--border); border-radius: 4px; font-size: 0.9rem;">
+                        {{ . }}
+                    </a>
+                {{ end }}
+            {{ end }}
+        {{ end }}
+    </div>
+    {{ end }}
+    <!-- КОНЕЦ БЛОКА С ТЕГАМИ -->
+</article>
+{{ end }}
