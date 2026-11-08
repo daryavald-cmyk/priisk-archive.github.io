@@ -1,0 +1,16 @@
+{{ define "main" }}
+<article class="post-single">
+    <header class="post-header">
+        <h1 class="post-title">{{ .Title }}</h1>
+    </header>
+
+    <div class="post-content">
+        <!-- Выводим список всех терминов (тегов) этой таксономии -->
+        <div class="taxonomy-list">
+            {{ range .Data.Terms.Alphabetical }}
+                <a href="{{ .Page.Permalink }}" class="tag-pill">{{ .Page.Title }}</a>
+            {{ end }}
+        </div>
+    </div>
+</article>
+{{ end }}
