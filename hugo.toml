@@ -29,7 +29,7 @@ defaultContentLanguage = "ru"
 [[menu.main]]
   identifier = "tags"
   name = "УКАЗАТЕЛИ"
-  url = "/tags/"
+  url = "/indicators/"
   weight = 20
   
 [taxonomies]
