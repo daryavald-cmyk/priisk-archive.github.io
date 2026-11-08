@@ -173,7 +173,7 @@ body .post-entry .entry-content,
 body .first-entry .entry-content {
     font-size: 0.9rem !important;
     color: var(--accent-text) !important;
-    margin-top: 1.5rem !important;
+    margin-top: 1.0rem !important;
 }
 
 /* =========================================
