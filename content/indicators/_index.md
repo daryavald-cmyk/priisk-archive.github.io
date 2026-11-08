@@ -1,7 +1,7 @@
 <div class="indicators-grid">
   <a href="/places/" class="indicator-card">Места</a>
   
-  <a href="/surnames/" class="indicator-card">Фамилии</a>
+  <a href="/surnames/" class="indicator-card">Люди</a>
   
   <a href="/themes/" class="indicator-card">Темы</a>
   
