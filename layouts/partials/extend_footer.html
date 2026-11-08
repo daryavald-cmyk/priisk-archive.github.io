@@ -4,7 +4,7 @@
         <!-- Строка 1: Email и адрес -->
         <div class="footer-row">
             <span>E-mail: </span>
-            <span href="mailto:apriisk@yandex.ru" class="footer-email">apriisk@yandex.ru</a>
+            <span class="footer-email">apriisk@yandex.ru</span>
         </div>
 
         <!-- Строка 2: Копирайт и подпись -->
@@ -14,38 +14,33 @@
 
     </div>
 </footer>
+
 <script>
-// Ждем полной загрузки, а затем ждем еще чуть-чуть (на случай, если кнопка появляется с задержкой)
 window.addEventListener('load', function() {
-    setTimeout(function() {
-        // Ищем кнопку по всем возможным признакам
-        const killButton = () => {
-            const btns = document.querySelectorAll('a[href="#top"], #top-link, .top-link, [id*="scroll"], [class*="scroll"]');
-            btns.forEach(btn => btn.remove()); // Физически удаляем из DOM
-        };
-        
-        killButton();
-        
-        // На всякий случай запускаем еще раз через секунду (если скрипт темы создаст её заново)
-        <script>
-  const scrollTopBtn = document.createElement('button');
-  scrollTopBtn.id = 'scroll-top';
-  scrollTopBtn.innerHTML = '↑'; // Или SVG стрелочка
-  document.body.appendChild(scrollTopBtn);
+    // 1. Создаем кнопку "Наверх"
+    const scrollTopBtn = document.createElement('button');
+    scrollTopBtn.id = 'scroll-top';
+    scrollTopBtn.innerHTML = '↑'; 
+    document.body.appendChild(scrollTopBtn);
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      scrollTopBtn.classList.add('show');
-    } else {
-      scrollTopBtn.classList.remove('show');
-    }
-  });
+    // 2. Логика появления при скролле
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollTopBtn.classList.add('show');
+        } else {
+            scrollTopBtn.classList.remove('show');
+        }
+    });
 
-  scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-</script>
-        setTimeout(killButton, 1000);
-    }, 500); 
+    // 3. Плавный скролл наверх при клике
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // 4. (Опционально) Удаляем старую кнопку темы, если она мешает
+    setTimeout(() => {
+        const oldBtns = document.querySelectorAll('a[href="#top"], #top-link, .top-link');
+        oldBtns.forEach(btn => btn.remove());
+    }, 500);
 });
 </script>
