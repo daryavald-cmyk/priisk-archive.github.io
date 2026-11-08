@@ -171,7 +171,7 @@ body .first-entry .entry-header h1 {
 
 body .post-entry .entry-content,
 body .first-entry .entry-content {
-    font-size: 0.9rem !important;
+    font-size: 1.0rem !important;
     color: var(--accent-text) !important;
     margin-top: 1.0rem !important;
 }
