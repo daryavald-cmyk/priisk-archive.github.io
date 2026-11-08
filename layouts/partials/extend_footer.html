@@ -27,6 +27,24 @@ window.addEventListener('load', function() {
         killButton();
         
         // На всякий случай запускаем еще раз через секунду (если скрипт темы создаст её заново)
+        <script>
+  const scrollTopBtn = document.createElement('button');
+  scrollTopBtn.id = 'scroll-top';
+  scrollTopBtn.innerHTML = '↑'; // Или SVG стрелочка
+  document.body.appendChild(scrollTopBtn);
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      scrollTopBtn.classList.add('show');
+    } else {
+      scrollTopBtn.classList.remove('show');
+    }
+  });
+
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
         setTimeout(killButton, 1000);
     }, 500); 
 });
