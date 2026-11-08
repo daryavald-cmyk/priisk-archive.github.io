@@ -1,6 +1,5 @@
 ---
 title: "Указатели"
-layout: "list"
 ---
 
 - [Места](/places/)
@@ -8,4 +7,4 @@ layout: "list"
 - [Темы](/themes/)
 - [Профессии и занятия](/occupations/)
 - [Типы источников](/sources/)
-- [Шифры дел](/archive-codes/)
+- [Шифры дел](/archive-codes/
