@@ -644,3 +644,28 @@ body .first-entry:hover {
 .header #menu a.active::after {
     display: none !important;
 }
+/* =========================================
+   АКТИВНЫЙ ПУНКТ МЕНЮ (Поиск, Указатели)
+   ========================================= */
+
+/* Перебираем все возможные варианты классов активной ссылки */
+.header #menu a.active,
+.header #menu a.current,
+.header #menu a[aria-current="page"],
+.header #menu a[aria-current="true"],
+.header #menu .active > a,
+.header #menu .current > a {
+    color: var(--accent-text) !important; /* Оранжевый цвет */
+    text-decoration: none !important;     /* Без подчёркивания */
+    border-bottom: none !important;       /* Без нижней линии */
+    font-weight: 400 !important;          /* Убираем жирность (возвращаем нормальную толщину) */
+}
+
+/* На всякий случай убираем подчёркивание и жирность при наведении на активный пункт */
+.header #menu a.active:hover,
+.header #menu a.current:hover,
+.header #menu a[aria-current="page"]:hover {
+    text-decoration: none !important;
+    color: var(--accent-text) !important;
+    font-weight: 400 !important;
+}
