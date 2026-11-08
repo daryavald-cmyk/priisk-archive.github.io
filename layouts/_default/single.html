@@ -10,26 +10,51 @@
         {{ .Content }}
     </div>
 
-    <!-- НАЧАЛО БЛОКА С ТЕГАМИ -->
-    {{ $taxonomies := slice "places" "surnames" "themes" "occupations" "sources" "archive_codes" }}
-    {{ $hasTags := false }}
-    {{ range $taxonomies }}{{ if index $.Params . }}{{ $hasTags = true }}{{ end }}{{ end }}
+   <!-- НАЧАЛО ГРУППИРОВКИ ТЕГОВ -->
+{{ $hasTags := false }}
+{{ if or .Params.places .Params.surnames .Params.themes .Params.occupations .Params.sources .Params.archive_codes }}{{ $hasTags = true }}{{ end }}
+
+{{ if $hasTags }}
+<div class="post-tags" style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border);">
     
-    {{ if $hasTags }}
-    <div class="post-tags" style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border);">
-        <strong>Теги:</strong>
-        {{ range $taxonomy := $taxonomies }}
-            {{ with index $.Params $taxonomy }}
-                {{ $taxonomyName := $taxonomy }}
-                {{ range . }}
-                    <a href="{{ printf "/%s/%s/" ($taxonomyName | urlize) (. | urlize) | relURL }}" style="display: inline-block; margin: 0.2rem; padding: 0.2rem 0.5rem; background: var(--entry); border: 1px solid var(--border); border-radius: 4px; font-size: 0.9rem;">
-                        {{ . }}
-                    </a>
-                {{ end }}
-            {{ end }}
-        {{ end }}
+    {{ with .Params.places }}
+    <div style="margin-bottom: 0.5rem;">
+        <strong>Места:</strong> {{ delimit . ", " }}
     </div>
     {{ end }}
-    <!-- КОНЕЦ БЛОКА С ТЕГАМИ -->
+
+    {{ with .Params.surnames }}
+    <div style="margin-bottom: 0.5rem;">
+        <strong>Люди:</strong> {{ delimit . ", " }}
+    </div>
+    {{ end }}
+
+    {{ with .Params.themes }}
+    <div style="margin-bottom: 0.5rem;">
+        <strong>Темы:</strong> {{ delimit . ", " }}
+    </div>
+    {{ end }}
+
+    {{ with .Params.occupations }}
+    <div style="margin-bottom: 0.5rem;">
+        <strong>Профессии и занятия:</strong> {{ delimit . ", " }}
+    </div>
+    {{ end }}
+
+    {{ with .Params.sources }}
+    <div style="margin-bottom: 0.5rem;">
+        <strong>Типы источников:</strong> {{ delimit . ", " }}
+    </div>
+    {{ end }}
+
+    {{ with .Params.archive_codes }}
+    <div style="margin-bottom: 0.5rem;">
+        <strong>Шифры дел:</strong> {{ delimit . ", " }}
+    </div>
+    {{ end }}
+
+</div>
+{{ end }}
+<!-- КОНЕЦ ГРУППИРОВКИ ТЕГОВ -->
 </article>
 {{ end }}
