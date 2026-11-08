@@ -11,6 +11,7 @@ sources: ["статья в газете"]
 draft: false
 ---
 <hr class="line-solid">
+<div style="height: 17px;"></div>
 <style>
   .my-mono-font, .my-mono-font * {
     font-family: "Courier New", Courier, "Nimbus Mono PS", "Liberation Mono", monospace !important;
@@ -24,7 +25,7 @@ draft: false
 <div class="my-mono-font">
   <div>Н. С. Кое-что о занятиях жителей деревни Мостовки Верх-Исетской волости. // Екатеринбургская неделя. Газета политическая и литературная. — 1883. — 5 января (№ 1). — С. 3-4.</div>
 </div>
-
+<div style="height: 17px;"></div>
 <hr class="line-solid">
 <div style="height: 17px;"></div>
 
