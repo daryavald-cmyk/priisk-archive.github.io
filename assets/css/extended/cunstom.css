@@ -620,3 +620,27 @@ body .first-entry:hover {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important; /* Добавляем легкую тень для объема */
     transition: all 0.2s ease !important; /* Плавный переход */
 }
+/* =========================================
+   СТИЛИ ДЛЯ МЕНЮ (Поиск и Указатели)
+   ========================================= */
+
+/* 1. При наведении на ссылку в меню — она становится оранжевой */
+.header #menu a:hover {
+    color: var(--accent-text) !important;
+    transition: color 0.2s ease !important;
+}
+
+/* 2. Активная страница (когда ты находишься на /search/ или /indicators/) */
+/* PaperMod добавляет класс .active к ссылке текущей страницы */
+.header #menu a.active,
+.header #menu a[aria-current="page"] {
+    color: var(--accent-text) !important; /* Оставляем ярким */
+    text-decoration: none !important;     /* Без подчеркивания */
+    border-bottom: none !important;       /* Без нижней линии */
+}
+
+/* 3. Убираем декоративные элементы (точки/стрелки) у активного пункта, если они есть */
+.header #menu a.active::before,
+.header #menu a.active::after {
+    display: none !important;
+}
