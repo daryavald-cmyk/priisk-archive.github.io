@@ -11,7 +11,6 @@ sources: ["статья в газете"]
 draft: false
 ---
 <hr class="line-solid">
-<div class="doc-meta">
 <style>
   .my-mono-font, .my-mono-font * {
     font-family: "Courier New", Courier, "Nimbus Mono PS", "Liberation Mono", monospace !important;
