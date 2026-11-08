@@ -1,5 +1,6 @@
 ---
 title: "Указатели"
+layout: "list"
 ---
 
 - [Места](/places/)
