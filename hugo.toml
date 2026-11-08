@@ -38,3 +38,5 @@ defaultContentLanguage = "ru"
   surname = 'surnames'    # Фамилии
   theme = 'themes'        # Темы
   source = 'sources'      # Типы источников
+  occupation = 'occupations'    # Профессии и занятия
+  archive_code = 'archive-codes' # Шифры дел
