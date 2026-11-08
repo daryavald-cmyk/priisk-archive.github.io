@@ -203,7 +203,7 @@ body:not(.list) .main {
     top: 1rem !important; /* Дата над заголовком */
     left: 0 !important;      
     font-family: var(--font-family) !important;
-    font-size: 0.85rem !important;
+    font-size: 0.95rem !important;
     color: var(--primary) !important;
     margin: 0 !important;
     display: block !important;
@@ -220,7 +220,7 @@ body:not(.list) .main {
 
 .post-header .post-description {
     color: var(--accent-text) !important;
-    margin-top: 0.5rem !important;
+    margin-top: 1.3rem !important;
     font-size: 1rem !important;
 }
 /* Основной текст статьи */
