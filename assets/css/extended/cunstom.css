@@ -506,3 +506,36 @@ span.bronze {
     color: var(--accent-text) !important; /* Оранжевая стрелка */
     transform: translateY(-3px) !important; /* Чуть подпрыгивает */
 }
+/* =========================================
+   УБИРАЕМ ПОДЧЁРКИВАНИЕ И ВОЗВРАЩАЕМ ЭФФЕКТЫ ДЛЯ ПЛАШЕК
+   ========================================= */
+
+/* Для тегов внизу статьи */
+.tag-pill {
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+.tag-pill:hover {
+    text-decoration: none !important;
+    border-bottom: 1px solid var(--accent-text) !important; /* Твой акцентный цвет при наведении */
+}
+
+/* Для тегов на страницах разделов (/places/ и т.д.) */
+.taxonomy-list a {
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+.taxonomy-list a:hover {
+    text-decoration: none !important;
+    border-bottom: 1px solid var(--accent-text) !important;
+}
+
+/* Для карточек на странице "Указатели" (Места, Люди и т.д.) */
+.indicator-card {
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+.indicator-card:hover {
+    text-decoration: none !important;
+    border-bottom: 1px solid var(--accent-text) !important;
+}
