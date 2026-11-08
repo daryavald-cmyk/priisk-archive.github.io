@@ -212,9 +212,7 @@ body:not(.list) .main {
 .post-header .post-title {
     font-weight: 600 !important;
     font-size: 1.5rem !important;
-    margin: 0 !important;
-      
-    /* ВОТ ЭТА СТРОКА ВОЗВРАЩАЕТ ЗАГОЛОВОК НА МЕСТО */
+    margin-top: 2rem !important; /* <--- ВОТ ЭТО ОТОДВИНЕТ ЗАГОЛОВОК ВНИЗ */
     display: block !important; 
 }
 
