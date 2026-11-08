@@ -200,10 +200,10 @@ body:not(.list) .main {
 
 .post-header .post-meta {
     position: absolute !important;
-    top: 1rem !important; /* Дата над заголовком */
+    top: 0,85rem !important; /* Дата над заголовком */
     left: 0 !important;      
     font-family: var(--font-family) !important;
-    font-size: 0.95rem !important;
+    font-size: 0.9rem !important;
     color: var(--primary) !important;
     margin: 0 !important;
     display: block !important;
