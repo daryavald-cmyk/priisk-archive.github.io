@@ -383,3 +383,32 @@ span.bronze {
     border-color: var(--accent-text) !important;
     color: var(--accent-text) !important;
 }
+/* =========================================
+   СТИЛИ ДЛЯ СТРАНИЦЫ "УКАЗАТЕЛИ"
+   ========================================= */
+.indicators-grid {
+    display: flex !important;
+    flex-direction: column !important; /* Выстраиваем в столбик */
+    gap: 0.8rem !important; /* Расстояние между карточками */
+    margin-top: 2rem !important;
+}
+
+.indicator-card {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important; /* Текст слева, стрелка (если добавим) справа */
+    background-color: var(--entry) !important; /* Фон как у карточек */
+    border: 1px solid var(--border) !important; /* Рамка как у карточек */
+    padding: 1rem 1.5rem !important; /* Внутренние отступы */
+    border-radius: 8px !important; /* Скругление углов */
+    font-size: 1.1rem !important;
+    text-decoration: none !important;
+    color: var(--primary) !important;
+    transition: all 0.2s ease !important;
+}
+
+.indicator-card:hover {
+    border-color: var(--accent-text) !important; /* Оранжевая рамка при наведении */
+    color: var(--accent-text) !important; /* Оранжевый текст при наведении */
+    transform: translateX(5px) !important; /* Легкий сдвиг вправо для интерактивности */
+}
