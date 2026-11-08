@@ -1,10 +1,6 @@
----
-title: "Указатели"
----
-
-- [Места](/places/)
-- [Фамилии](/surnames/)
-- [Темы](/themes/)
-- [Профессии и занятия](/occupations/)
-- [Типы источников](/sources/)
-- [Шифры дел](/archive-codes/
+[МЕСТА](/places/)
+[ФАМИЛИИ](/surnames/)
+[ТЕМЫ](/themes/)
+[ПРОФЕССИИ И ЗАНЯТИЯ](/occupations/)
+[ТИПЫ ИСТОЧНИКОВ](/sources/)
+[ШИФРЫ ДЕЛ](/archive-codes/)
