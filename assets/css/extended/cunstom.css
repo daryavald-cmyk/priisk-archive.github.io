@@ -171,9 +171,9 @@ body .first-entry .entry-header h1 {
 
 body .post-entry .entry-content,
 body .first-entry .entry-content {
-    font-size: 0.85rem !important;
+    font-size: 0.9rem !important;
     color: var(--accent-text) !important;
-    margin-top: 0.5rem !important;
+    margin-top: 1.5rem !important;
 }
 
 /* =========================================
@@ -222,6 +222,11 @@ body:not(.list) .main {
     color: var(--accent-text) !important;
     margin-top: 0.5rem !important;
     font-size: 1rem !important;
+}
+/* Основной текст статьи */
+.post-content, .post-single {
+    font-size: 0,9rem !important; /* Размер основного текста (можно поставить 1.1rem или 18px) */
+    line-height: 1.5 !important; /* Межстрочный интервал */
 }
 
 /* =========================================
