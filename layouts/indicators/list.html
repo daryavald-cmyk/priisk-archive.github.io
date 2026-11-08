@@ -1,25 +1,12 @@
 {{ define "main" }}
 <article class="post-single">
   
-    <!-- Основной контент (твои ссылки на места, фамилии и т.д.) -->
+    <!-- Основной контент -->
     <div class="post-content" style="margin-top: 0 !important; padding-top: 0 !important;">
         
-        <!-- 
-          ВОТ ЗДЕСЬ МЕНЯЙ ОТСТУП СВЕРХУ (margin-top) 
-          Если поставить 0, текст прилипнет к верху. 
-          Сейчас стоит 1rem (16px) — можно увеличить до 2rem.
-        -->
-        <div style="margin-top: 2rem;">
+        <!-- Обертка для списка с настройкой отступов -->
+        <div class="custom-indicators-list" style="margin-top: 2rem;">
             {{ .Content }}
-          <!-- Основной контент -->
-<div class="post-content" style="margin-top: 0 !important; padding-top: 0 !important;">
-    
-    <!-- Обертка для списка с настройкой отступов -->
-    <div class="custom-indicators-list" style="margin-top: 1rem;">
-        {{ .Content }}
-    </div>
-
-</div>
         </div>
 
     </div>
