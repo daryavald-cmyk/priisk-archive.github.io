@@ -200,7 +200,7 @@ body:not(.list) .main {
 
 .post-header .post-meta {
     position: absolute !important;
-    top: 0,9rem !important; /* Дата над заголовком */
+    top: 0.9rem !important; /* Дата над заголовком */
     left: 0 !important;      
     font-family: var(--font-family) !important;
     font-size: 0.9rem !important;
@@ -225,7 +225,7 @@ body:not(.list) .main {
 }
 /* Основной текст статьи */
 .post-content, .post-single {
-    font-size: 0,9rem !important; /* Размер основного текста (можно поставить 1.1rem или 18px) */
+    font-size: 0.9rem !important; /* Размер основного текста (можно поставить 1.1rem или 18px) */
     line-height: 1.5 !important; /* Межстрочный интервал */
 }
 
