@@ -16,7 +16,7 @@ draft: false
   .my-mono-font, .my-mono-font * {
     font-family: "Courier New", Courier, "Nimbus Mono PS", "Liberation Mono", monospace !important;
     font-weight: 300 !important; 
-    font-size: 1.0em !important;
+    font-size: 0.95em !important;
     line-height: 1.5;
     margin: 0 !important;
     padding: 0 !important;
