@@ -62,3 +62,7 @@ draft: false
 
 <hr class="line-solid">
 
+При подготовке текста этой публикации искусственный интеллект не использовался.
+<div style="margin-top: 2rem;"></div>
+
+<hr class="line-solid">
