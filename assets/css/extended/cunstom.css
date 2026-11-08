@@ -324,7 +324,34 @@ span.bronze {
     margin-bottom: 2rem !important; /* ВОТ ЭТА ЦИФРА ОТВЕЧАЕТ ЗА РАССТОЯНИЕ МЕЖДУ СТРОЧКАМИ */
     font-size: 1.1rem !important;   /* Если хочешь сделать шрифт крупнее */
 }
-.post-content p, 
-.post-content li {
-    font-size: 0,9rem !important; /* ЗДЕСЬ МЕНЯЕТСЯ РАЗМЕР */
+/* =========================================
+   СТИЛИ ДЛЯ ПЛАШЕК-ТЕГОВ (Внизу статьи)
+   ========================================= */
+.tag-pill {
+    display: inline-flex !important; /* Горизонтальное выстраивание */
+    align-items: center !important;
+    background-color: var(--entry) !important; /* Фон как у карточек */
+    border: 1px solid var(--border) !important; /* Рамка как у карточек */
+    padding: 0.2rem 0.6rem !important; 
+    border-radius: 4px !important; /* Скругление */
+    font-size: 0.9rem !important;
+    text-decoration: none !important;
+    color: inherit !important;
+    transition: all 0.2s ease !important;
+    white-space: nowrap !important; /* Запрещаем перенос слов ВНУТРИ плашки */
+}
+
+/* Эффект при наведении (чтобы было понятно, что это ссылка) */
+.tag-pill:hover {
+    border-color: var(--accent-text) !important; /* При наведении рамка становится оранжевой */
+    color: var(--accent-text) !important; /* И текст тоже */
+}
+
+/* Группа (Места, Люди и т.д.) */
+.tag-group {
+    width: 100% !important; /* Занимает всю ширину, чтобы каждая группа была с новой строки */
+    display: flex !important;
+    flex-wrap: wrap !important; /* Если тегов много, они аккуратно перенесутся на новую строку ВНУТРИ группы */
+    align-items: center !important;
+    gap: 0.5rem !important;
 }
