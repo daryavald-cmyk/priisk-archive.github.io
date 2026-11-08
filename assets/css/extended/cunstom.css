@@ -192,7 +192,7 @@ body:not(.list) .main {
 .post-header {
     position: relative !important;
     display: block !important;
-    padding-top: 3rem !important; /* Опускаем заголовок и дату в публикации */
+    padding-top: 0 !important; /* Опускаем заголовок и дату в публикации */
     margin-top: 0 !important; 
     padding-bottom: 1.5rem !important;
     margin-bottom: 2rem !important;
@@ -203,7 +203,7 @@ body:not(.list) .main {
     top: 0.9rem !important; /* Дата над заголовком */
     left: 0 !important;      
     font-family: var(--font-family) !important;
-    font-size: 0.9rem !important;
+    font-size: 1.0rem !important;
     color: var(--primary) !important;
     margin: 0 !important;
     display: block !important;
@@ -225,7 +225,7 @@ body:not(.list) .main {
 }
 /* Основной текст статьи */
 .post-content, .post-single {
-    font-size: 0.9rem !important; /* Размер основного текста (можно поставить 1.1rem или 18px) */
+    font-size: 1.0rem !important; /* Размер основного текста (можно поставить 1.1rem или 18px) */
     line-height: 1.5 !important; /* Межстрочный интервал */
 }
 
