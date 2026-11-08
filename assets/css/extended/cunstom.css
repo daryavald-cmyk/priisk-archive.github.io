@@ -323,7 +323,7 @@ span.bronze {
 .post-content, 
 /* Расстояние между группами указателей (Места, Фамилии и т.д.) */
 .custom-indicators-list li {
-    margin-bottom: 1.5rem !important; /* ВОТ ЭТА ЦИФРА ОТВЕЧАЕТ ЗА РАССТОЯНИЕ МЕЖДУ СТРОЧКАМИ */
+    margin-bottom: 2rem !important; /* ВОТ ЭТА ЦИФРА ОТВЕЧАЕТ ЗА РАССТОЯНИЕ МЕЖДУ СТРОЧКАМИ */
     font-size: 1.1rem !important;   /* Если хочешь сделать шрифт крупнее */
 }
 .post-content p, 
