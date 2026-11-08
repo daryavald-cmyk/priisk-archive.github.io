@@ -17,7 +17,7 @@
     
     {{ if $hasTags }}
     <div class="post-tags" style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border);">
-        <strong>Указатели:</strong>
+        <strong>Теги:</strong>
         {{ range $taxonomy := $taxonomies }}
             {{ with index $.Params $taxonomy }}
                 {{ $taxonomyName := $taxonomy }}
