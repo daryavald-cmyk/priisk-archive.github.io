@@ -442,3 +442,18 @@ span.bronze {
     border-color: var(--accent-text);
     color: var(--accent-text);
 }
+/* =========================================
+   СТИЛИ ДЛЯ ССЫЛОК В ТЕКСТЕ СТАТЬИ
+   ========================================= */
+.post-content a {
+    text-decoration: underline !important; /* Подчеркивание всегда */
+    text-underline-offset: 3px !important; /* Отступ подчеркивания от текста (чтобы не прилипало) */
+    color: inherit !important; /* Цвет текста такой же, как у обычного текста */
+    transition: color 0.2s ease !important; /* Плавное изменение цвета */
+}
+
+/* При наведении мыши */
+.post-content a:hover {
+    color: var(--accent-text) !important; /* Становится акцентно-оранжевым */
+    text-decoration-color: var(--accent-text) !important; /* И подчеркивание тоже оранжевое */
+}
