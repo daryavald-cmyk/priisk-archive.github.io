@@ -696,3 +696,21 @@ body .first-entry:hover {
     text-decoration: none !important;
     font-weight: 400 !important;
 }
+/* =========================================
+   ИСПРАВЛЕНИЕ АКТИВНОГО ПУНКТА МЕНЮ (span.active)
+   ========================================= */
+
+/* Жестко перебиваем стили темы для активного span внутри меню */
+.header #menu a span.active {
+    color: var(--accent-text) !important;   /* Оранжевый цвет */
+    text-decoration: none !important;       /* Убираем подчеркивание */
+    border-bottom: none !important;         /* Убираем нижнюю линию */
+    font-weight: 400 !important;            /* Убираем жирность (возвращаем тонкий шрифт) */
+}
+
+/* На всякий случай дублируем при наведении */
+.header #menu a span.active:hover {
+    color: var(--accent-text) !important;
+    text-decoration: none !important;
+    font-weight: 400 !important;
+}
