@@ -539,3 +539,74 @@ span.bronze {
     text-decoration: none !important;
     border-bottom: 1px solid var(--accent-text) !important;
 }
+/* =========================================
+   ЯДЕРНАЯ ЗАЧИСТКА ПЛАШЕК (ТЕГИ, УКАЗАТЕЛИ)
+   ========================================= */
+
+/* 1. ТЕГИ НА СТРАНИЦАХ РАЗДЕЛОВ (/places/ и т.д.) */
+.taxonomy-list a.tag-pill,
+.taxonomy-list a.tag-pill:link,
+.taxonomy-list a.tag-pill:visited {
+    text-decoration: none !important;
+    border-bottom: 1px solid transparent !important; /* Прозрачная рамка, чтобы не было скачков */
+    background-color: var(--entry) !important;
+    border: 1px solid var(--border) !important;
+    padding: 0.4rem 0.8rem !important;
+    border-radius: 6px !important;
+    color: inherit !important;
+    transition: all 0.2s ease !important;
+}
+
+.taxonomy-list a.tag-pill:hover {
+    text-decoration: none !important;
+    border-color: var(--accent-text) !important; /* Оранжевая рамка */
+    color: var(--accent-text) !important; /* Оранжевый текст */
+}
+
+/* 2. ТЕГИ ВНИЗУ СТАТЬИ */
+.post-tags a.tag-pill,
+.post-tags a.tag-pill:link,
+.post-tags a.tag-pill:visited {
+    text-decoration: none !important;
+    border-bottom: 1px solid transparent !important;
+    background-color: var(--entry) !important;
+    border: 1px solid var(--border) !important;
+    padding: 0.2rem 0.6rem !important;
+    border-radius: 4px !important;
+    color: inherit !important;
+    transition: all 0.2s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    white-space: nowrap !important;
+}
+
+.post-tags a.tag-pill:hover {
+    text-decoration: none !important;
+    border-color: var(--accent-text) !important;
+    color: var(--accent-text) !important;
+}
+
+/* 3. КАРТОЧКИ НА СТРАНИЦЕ "УКАЗАТЕЛИ" */
+.indicator-card,
+.indicator-card:link,
+.indicator-card:visited {
+    text-decoration: none !important;
+    border-bottom: 1px solid transparent !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    background-color: var(--entry) !important;
+    border: 1px solid var(--border) !important;
+    padding: 1rem 1.5rem !important;
+    border-radius: 8px !important;
+    font-size: 1.1rem !important;
+    color: var(--primary) !important;
+    transition: all 0.2s ease !important;
+}
+
+.indicator-card:hover {
+    text-decoration: none !important;
+    border-color: var(--accent-text) !important;
+    color: var(--accent-text) !important;
+    transform: translateX(5px) !important;
+}
