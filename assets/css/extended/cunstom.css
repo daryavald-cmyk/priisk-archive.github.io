@@ -610,3 +610,13 @@ span.bronze {
     color: var(--accent-text) !important;
     transform: translateX(5px) !important;
 }
+/* =========================================
+   ЭФФЕКТ НАВЕДЕНИЯ ДЛЯ КАРТОЧЕК НА ГЛАВНОЙ
+   ========================================= */
+body .post-entry:hover,
+body .first-entry:hover {
+    border-color: var(--accent-text) !important; /* Оранжевая рамка при наведении */
+    transform: translateY(-3px) !important; /* Легкий подъем вверх для эффекта */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important; /* Добавляем легкую тень для объема */
+    transition: all 0.2s ease !important; /* Плавный переход */
+}
