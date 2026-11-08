@@ -355,3 +355,31 @@ span.bronze {
     align-items: center !important;
     gap: 0.5rem !important;
 }
+/* =========================================
+   СТИЛИ ДЛЯ СПИСКА ТАКСОНОМИЙ (Страницы /places/, /surnames/)
+   ========================================= */
+.taxonomy-list {
+    display: flex !important;
+    flex-wrap: wrap !important; /* Если не влезают в экран, переносятся */
+    gap: 0.5rem !important; /* Расстояние между плашками */
+    margin-top: 1.5rem !important;
+}
+
+.taxonomy-list a {
+    display: inline-flex !important;
+    align-items: center !important;
+    background-color: var(--entry) !important; /* Фон карточки */
+    border: 1px solid var(--border) !important; /* Рамка */
+    padding: 0.4rem 0.8rem !important; /* Отступы внутри плашки */
+    border-radius: 6px !important; /* Скругление */
+    font-size: 1rem !important;
+    text-decoration: none !important;
+    color: inherit !important;
+    transition: all 0.2s ease !important;
+    white-space: nowrap !important;
+}
+
+.taxonomy-list a:hover {
+    border-color: var(--accent-text) !important;
+    color: var(--accent-text) !important;
+}
