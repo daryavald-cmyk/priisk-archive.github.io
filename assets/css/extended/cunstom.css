@@ -494,27 +494,3 @@ span.bronze {
     color: var(--accent-text) !important; /* Оранжевая стрелка */
     transform: translateY(-3px) !important; /* Чуть подпрыгивает */
 }
-/* =========================================
-   УБИРАЕМ ПОДЧЁРКИВАНИЕ У ПЛАШЕК И КАРТОЧЕК
-   ========================================= */
-
-/* 1. Убираем подчёркивание у карточек на странице "Указатели" (Места, Люди и т.д.) */
-.indicator-card,
-.indicator-card:hover {
-    text-decoration: none !important; /* Принудительно убираем линию */
-    border-bottom: none !important;   /* На всякий случай убираем рамку снизу */
-}
-
-/* 2. Убираем подчёркивание у тегов на страницах разделов (внутри /places/, /surnames/) */
-.taxonomy-list a,
-.taxonomy-list a:hover {
-    text-decoration: none !important;
-    border-bottom: none !important;
-}
-
-/* 3. Убираем подчёркивание у тегов внизу страницы публикации */
-.tag-pill,
-.tag-pill:hover {
-    text-decoration: none !important;
-    border-bottom: none !important;
-}
