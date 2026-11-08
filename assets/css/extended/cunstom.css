@@ -458,6 +458,18 @@ span.bronze {
     text-decoration-color: var(--accent-text) !important; /* И подчеркивание тоже оранжевое */
 }
 /* =========================================
+   УБИРАЕМ ПОДЧЁРКИВАНИЕ У ПЛАШЕК И КАРТОЧЕК
+   ========================================= */
+.tag-pill, 
+.tag-pill:hover,
+.indicator-card,
+.indicator-card:hover,
+.taxonomy-list a,
+.taxonomy-list a:hover {
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+/* =========================================
    КНОПКА "НАВЕРХ" (В правом нижнем углу)
    ========================================= */
 #scroll-top {
