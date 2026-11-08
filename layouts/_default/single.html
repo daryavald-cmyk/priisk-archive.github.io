@@ -10,53 +10,47 @@
         {{ .Content }}
     </div>
 
- <!-- НАЧАЛО ГРУППИРОВКИ ТЕГОВ -->
+<!-- НАЧАЛО ГРУППИРОВКИ ТЕГОВ -->
 {{ $hasTags := false }}
 {{ if or .Params.places .Params.surnames .Params.themes .Params.occupations .Params.sources .Params.archive_codes }}{{ $hasTags = true }}{{ end }}
 
 {{ if $hasTags }}
-<div class="post-tags" style="margin-top: 2rem; padding-top: 1rem;">
+<div class="post-tags" style="margin-top: 2rem; padding-top: 1rem; line-height: 1.6;">
     
     {{ with .Params.places }}
-    <div style="margin-bottom: 0.5rem;">
-        <strong>Места:</strong> 
-        {{ range . }}<a href="{{ "/places/" | relURL }}{{ . | urlize }}/" style="text-decoration: none; color: var(--accent-text);">{{ . }}</a>, {{ end }}
-    </div>
+    <span><strong>Места:</strong> 
+        {{ range . }}<a href="{{ "/places/" | relURL }}{{ . | urlize }}/" style="text-decoration: none; color: inherit;">{{ . }}</a> {{ end }}
+    </span>
     {{ end }}
 
     {{ with .Params.surnames }}
-    <div style="margin-bottom: 0.5rem;">
-        <strong>Люди:</strong> 
-        {{ range . }}<a href="{{ "/surnames/" | relURL }}{{ . | urlize }}/" style="text-decoration: none; color: var(--accent-text);">{{ . }}</a>, {{ end }}
-    </div>
+    <span><strong>Люди:</strong> 
+        {{ range . }}<a href="{{ "/surnames/" | relURL }}{{ . | urlize }}/" style="text-decoration: none; color: inherit;">{{ . }}</a> {{ end }}
+    </span>
     {{ end }}
 
     {{ with .Params.themes }}
-    <div style="margin-bottom: 0.5rem;">
-        <strong>Темы:</strong> 
-        {{ range . }}<a href="{{ "/themes/" | relURL }}{{ . | urlize }}/" style="text-decoration: none; color: var(--accent-text);">{{ . }}</a>, {{ end }}
-    </div>
+    <span><strong>Темы:</strong> 
+        {{ range . }}<a href="{{ "/themes/" | relURL }}{{ . | urlize }}/" style="text-decoration: none; color: inherit;">{{ . }}</a> {{ end }}
+    </span>
     {{ end }}
 
     {{ with .Params.occupations }}
-    <div style="margin-bottom: 0.5rem;">
-        <strong>Профессии и занятия:</strong> 
-        {{ range . }}<a href="{{ "/occupations/" | relURL }}{{ . | urlize }}/" style="text-decoration: none; color: var(--accent-text);">{{ . }}</a>, {{ end }}
-    </div>
+    <span><strong>Профессии и занятия:</strong> 
+        {{ range . }}<a href="{{ "/occupations/" | relURL }}{{ . | urlize }}/" style="text-decoration: none; color: inherit;">{{ . }}</a> {{ end }}
+    </span>
     {{ end }}
 
     {{ with .Params.sources }}
-    <div style="margin-bottom: 0.5rem;">
-        <strong>Типы источников:</strong> 
-        {{ range . }}<a href="{{ "/sources/" | relURL }}{{ . | urlize }}/" style="text-decoration: none; color: var(--accent-text);">{{ . }}</a>, {{ end }}
-    </div>
+    <span><strong>Типы источников:</strong> 
+        {{ range . }}<a href="{{ "/sources/" | relURL }}{{ . | urlize }}/" style="text-decoration: none; color: inherit;">{{ . }}</a> {{ end }}
+    </span>
     {{ end }}
 
     {{ with .Params.archive_codes }}
-    <div style="margin-bottom: 0.5rem;">
-        <strong>Шифры дел:</strong> 
-        {{ range . }}<a href="{{ "/archive-codes/" | relURL }}{{ . | urlize }}/" style="text-decoration: none; color: var(--accent-text);">{{ . }}</a>, {{ end }}
-    </div>
+    <span><strong>Шифры дел:</strong> 
+        {{ range . }}<a href="{{ "/archive-codes/" | relURL }}{{ . | urlize }}/" style="text-decoration: none; color: inherit;">{{ . }}</a> {{ end }}
+    </span>
     {{ end }}
 
 </div>
